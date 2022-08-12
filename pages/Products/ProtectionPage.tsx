@@ -1,0 +1,222 @@
+import React,{memo} from "react";
+import {NextPage} from "next";
+import {ButtonNavBar, NavBar, TextButtonWhite} from "../../components/NavBar";
+import Image from "next/image";
+import {IMG_HEADER, IMG_PROTECTION} from "../../assets";
+import {ItemGradient} from "../../components/ItemGradient";
+import {CardContentSection} from "../../components/HomePage/CardContentSection";
+import {CardFeedback} from "../../components/HomePage/CardFeedback";
+import {GradientBox} from "../../components/GradientBox";
+import {Footer} from "../../components/Footer";
+import Home, {DivCenter, DivSpaceBetWeen, RowSection} from "../index";
+import styled from "styled-components";
+import {CardProblem} from "../../components/ProtectionPage/CardProblem";
+import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
+
+const ProtectionPage:NextPage = memo(function ProtectionPage(){
+    return (
+        <>
+            <Container>
+                <NavBar/>
+                <HeaderSection>
+                    <LeftHeaderSection>
+                        <TextHeaderBold>Disable Right-click
+                            & Content Protection</TextHeaderBold>
+                        <TextHeaderNormal>Worrying about someone stealing your work? Activate your protection now!</TextHeaderNormal>
+                        <ListBullets>
+                            <ItemList>Sending email/SMS in bulk</ItemList>
+                            <ItemList>Special gift offers</ItemList>
+                            <ItemList>Disable right-click & Content protection</ItemList>
+                        </ListBullets>
+                        <RowSection>
+                            <ButtonNavBar>
+                                <TextButtonWhite>Install Shopify apps</TextButtonWhite>
+                            </ButtonNavBar>
+                            <LinkTextGray>Watch video demo</LinkTextGray>
+                        </RowSection>
+                    </LeftHeaderSection>
+                    <RightHeaderSection>
+                        <Image src={IMG_PROTECTION}/>
+                    </RightHeaderSection>
+                </HeaderSection>
+                <ProblemSection>
+                    <TextTitleProblem>PROBLEMS</TextTitleProblem>
+                    <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
+                    <DivSpaceBetWeen>
+                        <ItemProblemSection>
+                            <CardProblem/>
+                        </ItemProblemSection>
+                        <ItemProblemSection>
+                            <CardProblem/>
+                        </ItemProblemSection>
+                        <ItemProblemSection>
+                            <CardProblem/>
+                        </ItemProblemSection>
+                    </DivSpaceBetWeen>
+                </ProblemSection>
+                <ContentSection>
+                    <TextTitleProblem>OUR SOLUTIONS</TextTitleProblem>
+                    <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
+                   <DivSpaceBetWeen>
+                       <ItemWrapper>
+                           <ItemGradient/>
+                           <CardContentSection/>
+                       </ItemWrapper>
+                       <ItemWrapper>
+                           <CardContentSection/>
+                           <CardContentSection/>
+                       </ItemWrapper>
+                       <ItemWrapper>
+                           <ItemGradient/>
+                           <CardContentSection/>
+                       </ItemWrapper>
+                   </DivSpaceBetWeen>
+                </ContentSection>
+                <BlogSection>
+                    <TextBoldProblem>Videos - App intro, tutorial and many more</TextBoldProblem>
+                    <IframeVideo  height="600" src="https://www.youtube.com/embed/pBlqQGkPBjE"
+                            title="YouTube video player" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen></IframeVideo>
+                    <br/>
+                    <ButtonNavBar>
+                        <TextButtonWhite>Watch more</TextButtonWhite>
+                    </ButtonNavBar>
+                    <br/>
+                    <br/>
+                    <DivCenter>
+                        <GradientBox/>
+                    </DivCenter>
+                </BlogSection>
+            </Container>
+            <Footer/>
+        </>
+    )
+})
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12.5%;
+`
+
+const HeaderSection = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 80px;
+  padding-top: 100px;
+`
+const LeftHeaderSection = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+`
+const RightHeaderSection = styled.div`
+  width: 50%;
+`
+const TextHeaderBold = styled.span`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  letter-spacing: 0.025em;
+  color: #1D1B29;
+`
+const TextHeaderNormal = styled.p`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.025em;
+  color: #1D1B29;
+`
+
+const ContentSection = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+`
+const ItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+`
+const ProblemSection = styled.div`
+display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:100px 0;
+`
+const TextTitleProblem = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #004AF7;
+`
+const TextBoldProblem =styled.div`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0.025em;
+  color: #000000;
+  margin-bottom: 20px;
+`
+const ItemProblemSection = styled.div`
+display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+`
+const BlogSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0;
+`
+const IframeVideo = styled.iframe`
+display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`
+const TextBlogBold = styled.span`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0.025em;
+  color: #000000;
+`
+const ListBullets = styled.ul`
+  list-style-type: disc;
+`
+const ItemList = styled.li`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.025em;
+  color: #1D1B29;
+`
+const LinkTextGray = styled.a`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: rgba(41, 45, 50, 0.5);
+  margin-left: 20px;
+`
+export default ProtectionPage

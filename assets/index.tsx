@@ -1,0 +1,12 @@
+export const IMG_LOGO = require('./images/img_logo.svg')
+export const IMG_HEADER = require('./images/img_header_example.svg')
+export const IMG_BLOG_EXAMPLE = require('./images/img_blog_example.svg')
+export const IMG_PROTECTION = require('./images/img_protection.svg')
+export const IMG_CARD_PROBLEM = require('./images/img_card_problem.svg')
+
+export const IC_CONTENT_01 = require('./icons/ic_content01.svg')
+export const IC_CONTENT_02 = require('./icons/ic_content02.svg')
+export const IC_CONTENT_03 = require('./icons/ic_content03.svg')
+export const IC_CONTENT_04 = require('./icons/ic_content04.svg')
+export const IC_FIVE_STAR = require('./icons/ic_five_star.svg')
+export const IC_FACEBOOK = require('./icons/ic_facebook.svg')
