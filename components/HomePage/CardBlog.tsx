@@ -15,9 +15,11 @@ export const CardBlogHomePage = memo(function CardBlogHomePage() {
                     <ItemList>Special gift offers</ItemList>
                     <ItemList>Disable right-click & Content protection</ItemList>
                 </ListBullets>
-                <ButtonNavBar>
-                    <TextButtonWhite>Read full story</TextButtonWhite>
-                </ButtonNavBar>
+                <div>
+                    <ButtonNavBar>
+                        <TextButtonWhite>Read full story</TextButtonWhite>
+                    </ButtonNavBar>
+                </div>
             </LeftSection>
             <RightSection>
                 <Image src={IMG_BLOG_EXAMPLE}/>
@@ -33,6 +35,7 @@ const Container = styled.div`
   padding: 70px;
   margin-top: 20px;
   border-radius: 6px;
+  width: 100%;
 `
 const TextHeading = styled.span`
   font-style: normal;
@@ -68,5 +71,8 @@ const LeftSection = styled.div`
   justify-content: center;
 `
 const RightSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 49%;
 `

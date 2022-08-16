@@ -27,6 +27,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   background-color: white;
+  max-width: 520px;
 `
 const ContentDiv = styled.div`
 display: flex;

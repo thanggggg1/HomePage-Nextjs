@@ -24,26 +24,31 @@ const Home: NextPage = memo(function Home() {
                         <TextHeaderNormal>Sortecom includes all you need for you ecommerce website:
                             Email marketing, Review, Free gifts BOGO, Pop up,
                             Free Shipping bar, Content Protections and many more</TextHeaderNormal>
-                        <ButtonNavBar>
-                            <TextButtonWhite>Visit Shopify apps</TextButtonWhite>
-                        </ButtonNavBar>
+                        <div>
+                            <ButtonNavBar>
+                                <TextButtonWhite>Visit Shopify apps</TextButtonWhite>
+                            </ButtonNavBar>
+                        </div>
                     </LeftHeaderSection>
                     <RightHeaderSection>
                         <Image src={IMG_HEADER}/>
                     </RightHeaderSection>
                 </HeaderSection>
-                <ContentSection>
+                <ContentSection id={'about'}>
                     <ItemWrapper>
-                        <ItemGradient/>
-                        <CardContentSection/>
+                        <ItemGradient text={'Why SortEcom?'}/>
+                        <CardContentSection header={'Various kinds of app \n' +
+                            'for every problems'} content={'We provide apps that deal with daily struggles of a merchant.'} isList={true} textButton={'Learn More'}/>
                     </ItemWrapper>
                     <ItemWrapper>
-                        <CardContentSection/>
-                        <CardContentSection/>
+                        <CardContentSection header={'Trusted by \n' +
+                            'worldwide merchants'} content={'Used by 100K+ merchants with 100% satisfaction'} isList={false} textButton={'What they talk about'}/>
+                        <CardContentSection header={'Enhance merchants’ experience'} content={'We develop apps that customer-centric and really easy to use.'} isList={false} textButton={'Learn More'}/>
                     </ItemWrapper>
                     <ItemWrapper>
-                        <ItemGradient/>
-                        <CardContentSection/>
+                        <CardContentSection header={'Free Life-time Support'} content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, ' +
+                            'are wondering how it’s compatible with your store’s Shopify theme, or require a code adjustment to fit your needs.'} isList={false} textButton={'Contact our support'}/>
+                        <ItemGradient text={'It simply works!'}/>
                     </ItemWrapper>
                 </ContentSection>
                 <FeedbackSection>
@@ -52,24 +57,24 @@ const Home: NextPage = memo(function Home() {
                         <TextFeedbackNormal>Join over +10,000 Shopify brands that run their business on Sortecom.
                             We're in the business of helping your business to provide your customers with more
                             value.</TextFeedbackNormal>
-                        <RowSection>
+                        <DivSpaceBetWeen>
                             <StatisticalWrapper>
                                 <TextFeedBackNumber>100 thousand</TextFeedBackNumber>
                                 <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>
                             </StatisticalWrapper>
                             <StatisticalWrapper>
-                                <TextFeedBackNumber>100 thousand</TextFeedBackNumber>
-                                <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>
+                                <TextFeedBackNumber>2 billion</TextFeedBackNumber>
+                                <TextFeedbackNormal>Shopper interaction</TextFeedbackNormal>
                             </StatisticalWrapper>
                             <StatisticalWrapper>
-                                <TextFeedBackNumber>100 thousand</TextFeedBackNumber>
-                                <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>
+                                <TextFeedBackNumber>1 million </TextFeedBackNumber>
+                                <TextFeedbackNormal>Users worlwide</TextFeedbackNormal>
                             </StatisticalWrapper>
                             <StatisticalWrapper>
-                                <TextFeedBackNumber>100 thousand</TextFeedBackNumber>
-                                <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>
+                                <TextFeedBackNumber>4 Apps</TextFeedBackNumber>
+                                <TextFeedbackNormal>serve all purposes</TextFeedbackNormal>
                             </StatisticalWrapper>
-                        </RowSection>
+                        </DivSpaceBetWeen>
                     </WrapperPaddingFeedback>
                     <FeedbackCardWrapper>
                         <CardFeedbackItem>
@@ -93,14 +98,15 @@ const Home: NextPage = memo(function Home() {
                             <TextButtonWhite>Read all blogs</TextButtonWhite>
                         </ButtonNavBar>
                     </DivSpaceBetWeen>
-                    <CardBlogHomePage/>
+                    <DivCenter>
+                        <CardBlogHomePage/>
+                    </DivCenter>
                     <CardBlogHomePage/>
                     <br/>
                     <br/>
                     <br/>
                     <DivCenter>
                         <GradientBox/>
-
                     </DivCenter>
                 </BlogSection>
             </Container>
@@ -113,7 +119,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 12.5%;
+  padding: 0 8%;
 `
 export const RowSection = styled.div`
   display: flex;
@@ -135,6 +141,9 @@ const LeftHeaderSection = styled.div`
   padding: 0 60px;
 `
 const RightHeaderSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 50%;
 `
 const TextHeaderBold = styled.span`

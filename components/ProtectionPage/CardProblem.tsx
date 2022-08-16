@@ -3,13 +3,12 @@ import styled from "styled-components";
 import Image from "next/image";
 import {IMG_CARD_PROBLEM} from "../../assets";
 
-export const CardProblem = memo(function CardProblem() {
+export const CardProblem = memo(function CardProblem(props:any) {
     return (
         <Container>
             <Image src={IMG_CARD_PROBLEM}/>
-            <TextTitle>Your work belongs to you!</TextTitle>
-            <TextContent>Original images and content are valuable digital assets that must be well-protected to prevent
-                replication.</TextContent>
+            <TextTitle>{props.title}</TextTitle>
+            <TextContent>{props.content}</TextContent>
         </Container>
     )
 })

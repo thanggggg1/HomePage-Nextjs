@@ -1,10 +1,10 @@
 import React, {memo} from "react";
 import styled from "styled-components";
 
-export const ItemGradient = memo(function ItemGradient() {
+export const ItemGradient = memo(function ItemGradient(props:any) {
     return (
         <Container>
-            <Text>Why SortEcom?</Text>
+            <Text>{props.text}</Text>
         </Container>
     )
 })

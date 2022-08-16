@@ -79,24 +79,7 @@ import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
                         </ItemProblemSection>
                     </DivSpaceBetWeen>
                 </ProblemSection>
-                <ContentSection>
-                    <TextTitleProblem>OUR SOLUTIONS</TextTitleProblem>
-                    <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
-                    <DivSpaceBetWeen>
-                        <ItemWrapper>
-                            <ItemGradient/>
-                            <CardContentSection/>
-                        </ItemWrapper>
-                        <ItemWrapper>
-                            <CardContentSection/>
-                            <CardContentSection/>
-                        </ItemWrapper>
-                        <ItemWrapper>
-                            <ItemGradient/>
-                            <CardContentSection/>
-                        </ItemWrapper>
-                    </DivSpaceBetWeen>
-                </ContentSection>
+
                 <BlogSection>
                     <TextBoldProblem>Videos - App intro, tutorial and many more</TextBoldProblem>
                     <CardBlogHomePage/>
@@ -136,6 +119,9 @@ const LeftHeaderSection = styled.div`
   padding: 0 60px;
 `
 const RightHeaderSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 50%;
 `
 const TextHeaderBold = styled.span`
@@ -155,35 +141,13 @@ const TextHeaderNormal = styled.p`
   color: #1D1B29;
 `
 
-const ContentSection = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 0;
-`
-const ItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 32%;
-`
 const ProblemSection = styled.div`
 display: flex;
   justify-content: center;
   flex-direction: column;
   padding:100px 0;
 `
-const TextTitleProblem = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 27px;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-  color: #004AF7;
-`
+
 const TextBoldProblem =styled.div`
   font-style: normal;
   font-weight: 700;
@@ -218,5 +182,6 @@ const InputBox = styled.input`
   border-radius: 6px;
   padding: 9px 12px;
   margin-right: 20px;
+  width: 40%;
 `
 export default BlogPage;

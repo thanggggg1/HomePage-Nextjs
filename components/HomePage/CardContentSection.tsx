@@ -3,23 +3,22 @@ import styled from "styled-components";
 import Image from "next/image";
 import {IC_CONTENT_01} from "../../assets";
 
-export const CardContentSection = memo(function CardContentSection() {
+export const CardContentSection = memo(function CardContentSection(props:any) {
     return (
         <Container>
             <LeftDiv>
                 <Image src={IC_CONTENT_01}/>
             </LeftDiv>
-            <TextContentHeading>Various kinds of app
-                for every problems</TextContentHeading>
-            <TextContentNormal>We provide apps that deal with daily struggles of a merchant.</TextContentNormal>
-            <ListBullets>
+            <TextContentHeading>{props.header}</TextContentHeading>
+            <TextContentNormal>{props.content}</TextContentNormal>
+            {props.isList && <ListBullets>
                 <ItemList>Sending email/SMS in bulk</ItemList>
                 <ItemList>Special gift offers</ItemList>
                 <ItemList>Disable right-click & Content protection</ItemList>
-            </ListBullets>
+            </ListBullets>}
             <LeftDiv>
                 <GrayButton>
-                    <TextButton>Learn more</TextButton>
+                    <TextButton>{props.textButton}</TextButton>
                 </GrayButton>
             </LeftDiv>
         </Container>
@@ -28,12 +27,10 @@ export const CardContentSection = memo(function CardContentSection() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: white;
   border-radius: 6px;
   padding: 30px 50px;
-  margin-top: 20px;
+  margin: 20px 0;
 `
 const TextContentHeading = styled.p`
   font-style: normal;
@@ -53,6 +50,7 @@ const TextContentNormal = styled.p`
 `
 const ListBullets = styled.ul`
   list-style-type: disc;
+  padding-left: 20px;
 `
 const ItemList = styled.li`
   font-style: normal;

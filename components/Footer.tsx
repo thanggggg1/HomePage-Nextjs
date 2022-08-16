@@ -2,11 +2,11 @@ import React, {memo} from "react";
 import styled from "styled-components";
 import {DivSpaceBetWeen, RowSection} from "../pages/index";
 import Image from "next/image";
-import {IC_FACEBOOK} from "../assets";
+import {IC_FACEBOOK, IC_INSTAGRAM, IC_LINKEDIN, IC_YOUTUBE} from "../assets";
 
 export const Footer = memo(function Footer() {
     return (
-        <Container>
+        <Container id={'footer'}>
             <BorderDivSpaceBetWeen>
                 <ColumnWrapper>
                     <ListTitle>
@@ -20,17 +20,17 @@ export const Footer = memo(function Footer() {
                     </ListItem>
                     <ListItem>
                         <ImageWrapper>
-                            <Image src={IC_FACEBOOK}/>
+                            <Image src={IC_LINKEDIN}/>
                         </ImageWrapper> <TextListItem>Linkedin</TextListItem>
                     </ListItem>
                     <ListItem>
                         <ImageWrapper>
-                            <Image src={IC_FACEBOOK}/>
+                            <Image src={IC_INSTAGRAM}/>
                         </ImageWrapper> <TextListItem>Instagram</TextListItem>
                     </ListItem>
                     <ListItem>
                         <ImageWrapper>
-                            <Image src={IC_FACEBOOK}/>
+                            <Image src={IC_YOUTUBE}/>
                         </ImageWrapper> <TextListItem>Youtube</TextListItem>
                     </ListItem>
                 </ColumnWrapper>

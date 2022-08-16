@@ -42,15 +42,15 @@ const ProtectionPage:NextPage = memo(function ProtectionPage(){
                 <ProblemSection>
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
                     <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
-                    <DivSpaceBetWeen>
+                    <DivSpaceBetWeen style={{alignItems:'self-start'}}>
                         <ItemProblemSection>
-                            <CardProblem/>
+                            <CardProblem title={'Your work belongs to you!'} content={'Original images and content are valuable digital assets that must be well-protected to prevent replication.'}/>
                         </ItemProblemSection>
                         <ItemProblemSection>
-                            <CardProblem/>
+                            <CardProblem title={'Duplicated content affects SEO'} content={'Search engines prize stores with higher ranking for original content, duplicated work will definitely impact your SEO performance, espeacially on Google'}/>
                         </ItemProblemSection>
                         <ItemProblemSection>
-                            <CardProblem/>
+                            <CardProblem title={'Lack of a complete solution'} content={'Because there are various ways to violate your copyright, you will need a comprehensive solution to avoid fraudulent practices.'}/>
                         </ItemProblemSection>
                     </DivSpaceBetWeen>
                 </ProblemSection>
@@ -59,22 +59,24 @@ const ProtectionPage:NextPage = memo(function ProtectionPage(){
                     <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
                    <DivSpaceBetWeen>
                        <ItemWrapper>
-                           <ItemGradient/>
-                           <CardContentSection/>
+                           <ItemGradient text={'All-in-one protection'}/>
+                           <CardContentSection header={'Disable Keyboard Shortcuts\n' +
+                               'Disable Dev tools (F12)'} content={'Vistors on your site can not access to the function of these keyboard shortcuts:' +
+                               ''} textButton={'Learn more'}/>
                        </ItemWrapper>
                        <ItemWrapper>
-                           <CardContentSection/>
-                           <CardContentSection/>
+                           <CardContentSection header={'Disable Right-click'} content={'Vistors on your site are not allowed to Text Selection and use Right-click on the mouse.'} textButton={'Install the app now'}/>
+                           <CardContentSection header={'Disable by Country'} content={'Block users from specific countries'} textButton={'Experience our app'}/>
                        </ItemWrapper>
                        <ItemWrapper>
-                           <ItemGradient/>
-                           <CardContentSection/>
+                           <CardContentSection header={'Free Life-time Support'} content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, are wondering how it’s compatible with your store’s Shopify theme.'} textButton={'Contact our support'}/>
+                           <ItemGradient text={'It simply works!'}/>
                        </ItemWrapper>
                    </DivSpaceBetWeen>
                 </ContentSection>
                 <BlogSection>
                     <TextBoldProblem>Videos - App intro, tutorial and many more</TextBoldProblem>
-                    <IframeVideo  height="600" src="https://www.youtube.com/embed/pBlqQGkPBjE"
+                    <IframeVideo  height="800" src="https://www.youtube.com/embed/pBlqQGkPBjE"
                             title="YouTube video player" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen></IframeVideo>
@@ -115,6 +117,9 @@ const LeftHeaderSection = styled.div`
   padding: 0 60px;
 `
 const RightHeaderSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 50%;
 `
 const TextHeaderBold = styled.span`
@@ -173,10 +178,11 @@ const TextBoldProblem =styled.div`
   margin-bottom: 20px;
 `
 const ItemProblemSection = styled.div`
-display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 32%;
+  max-width: 440px;
 `
 const BlogSection = styled.div`
   display: flex;

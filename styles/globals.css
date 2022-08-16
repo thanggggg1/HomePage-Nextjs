@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
   background-color:#F6F6F7;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -13,6 +14,21 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  color: #0070f3;
+  cursor: pointer;
+}
+
+button{
+  cursor: pointer;
+}
+
+change-rotate{
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+  transform: rotate(360deg);
+  transition-duration: 5s;
+}
 * {
   box-sizing: border-box;
 }
