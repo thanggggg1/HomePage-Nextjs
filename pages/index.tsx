@@ -1,6 +1,6 @@
 import type {NextPage} from 'next'
 import Image from 'next/image'
-import {memo} from "react";
+import React, {memo} from "react";
 import styled from "styled-components";
 import {ButtonNavBar, NavBar, TextButtonWhite} from "../components/NavBar";
 import {IMG_HEADER} from "../assets";
@@ -24,9 +24,11 @@ const Home: NextPage = memo(function Home() {
                         <TextHeaderNormal>Sortecom includes all you need for you ecommerce website:
                             Email marketing, Review, Free gifts BOGO, Pop up,
                             Free Shipping bar, Content Protections and many more</TextHeaderNormal>
-                        <div>
-                            <ButtonNavBar>
-                                <TextButtonWhite>Visit Shopify apps</TextButtonWhite>
+                        <div style={{display:"flex",flexWrap:'wrap'}}>
+                            <ButtonNavBar className='click-btn btn-style902'>
+                                <div className="block"><span></span></div>
+                                <TextButtonWhite data-name="hover">Visit Shopify</TextButtonWhite>
+                                <TextButtonWhite data-name="me">apps</TextButtonWhite>
                             </ButtonNavBar>
                         </div>
                     </LeftHeaderSection>

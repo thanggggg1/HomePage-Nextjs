@@ -7,17 +7,17 @@ import $ from 'jquery'
 import Link from "next/link";
 
 export const NavBar = memo(function NavBar() {
- useEffect(()=>{
-     $(".hoverable-dropdown").hover(function() {
-         var isHovered = $(this).is(":hover");
-         if (isHovered) {
-             $(this).children("div").eq(1).stop().slideDown(300);
-         } else {
-             $(this).children("div").eq(1).stop().slideUp(300);
-         }
+    useEffect(() => {
+        $(".hoverable-dropdown").hover(function () {
+            var isHovered = $(this).is(":hover");
+            if (isHovered) {
+                $(this).children("div").eq(1).stop().slideDown(300);
+            } else {
+                $(this).children("div").eq(1).stop().slideUp(300);
+            }
 
-     });
- },[])
+        });
+    }, [])
 
     return (
         <Container>
@@ -28,31 +28,35 @@ export const NavBar = memo(function NavBar() {
                 <DivOptionNavBar>
                     <TextNavBar href="#about">About us</TextNavBar>
                 </DivOptionNavBar>
-                <DivOptionNavBar className={'hoverable-dropdown'} style={{position:"relative"}}>
+                <DivOptionNavBar className={'hoverable-dropdown'} style={{position: "relative"}}>
                     <RowSection>
                         <TextNavBar>Products</TextNavBar>
                         <Image src={IC_SHAPE_DOWN} className={'change'}/>
                     </RowSection>
                     <DropDownMenu>
-                            <ItemDropDown>
-                                <Row>
-                                   <div style={{marginRight:20}}>
-                                       <Image src={IC_PROTECTION} width={100} height={100}/>
-                                   </div>
-                                    <Column>
-                                        <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
-                                        <TextNavBarSpan>Increase engagement and repeat sales through our fully featured loyalty & rewards program. Reward points and discounts to encourage sales</TextNavBarSpan>
-                                    </Column>
-                                </Row>
-                            </ItemDropDown>
                         <ItemDropDown>
                             <Row>
-                                <div style={{marginRight:20}}>
+                                <div style={{marginRight: 20}}>
+                                    <Image src={IC_PROTECTION} width={100} height={100}/>
+                                </div>
+                                <Column>
+                                    <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
+                                    <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
+                                        loyalty & rewards program. Reward points and discounts to encourage
+                                        sales</TextNavBarSpan>
+                                </Column>
+                            </Row>
+                        </ItemDropDown>
+                        <ItemDropDown>
+                            <Row>
+                                <div style={{marginRight: 20}}>
                                     <Image src={IC_PROTECTION} width={100} height={100}/>
                                 </div>
                                 <Column>
                                     <TextNavBarBold>Free gift</TextNavBarBold>
-                                    <TextNavBarSpan>Increase engagement and repeat sales through our fully featured loyalty & rewards program. Reward points and discounts to encourage sales</TextNavBarSpan>
+                                    <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
+                                        loyalty & rewards program. Reward points and discounts to encourage
+                                        sales</TextNavBarSpan>
                                 </Column>
                             </Row>
                         </ItemDropDown>
@@ -62,10 +66,10 @@ export const NavBar = memo(function NavBar() {
                     <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
                 </DivOptionNavBar>
                 <DivOptionNavBar>
-                    <TextNavBar href="#footer" >Contact</TextNavBar>
+                    <TextNavBar href="#footer">Contact</TextNavBar>
                 </DivOptionNavBar>
                 <DivOptionNavBar>
-                    <ButtonNavBar>
+                    <ButtonNavBar className='click-btn btn-style3'>
                         <TextButtonWhite>Start free on Shopify</TextButtonWhite>
                     </ButtonNavBar>
                 </DivOptionNavBar>
@@ -77,8 +81,8 @@ export const NavBar = memo(function NavBar() {
 const Container = styled.div`
   display: flex;
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   right: 0;
   padding: 12px 12.5%;
   align-items: center;
@@ -91,7 +95,7 @@ const ImageLogo = styled(Image)`
 
 `
 const DivOptionNavBar = styled.div`
-margin:0 20px;
+  margin: 0 20px;
 `
 const TextNavBar = styled.a`
   font-style: normal;
@@ -117,14 +121,14 @@ const TextNavBarSpan = styled.div`
   color: #a1a0a0;
 `
 export const ButtonNavBar = styled.button`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #18A0FB;
-  padding:10px 30px;
+  padding: 10px 30px;
   border: none;
   border-radius: 6px;
-  &:hover{
+  &:hover {
     background-color: #00609AFF;
   }
 `
@@ -141,10 +145,10 @@ const DropDownMenu = styled.div`
   flex-direction: column;
   display: none;
   background-color: white;
-  padding:20px;
+  padding: 20px;
   border-radius: 6px;
   width: 360px;
-  margin-top: 60px;
+  margin-top: 20px;
 `
 const ItemDropDown = styled.div`
   display: flex;
@@ -155,11 +159,11 @@ const ItemDropDown = styled.div`
 export const SLink = styled(Link)`
   cursor: pointer;
 `
- export const Row = styled.div`
-display: flex;
+export const Row = styled.div`
+  display: flex;
   justify-content: center;
 `
 export const Column = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
 `
