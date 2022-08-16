@@ -17,7 +17,7 @@ export const CardContentSection = memo(function CardContentSection(props:any) {
                 <ItemList>Disable right-click & Content protection</ItemList>
             </ListBullets>}
             <LeftDiv>
-                <GrayButton className='click-btn btn-style3'>
+                <GrayButton className='click-btn btn-style505'>
                     <TextButton>{props.textButton}</TextButton>
                 </GrayButton>
             </LeftDiv>
@@ -66,7 +66,7 @@ const GrayButton = styled.button`
   border-radius: 6px;
   padding: 10px 40px;
   &:hover a{
-    color: #0070f3; !important;
+    color: #ffffff; !important;
   }
 `
 const TextButton = styled.a`

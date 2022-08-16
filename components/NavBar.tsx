@@ -21,9 +21,11 @@ export const NavBar = memo(function NavBar() {
 
     return (
         <Container>
-            <SLink href={'/'}>
-                <ImageLogo src={IMG_LOGO}/>
-            </SLink>
+            <div style={{cursor:"pointer"}}>
+                <SLink href={'/'}>
+                    <ImageLogo src={IMG_LOGO}/>
+                </SLink>
+            </div>
             <RowSection>
                 <DivOptionNavBar>
                     <TextNavBar href="#about">About us</TextNavBar>
@@ -69,7 +71,7 @@ export const NavBar = memo(function NavBar() {
                     <TextNavBar href="#footer">Contact</TextNavBar>
                 </DivOptionNavBar>
                 <DivOptionNavBar>
-                    <ButtonNavBar className='click-btn btn-style3'>
+                    <ButtonNavBar className='click-btn btn-style505'>
                         <TextButtonWhite>Start free on Shopify</TextButtonWhite>
                     </ButtonNavBar>
                 </DivOptionNavBar>

@@ -40,7 +40,7 @@ export const Footer = memo(function Footer() {
                     </ListTitle>
                     <ListItem>
                         <div>
-                            <TextListItem>Home</TextListItem>
+                            <TextListItem className="effect-underline">Home</TextListItem>
                         </div>
                     </ListItem>
                     <ListItem>

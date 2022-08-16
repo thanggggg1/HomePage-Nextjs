@@ -8,9 +8,9 @@ export const CardSubcribe = memo(function CardSubcribe() {
             <TextTitle>Subscribe to our Blog</TextTitle>
             <TextSubTitle>Get the latest posts in your email</TextSubTitle>
             <InputBox placeholder={'Enter your email address'}/>
-                <ButtonNavBar style={{width:'100%'}}>
-                    <TextButtonWhite>Subcribe</TextButtonWhite>
-                </ButtonNavBar>
+            <ButtonNavBar style={{width: '100%'}}>
+                <TextButtonWhite>Subcribe</TextButtonWhite>
+            </ButtonNavBar>
         </Container>
     )
 })
@@ -23,7 +23,7 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   max-width: 520px;
-padding:12% 20px;
+  padding: 12% 20px;
 `
 const TextTitle = styled.div`
   display: flex;

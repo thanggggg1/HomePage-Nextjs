@@ -27,8 +27,8 @@ const Home: NextPage = memo(function Home() {
                         <div style={{display:"flex",flexWrap:'wrap'}}>
                             <ButtonNavBar className='click-btn btn-style902'>
                                 <div className="block"><span></span></div>
-                                <TextButtonWhite data-name="hover">Visit Shopify</TextButtonWhite>
-                                <TextButtonWhite data-name="me">apps</TextButtonWhite>
+                                <TextButtonWhite data-name="hover">Visit</TextButtonWhite>
+                                <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
                             </ButtonNavBar>
                         </div>
                     </LeftHeaderSection>

@@ -29,8 +29,10 @@ const ProtectionPage:NextPage = memo(function ProtectionPage(){
                             <ItemList>Disable right-click & Content protection</ItemList>
                         </ListBullets>
                         <RowSection>
-                            <ButtonNavBar>
-                                <TextButtonWhite>Install Shopify apps</TextButtonWhite>
+                            <ButtonNavBar className='click-btn btn-style902'>
+                                <div className="block"><span></span></div>
+                                <TextButtonWhite data-name="hover">Install</TextButtonWhite>
+                                <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
                             </ButtonNavBar>
                             <LinkTextGray>Watch video demo</LinkTextGray>
                         </RowSection>

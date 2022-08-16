@@ -1,4 +1,4 @@
-import React,{memo} from "react";
+import React, {memo} from "react";
 import {ButtonNavBar, NavBar, TextButtonWhite} from "../../components/NavBar";
 import {DivCenter, DivSpaceBetWeen, RowSection} from "../index";
 import Image from "next/image";
@@ -14,7 +14,7 @@ import {CardBlog} from "../../components/BlogPage/CardBlog";
 import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
 
- const BlogPage:NextPage = memo(function BlogPage(){
+const BlogPage: NextPage = memo(function BlogPage() {
     return (
         <>
             <Container>
@@ -24,7 +24,7 @@ import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
                         <TextHeaderBold>Everything you need
                             to succeed with Sortecom.</TextHeaderBold>
                         <TextHeaderNormal>Join Sortecom newsletter to receive necessary resources
-                            to make your ecommerce business more successful!  </TextHeaderNormal>
+                            to make your ecommerce business more successful! </TextHeaderNormal>
                         <RowSection>
                             <InputBox placeholder={'Enter email'}/>
                             <ButtonNavBar>
@@ -142,13 +142,13 @@ const TextHeaderNormal = styled.p`
 `
 
 const ProblemSection = styled.div`
-display: flex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
-  padding:100px 0;
+  padding: 100px 0;
 `
 
-const TextBoldProblem =styled.div`
+const TextBoldProblem = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -158,9 +158,10 @@ const TextBoldProblem =styled.div`
   margin-bottom: 20px;
 `
 const ItemProblemSection = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 32%;
   height: 100%;
 `
