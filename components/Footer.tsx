@@ -39,8 +39,8 @@ export const Footer = memo(function Footer() {
                         MENU
                     </ListTitle>
                     <ListItem>
-                        <div>
-                            <TextListItem className="effect-underline">Home</TextListItem>
+                        <div className="effect-underline">
+                            <TextListItem>Home</TextListItem>
                         </div>
                     </ListItem>
                     <ListItem>
@@ -155,7 +155,10 @@ const TextListItem = styled.a`
   font-size: 10px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: #FFFFFF;
+  color: #C9C9C9;
+  &:hover{
+    color: #ffffff; !important;
+  }
 `
 const ColumnWrapper = styled.div`
   display: flex;

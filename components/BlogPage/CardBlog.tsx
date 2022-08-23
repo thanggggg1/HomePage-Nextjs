@@ -28,6 +28,7 @@ const Container = styled.div`
   flex-direction: column;
   background-color: white;
   max-width: 520px;
+  height: 100%;
 `
 const ContentDiv = styled.div`
 display: flex;

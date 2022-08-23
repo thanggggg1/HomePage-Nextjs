@@ -3,6 +3,12 @@ export const IMG_HEADER = require('./images/img_header_example.svg')
 export const IMG_BLOG_EXAMPLE = require('./images/img_blog_example.svg')
 export const IMG_PROTECTION = require('./images/img_protection.svg')
 export const IMG_CARD_PROBLEM = require('./images/img_card_problem.svg')
+export const IMG_BACKGROUND_BLACK = require('../public/img/img_black_background.svg')
+export const IMG_DIVIDE_SECTION = require('./images/img_divide_section.svg')
+export const IMG_TOGGLE =require('./images/img_toogle.svg')
+export const IMG_BACKGROUND_FOOTER = require('./images/img_background_footer.svg')
+
+
 
 export const IC_CONTENT_01 = require('./icons/ic_content01.svg')
 export const IC_CONTENT_02 = require('./icons/ic_content02.svg')

@@ -1,10 +1,12 @@
 import React, {memo, useEffect} from "react";
 import styled from "styled-components";
 import Image from 'next/image'
-import {IC_PROTECTION, IC_SHAPE_DOWN, IMG_LOGO} from "../assets";
+import {IC_PROTECTION, IC_SHAPE_DOWN, IMG_LOGO, IMG_TOGGLE} from "../assets";
 import {RowSection} from "../pages";
 import $ from 'jquery'
 import Link from "next/link";
+import {UseWindowSize} from "../utils/useWindowSize";
+import {MenuBarResponsive} from "./MenuBarResponsive";
 
 export const NavBar = memo(function NavBar() {
     useEffect(() => {
@@ -19,65 +21,74 @@ export const NavBar = memo(function NavBar() {
         });
     }, [])
 
-    return (
-        <Container>
-            <div style={{cursor:"pointer"}}>
-                <SLink href={'/'}>
-                    <ImageLogo src={IMG_LOGO}/>
-                </SLink>
-            </div>
-            <RowSection>
-                <DivOptionNavBar>
-                    <TextNavBar href="#about">About us</TextNavBar>
-                </DivOptionNavBar>
-                <DivOptionNavBar className={'hoverable-dropdown'} style={{position: "relative"}}>
-                    <RowSection>
-                        <TextNavBar>Products</TextNavBar>
-                        <Image src={IC_SHAPE_DOWN} className={'change'}/>
-                    </RowSection>
-                    <DropDownMenu>
-                        <ItemDropDown>
-                            <Row>
-                                <div style={{marginRight: 20}}>
-                                    <Image src={IC_PROTECTION} width={100} height={100}/>
-                                </div>
-                                <Column>
-                                    <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
-                                    <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
-                                        loyalty & rewards program. Reward points and discounts to encourage
-                                        sales</TextNavBarSpan>
-                                </Column>
-                            </Row>
-                        </ItemDropDown>
-                        <ItemDropDown>
-                            <Row>
-                                <div style={{marginRight: 20}}>
-                                    <Image src={IC_PROTECTION} width={100} height={100}/>
-                                </div>
-                                <Column>
-                                    <TextNavBarBold>Free gift</TextNavBarBold>
-                                    <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
-                                        loyalty & rewards program. Reward points and discounts to encourage
-                                        sales</TextNavBarSpan>
-                                </Column>
-                            </Row>
-                        </ItemDropDown>
-                    </DropDownMenu>
-                </DivOptionNavBar>
-                <DivOptionNavBar>
-                    <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
-                </DivOptionNavBar>
-                <DivOptionNavBar>
-                    <TextNavBar href="#footer">Contact</TextNavBar>
-                </DivOptionNavBar>
-                <DivOptionNavBar>
-                    <ButtonNavBar className='click-btn btn-style505'>
-                        <TextButtonWhite>Start free on Shopify</TextButtonWhite>
-                    </ButtonNavBar>
-                </DivOptionNavBar>
+    const {width} = UseWindowSize()
+    console.log('width', width)
 
-            </RowSection>
-        </Container>
+    return (
+        <>
+            <Container>
+                <SLink href='/'>
+                    <div style={{cursor: "pointer"}}>
+                        <ImageLogo src={IMG_LOGO}/>
+                    </div>
+                </SLink>
+                <RowSection>
+                    <DivOptionNavBar>
+                        <TextNavBar href="#about">About us</TextNavBar>
+                    </DivOptionNavBar>
+                    <DivOptionNavBar className={'hoverable-dropdown'} style={{position: "relative"}}>
+                        <RowSection>
+                            <TextNavBar>Products</TextNavBar>
+                            <Image src={IC_SHAPE_DOWN} className={'change'}/>
+                        </RowSection>
+                        <DropDownMenu>
+                            <ItemDropDown>
+                                <Row>
+                                    <div style={{marginRight: 20}}>
+                                        <Image src={IC_PROTECTION} width={100} height={100}/>
+                                    </div>
+                                    <Column>
+                                        <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
+                                        <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
+                                            loyalty & rewards program. Reward points and discounts to encourage
+                                            sales</TextNavBarSpan>
+                                    </Column>
+                                </Row>
+                            </ItemDropDown>
+                            <ItemDropDown>
+                                <Row>
+                                    <div style={{marginRight: 20}}>
+                                        <Image src={IC_PROTECTION} width={100} height={100}/>
+                                    </div>
+                                    <Column>
+                                        <TextNavBarBold>Free gift</TextNavBarBold>
+                                        <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
+                                            loyalty & rewards program. Reward points and discounts to encourage
+                                            sales</TextNavBarSpan>
+                                    </Column>
+                                </Row>
+                            </ItemDropDown>
+                        </DropDownMenu>
+                    </DivOptionNavBar>
+                    <DivOptionNavBar>
+                        <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
+                    </DivOptionNavBar>
+                    <DivOptionNavBar>
+                        <TextNavBar href="#footer">Contact</TextNavBar>
+                    </DivOptionNavBar>
+                    <DivOptionNavBar>
+                        <ButtonNavBar className='click-btn btn-style505'>
+                            <TextButtonWhite>Start free on Shopify</TextButtonWhite>
+                        </ButtonNavBar>
+                    </DivOptionNavBar>
+                </RowSection>
+                {
+                    (width < 1024) && <button>
+                        <Image src={IMG_TOGGLE} width={48} height={48}/>
+                    </button>
+                }
+            </Container>
+        </>
     )
 })
 const Container = styled.div`
@@ -126,10 +137,11 @@ export const ButtonNavBar = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #18A0FB;
+  background-color: #004AF7;
   padding: 10px 30px;
   border: none;
   border-radius: 6px;
+
   &:hover {
     background-color: #00609AFF;
   }

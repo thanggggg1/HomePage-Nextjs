@@ -3,13 +3,14 @@ import Image from 'next/image'
 import React, {memo} from "react";
 import styled from "styled-components";
 import {ButtonNavBar, NavBar, TextButtonWhite} from "../components/NavBar";
-import {IMG_HEADER} from "../assets";
+import {IMG_DIVIDE_SECTION, IMG_HEADER} from "../assets";
 import {CardContentSection} from "../components/HomePage/CardContentSection";
 import {ItemGradient} from "../components/ItemGradient";
 import {CardFeedback} from "../components/HomePage/CardFeedback";
 import {GradientBox} from "../components/GradientBox";
 import {Footer} from "../components/Footer";
 import {CardBlogHomePage} from "../components/HomePage/CardBlog";
+import Marquee from "react-fast-marquee";
 
 const Home: NextPage = memo(function Home() {
     return (
@@ -18,7 +19,8 @@ const Home: NextPage = memo(function Home() {
                 <NavBar/>
                 <HeaderSection>
                     <LeftHeaderSection>
-                        <TextHeaderBold>Powerful apps make your
+                        <TextBlueHeader>Powerful apps </TextBlueHeader>
+                        <TextHeaderBold>make your
                             ecommerce business better
                             and help boosting your sales</TextHeaderBold>
                         <TextHeaderNormal>Sortecom includes all you need for you ecommerce website:
@@ -53,11 +55,12 @@ const Home: NextPage = memo(function Home() {
                         <ItemGradient text={'It simply works!'}/>
                     </ItemWrapper>
                 </ContentSection>
+                <Image src={IMG_DIVIDE_SECTION}/>
                 <FeedbackSection>
                     <WrapperPaddingFeedback>
                         <TextFeedbackHeading>What customers talk about Sortecom</TextFeedbackHeading>
                         <TextFeedbackNormal>Join over +10,000 Shopify brands that run their business on Sortecom.
-                            We're in the business of helping your business to provide your customers with more
+                            We are in the business of helping your business to provide your customers with more
                             value.</TextFeedbackNormal>
                         <DivSpaceBetWeen>
                             <StatisticalWrapper>
@@ -78,20 +81,22 @@ const Home: NextPage = memo(function Home() {
                             </StatisticalWrapper>
                         </DivSpaceBetWeen>
                     </WrapperPaddingFeedback>
+                    <Marquee speed={40}>
                     <FeedbackCardWrapper>
-                        <CardFeedbackItem>
-                            <CardFeedback/>
-                        </CardFeedbackItem>
-                        <CardFeedbackItem>
-                            <CardFeedback/>
-                        </CardFeedbackItem>
-                        <CardFeedbackItem>
-                            <CardFeedback/>
-                        </CardFeedbackItem>
-                        <CardFeedbackItem>
-                            <CardFeedback/>
-                        </CardFeedbackItem>
+                            <CardFeedbackItem>
+                                <CardFeedback/>
+                            </CardFeedbackItem>
+                            <CardFeedbackItem>
+                                <CardFeedback/>
+                            </CardFeedbackItem>
+                            <CardFeedbackItem>
+                                <CardFeedback/>
+                            </CardFeedbackItem>
+                            <CardFeedbackItem>
+                                <CardFeedback/>
+                            </CardFeedbackItem>
                     </FeedbackCardWrapper>
+                    </Marquee>
                 </FeedbackSection>
                 <BlogSection>
                     <DivSpaceBetWeen>
@@ -151,9 +156,9 @@ const RightHeaderSection = styled.div`
 const TextHeaderBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 55px;
-  letter-spacing: 0.025em;
+  font-size: 60px;
+  line-height: 115.9%;
+  letter-spacing: 0.01em;
   color: #1D1B29;
 `
 const TextHeaderNormal = styled.p`
@@ -241,7 +246,7 @@ const BlogSection = styled.div`
 `
 export const DivSpaceBetWeen = styled.div`
 display: flex;
-  align-items: center;
+align-items: center;
   justify-content: space-between;
   width: 100%;
 `
@@ -259,6 +264,14 @@ export const DivCenter =styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+`
+const TextBlueHeader = styled.span`
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 115.9%;
+  letter-spacing: 0.01em;
+  color: #004AF7;
 `
 
 export default Home

@@ -43,7 +43,8 @@ const BlogPage: NextPage = memo(function BlogPage() {
                             <TextButtonWhite>Read all</TextButtonWhite>
                         </ButtonNavBar>
                     </DivSpaceBetWeen>
-                    <DivSpaceBetWeen>
+                    <div>
+                    <DivRowFlex>
                         <ItemProblemSection>
                             <CardBlog/>
                         </ItemProblemSection>
@@ -53,9 +54,9 @@ const BlogPage: NextPage = memo(function BlogPage() {
                         <ItemProblemSection>
                             <CardBlog/>
                         </ItemProblemSection>
-                    </DivSpaceBetWeen>
+                    </DivRowFlex>
                     <br/>
-                    <DivSpaceBetWeen>
+                    <DivRowFlex>
                         <ItemProblemSection>
                             <CardBlog/>
                         </ItemProblemSection>
@@ -65,9 +66,9 @@ const BlogPage: NextPage = memo(function BlogPage() {
                         <ItemProblemSection>
                             <CardSubcribe/>
                         </ItemProblemSection>
-                    </DivSpaceBetWeen>
+                    </DivRowFlex>
                     <br/>
-                    <DivSpaceBetWeen>
+                    <DivRowFlex>
                         <ItemProblemSection>
                             <CardBlog/>
                         </ItemProblemSection>
@@ -77,7 +78,8 @@ const BlogPage: NextPage = memo(function BlogPage() {
                         <ItemProblemSection>
                             <CardBlog/>
                         </ItemProblemSection>
-                    </DivSpaceBetWeen>
+                    </DivRowFlex>
+                    </div>
                 </ProblemSection>
 
                 <BlogSection>
@@ -144,6 +146,7 @@ const TextHeaderNormal = styled.p`
 const ProblemSection = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 100px 0;
 `
@@ -159,11 +162,9 @@ const TextBoldProblem = styled.div`
 `
 const ItemProblemSection = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 32%;
-  height: 100%;
+flex:1 ;
+  margin-right: 20px;
+
 `
 const BlogSection = styled.div`
   display: flex;
@@ -184,5 +185,11 @@ const InputBox = styled.input`
   padding: 9px 12px;
   margin-right: 20px;
   width: 40%;
+`
+
+const DivRowFlex = styled.div`
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
 `
 export default BlogPage;
