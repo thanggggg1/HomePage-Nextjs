@@ -3,124 +3,129 @@ import styled from "styled-components";
 import {DivSpaceBetWeen, RowSection} from "../pages/index";
 import Image from "next/image";
 import {IC_FACEBOOK, IC_INSTAGRAM, IC_LINKEDIN, IC_YOUTUBE} from "../assets";
+import {fontScale} from "../utils/fontScale";
 
 export const Footer = memo(function Footer() {
     return (
         <Container id={'footer'}>
-            <BorderDivSpaceBetWeen>
-                <ColumnWrapper>
-                    <ListTitle>
-                        SortEcom
-                    </ListTitle>
-                    <ListItem>
-                        <ImageWrapper>
-                            <Image src={IC_FACEBOOK}/>
-                        </ImageWrapper>
-                        <TextListItem>Facebook</TextListItem>
-                    </ListItem>
-                    <ListItem>
-                        <ImageWrapper>
-                            <Image src={IC_LINKEDIN}/>
-                        </ImageWrapper> <TextListItem>Linkedin</TextListItem>
-                    </ListItem>
-                    <ListItem>
-                        <ImageWrapper>
-                            <Image src={IC_INSTAGRAM}/>
-                        </ImageWrapper> <TextListItem>Instagram</TextListItem>
-                    </ListItem>
-                    <ListItem>
-                        <ImageWrapper>
-                            <Image src={IC_YOUTUBE}/>
-                        </ImageWrapper> <TextListItem>Youtube</TextListItem>
-                    </ListItem>
-                </ColumnWrapper>
-                <ColumnWrapper>
-                    <ListTitle>
-                        MENU
-                    </ListTitle>
-                    <ListItem>
-                        <div className="effect-underline">
-                            <TextListItem>Home</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>About us</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Blog</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Contact</TextListItem>
-                        </div>
-                    </ListItem>
-                </ColumnWrapper>
-                <ColumnWrapper>
-                    <ListTitle>
-                        Product
-                    </ListTitle>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Free Gift - BOGO (Updating)</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Email Marketing (Updating)</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Disable Right-click & Content Protection</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Banner - Free Shipping Bar (Updating)</TextListItem>
-                        </div>
-                    </ListItem>
-                </ColumnWrapper>
-                <ColumnWrapper>
-                    <ListTitle>
-                        Resources
-                    </ListTitle>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Blog</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Learning Center</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Community</TextListItem>
-                        </div>
-                    </ListItem>
-                    <ListItem>
-                        <div>
-                            <TextListItem>Help Document</TextListItem>
-                        </div>
-                    </ListItem>
-                </ColumnWrapper>
-            </BorderDivSpaceBetWeen>
-            <DivSpaceBetWeen>
-                <div>
-                    <TextListItem>© 2022, Sortecom. All rights reserved.</TextListItem>
-                </div>
-                <RightFooterSection>
-                    <TextListItem>Terms of service</TextListItem>
-                    <TextListItem>Private Policy</TextListItem>
-                    <TextListItem>Support Policy</TextListItem>
-                    <TextListItem>Cookies</TextListItem>
-                </RightFooterSection>
-            </DivSpaceBetWeen>
+            <ContentContainer>
+                <BorderDivSpaceBetWeen>
+                    <ColumnWrapper>
+                        <ListTitle>
+                            SortEcom
+                        </ListTitle>
+                        <ListItem>
+                            <ImageWrapper>
+                                <Image src={IC_FACEBOOK}/>
+                            </ImageWrapper>
+                            <TextListItem>Facebook</TextListItem>
+                        </ListItem>
+                        <ListItem>
+                            <ImageWrapper>
+                                <Image src={IC_LINKEDIN}/>
+                            </ImageWrapper> <TextListItem>Linkedin</TextListItem>
+                        </ListItem>
+                        <ListItem>
+                            <ImageWrapper>
+                                <Image src={IC_INSTAGRAM}/>
+                            </ImageWrapper> <TextListItem>Instagram</TextListItem>
+                        </ListItem>
+                        <ListItem>
+                            <ImageWrapper>
+                                <Image src={IC_YOUTUBE}/>
+                            </ImageWrapper> <TextListItem>Youtube</TextListItem>
+                        </ListItem>
+                    </ColumnWrapper>
+                    <ColumnWrapper>
+                        <ListTitle>
+                            MENU
+                        </ListTitle>
+                        <ListItem>
+                            <div className="effect-underline">
+                                <TextListItem href="/">Home</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem href="#about">About us</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem href="/Blog/BlogPage">Blog</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem href="#footer">Contact</TextListItem>
+                            </div>
+                        </ListItem>
+                    </ColumnWrapper>
+                    <ColumnWrapper>
+                        <ListTitle>
+                            Product
+                        </ListTitle>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Free Gift - BOGO (Updating)</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Email Marketing (Updating)</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem href={'https://protect.sortecom.com/'}>Disable Right-click & Content Protection</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Banner - Free Shipping Bar (Updating)</TextListItem>
+                            </div>
+                        </ListItem>
+                    </ColumnWrapper>
+                    <ColumnWrapper>
+                        <ListTitle>
+                            Resources
+                        </ListTitle>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Blog</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Learning Center</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Community</TextListItem>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <TextListItem>Help Document</TextListItem>
+                            </div>
+                        </ListItem>
+                    </ColumnWrapper>
+                </BorderDivSpaceBetWeen>
+            </ContentContainer>
+            <ContentContainer>
+                <DivSpaceBetWeen>
+                    <div>
+                        <TextListItem>© 2022, Sortecom. All rights reserved.</TextListItem>
+                    </div>
+                    <RightFooterSection>
+                        <TextListItem>Terms of service</TextListItem>
+                        <TextListItem>Private Policy</TextListItem>
+                        <TextListItem>Support Policy</TextListItem>
+                        <TextListItem>Cookies</TextListItem>
+                    </RightFooterSection>
+                </DivSpaceBetWeen>
+            </ContentContainer>
         </Container>
     )
 })
@@ -130,13 +135,21 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #1D1B29;
-  padding: 60px 12.5%;
-
+  padding: 60px 32px;
+  width: 100%;
+`
+const ContentContainer =styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-left: auto;
 `
 const ListTitle = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: ${p=> fontScale(14)}px;
   line-height: 19px;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -152,7 +165,7 @@ const ListItem = styled.li`
 const TextListItem = styled.a`
   font-style: normal;
   font-weight: 600;
-  font-size: 10px;
+  font-size: ${p=> fontScale(10)}px;
   line-height: 14px;
   letter-spacing: 0.01em;
   color: #C9C9C9;

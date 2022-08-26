@@ -13,12 +13,13 @@ import {NextPage} from "next";
 import {CardBlog} from "../../components/BlogPage/CardBlog";
 import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
+import {fontScale} from "../../utils/fontScale";
 
 const BlogPage: NextPage = memo(function BlogPage() {
     return (
         <>
+            <NavBar/>
             <Container>
-                <NavBar/>
                 <HeaderSection>
                     <LeftHeaderSection>
                         <TextHeaderBold>Everything you need
@@ -44,41 +45,41 @@ const BlogPage: NextPage = memo(function BlogPage() {
                         </ButtonNavBar>
                     </DivSpaceBetWeen>
                     <div>
-                    <DivRowFlex>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                    </DivRowFlex>
-                    <br/>
-                    <DivRowFlex>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                        <ItemProblemSection>
-                            <CardSubcribe/>
-                        </ItemProblemSection>
-                    </DivRowFlex>
-                    <br/>
-                    <DivRowFlex>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                        <ItemProblemSection>
-                            <CardBlog/>
-                        </ItemProblemSection>
-                    </DivRowFlex>
+                        <DivRowFlex>
+                            <ItemProblemSection>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                            <ItemProblemSection style={{justifyContent:'center'}}>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                            <ItemProblemSection style={{justifyContent:'flex-end'}}>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                        </DivRowFlex>
+                        <br/>
+                        <DivRowFlex>
+                            <ItemProblemSection>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                            <ItemProblemSection style={{justifyContent:'center'}}>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                            <ItemProblemSection style={{justifyContent:'flex-end'}}>
+                                <CardSubcribe/>
+                            </ItemProblemSection>
+                        </DivRowFlex>
+                        <br/>
+                        <DivRowFlex>
+                            <ItemProblemSection>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                            <ItemProblemSection style={{justifyContent:'center'}}>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                            <ItemProblemSection style={{justifyContent:'flex-end'}}>
+                                <CardBlog/>
+                            </ItemProblemSection>
+                        </DivRowFlex>
                     </div>
                 </ProblemSection>
 
@@ -103,7 +104,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 12.5%;
+  padding: 0 32px;
 `
 
 const HeaderSection = styled.div`
@@ -112,13 +113,18 @@ const HeaderSection = styled.div`
   flex-direction: row;
   margin-top: 80px;
   padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
 `
 const LeftHeaderSection = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 60px;
 `
 const RightHeaderSection = styled.div`
   display: flex;
@@ -129,7 +135,7 @@ const RightHeaderSection = styled.div`
 const TextHeaderBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: ${p => fontScale(40)}px;
   line-height: 55px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -137,7 +143,7 @@ const TextHeaderBold = styled.span`
 const TextHeaderNormal = styled.p`
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 27px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -145,16 +151,21 @@ const TextHeaderNormal = styled.p`
 
 const ProblemSection = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
   padding: 100px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
 `
 
 const TextBoldProblem = styled.div`
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: ${p => fontScale(32)}px;
   line-height: 44px;
   letter-spacing: 0.025em;
   color: #000000;
@@ -162,9 +173,8 @@ const TextBoldProblem = styled.div`
 `
 const ItemProblemSection = styled.div`
   display: flex;
-flex:1 ;
+  flex: 1;
   margin-right: 20px;
-
 `
 const BlogSection = styled.div`
   display: flex;
@@ -172,12 +182,17 @@ const BlogSection = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 60px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
 `
 const InputBox = styled.input`
   border: 1.5px solid #CACACA;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: ${p => fontScale(12)}px;
   line-height: 16px;
   color: rgba(29, 27, 41, 0.5);
   background-color: white;
@@ -187,7 +202,7 @@ const InputBox = styled.input`
   width: 40%;
 `
 
-const DivRowFlex = styled.div`
+export const DivRowFlex = styled.div`
   display: flex;
   flex: 1;
   flex-wrap: wrap;

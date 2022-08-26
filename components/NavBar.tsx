@@ -1,13 +1,13 @@
-import React, {memo, useEffect} from "react";
+import React, {memo, useCallback, useEffect} from "react";
 import styled from "styled-components";
 import Image from 'next/image'
 import {IC_PROTECTION, IC_SHAPE_DOWN, IMG_LOGO, IMG_TOGGLE} from "../assets";
-import {RowSection} from "../pages";
+import {DivSpaceBetWeen, RowSection} from "../pages";
 import $ from 'jquery'
 import Link from "next/link";
-import {UseWindowSize} from "../utils/useWindowSize";
+import UseWindowSize from "../utils/useWindowSize";
 import {MenuBarResponsive} from "./MenuBarResponsive";
-
+import {fontScale} from "../utils/fontScale";
 export const NavBar = memo(function NavBar() {
     useEffect(() => {
         $(".hoverable-dropdown").hover(function () {
@@ -20,100 +20,119 @@ export const NavBar = memo(function NavBar() {
 
         });
     }, [])
-
     const {width} = UseWindowSize()
-    console.log('width', width)
+
+    const onSlide = useCallback(()=>{
+        if ( $(".click-to-slide").is( ":hidden" ) ) {
+            $(".click-to-slide").slideDown( "slow" );
+        } else {
+            $(".click-to-slide").slideUp('fast');
+        }
+    },[])
 
     return (
         <>
             <Container>
-                <SLink href='/'>
-                    <div style={{cursor: "pointer"}}>
-                        <ImageLogo src={IMG_LOGO}/>
-                    </div>
-                </SLink>
-                <RowSection>
-                    <DivOptionNavBar>
-                        <TextNavBar href="#about">About us</TextNavBar>
-                    </DivOptionNavBar>
-                    <DivOptionNavBar className={'hoverable-dropdown'} style={{position: "relative"}}>
-                        <RowSection>
-                            <TextNavBar>Products</TextNavBar>
-                            <Image src={IC_SHAPE_DOWN} className={'change'}/>
-                        </RowSection>
-                        <DropDownMenu>
-                            <ItemDropDown>
-                                <Row>
-                                    <div style={{marginRight: 20}}>
-                                        <Image src={IC_PROTECTION} width={100} height={100}/>
-                                    </div>
-                                    <Column>
-                                        <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
-                                        <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
-                                            loyalty & rewards program. Reward points and discounts to encourage
-                                            sales</TextNavBarSpan>
-                                    </Column>
-                                </Row>
-                            </ItemDropDown>
-                            <ItemDropDown>
-                                <Row>
-                                    <div style={{marginRight: 20}}>
-                                        <Image src={IC_PROTECTION} width={100} height={100}/>
-                                    </div>
-                                    <Column>
-                                        <TextNavBarBold>Free gift</TextNavBarBold>
-                                        <TextNavBarSpan>Increase engagement and repeat sales through our fully featured
-                                            loyalty & rewards program. Reward points and discounts to encourage
-                                            sales</TextNavBarSpan>
-                                    </Column>
-                                </Row>
-                            </ItemDropDown>
-                        </DropDownMenu>
-                    </DivOptionNavBar>
-                    <DivOptionNavBar>
-                        <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
-                    </DivOptionNavBar>
-                    <DivOptionNavBar>
-                        <TextNavBar href="#footer">Contact</TextNavBar>
-                    </DivOptionNavBar>
-                    <DivOptionNavBar>
-                        <ButtonNavBar className='click-btn btn-style505'>
-                            <TextButtonWhite>Start free on Shopify</TextButtonWhite>
-                        </ButtonNavBar>
-                    </DivOptionNavBar>
-                </RowSection>
-                {
-                    (width < 1024) && <button>
-                        <Image src={IMG_TOGGLE} width={48} height={48}/>
-                    </button>
-                }
+                <ContentContainer>
+                    <DivSpaceBetWeen>
+                        <SLink href='/'>
+                            <div style={{cursor: "pointer"}}>
+                                <ImageLogo src={IMG_LOGO}/>
+                            </div>
+                        </SLink>
+                        {width && width > 1024 ? <RowSection>
+                            <DivOptionNavBar>
+                                <TextNavBar href="#about">About us</TextNavBar>
+                            </DivOptionNavBar>
+                            <DivOptionNavBar className={'hoverable-dropdown'} style={{position: "relative"}}>
+                                <RowSection>
+                                    <TextNavBar>Products</TextNavBar>
+                                    <Image src={IC_SHAPE_DOWN} className={'change'}/>
+                                </RowSection>
+                                <DropDownMenu>
+                                    <ItemDropDown>
+                                        <Row>
+                                            <div style={{marginRight: 20}}>
+                                                <Image src={IC_PROTECTION} width={100} height={100}/>
+                                            </div>
+                                            <Column>
+                                                <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
+                                                <TextNavBarSpan>All images, videos and content on your store belong to you only. prevents all intentional
+                                                    violation of your copyright by disable right clicks, download, keyboard shortcuts, and Dev Tools.</TextNavBarSpan>
+                                            </Column>
+                                        </Row>
+                                    </ItemDropDown>
+                                    <ItemDropDown>
+                                        <Row>
+                                            <div style={{marginRight: 20}}>
+                                                <Image src={IC_PROTECTION} width={100} height={100}/>
+                                            </div>
+                                            <Column>
+                                                <TextNavBarBold>Free gift</TextNavBarBold>
+                                                <TextNavBarSpan>Unlimited campaign creation: BOGO, buy one get discount,
+                                                    buy one get free gifts, buy 2 get discount or get 1 product, and many customized ways to create a desired campaign, even the most complicated ones.
+                                                </TextNavBarSpan>
+                                            </Column>
+                                        </Row>
+                                    </ItemDropDown>
+                                </DropDownMenu>
+                            </DivOptionNavBar>
+                            <DivOptionNavBar>
+                                <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
+                            </DivOptionNavBar>
+                            <DivOptionNavBar>
+                                <TextNavBar href="#footer">Contact</TextNavBar>
+                            </DivOptionNavBar>
+                            <DivOptionNavBar>
+                                <ButtonNavBar className='click-btn btn-style505'>
+                                    <TextButtonWhite>Start free on Shopify</TextButtonWhite>
+                                </ButtonNavBar>
+                            </DivOptionNavBar>
+                        </RowSection> : <ButtonToggle onClick={onSlide}>
+                            <Image src={IMG_TOGGLE} width={32} height={32}/>
+                        </ButtonToggle>}
+                    </DivSpaceBetWeen>
+                </ContentContainer>
             </Container>
+            <MenuBarResponsive/>
         </>
     )
 })
 const Container = styled.div`
-  display: flex;
-  position: fixed;
-  top: 0;
+  position: sticky;
   left: 0;
+  top: .001px;
   right: 0;
-  padding: 12px 12.5%;
+  bottom: auto;
+  display: flex;
+  min-height: 48px;
+  padding-right: 32px;
+  padding-left: 32px;
   align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  z-index: 1000;
+  background-color: #fff;
   box-shadow: 0px 2px 4px 0px #0000001A;
+  z-index: 1000;
+`
+const ContentContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: space-between;
+  align-items: center;
 `
 const ImageLogo = styled(Image)`
 
 `
 const DivOptionNavBar = styled.div`
-  margin: 0 20px;
+margin-left: 40px;
 `
 const TextNavBar = styled.a`
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: ${p=> fontScale(16)}px;
   line-height: 15px;
   color: #1D1B29;
   margin-right: 12px;
@@ -121,35 +140,36 @@ const TextNavBar = styled.a`
 const TextNavBarBold = styled.a`
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: ${p=> fontScale(18)}px;
   line-height: 15px;
   color: #1D1B29;
 `
 const TextNavBarSpan = styled.div`
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 15px;
+  font-size: ${p=> fontScale(16)}px;
+  line-height: 20px;
   margin-top: 12px;
   color: #a1a0a0;
 `
 export const ButtonNavBar = styled.button`
   display: flex;
+  margin-right: -1px;
   align-items: center;
   justify-content: center;
   background-color: #004AF7;
   padding: 10px 30px;
   border: none;
   border-radius: 6px;
-
   &:hover {
-    background-color: #00609AFF;
+    background-color: #1030a0
+  ;
   }
 `
 export const TextButtonWhite = styled.span`
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: ${p=> fontScale(16)}px;
   line-height: 19px;
   letter-spacing: -0.015em;
   color: #F6F6F7;
@@ -161,7 +181,7 @@ const DropDownMenu = styled.div`
   background-color: white;
   padding: 20px;
   border-radius: 6px;
-  width: 360px;
+  width: 440px;
   margin-top: 20px;
 `
 const ItemDropDown = styled.div`
@@ -180,4 +200,9 @@ export const Row = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
+`
+const ButtonToggle = styled.button`
+background-color: white;
+  border: none;
+
 `

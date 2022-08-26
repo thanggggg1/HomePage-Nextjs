@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 html,
 body {
   padding: 0;
@@ -24,7 +23,16 @@ button{
   transition: all 0.35s;
 
 }
-
+.content_bg_black {
+  background-image: url('../public/img/img_black_background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.content_bg_footer {
+  background-image: url('../public/img/img_background_footer.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .change-rotate{
   -ms-transform: rotate(360deg); /* IE 9 */
   -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
@@ -116,7 +124,7 @@ span[data-name="me"] {
   position: absolute;
   top: 0;
   left: -30%;
-  background-color: rgba(237, 157, 190, 0.5);
+  background-color:   #1030a0;
   border-radius: 0 200% 200% 0;
   transition: all 0.25s;
   z-index: 1;

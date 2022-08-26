@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import {IMG_BLOG_EXAMPLE} from "../../assets";
 import {ButtonNavBar, TextButtonWhite} from "../NavBar";
+import {fontScale} from "../../utils/fontScale";
 
 export const CardBlogHomePage = memo(function CardBlogHomePage() {
     return (
@@ -40,7 +41,7 @@ const Container = styled.div`
 const TextHeading = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: ${p=> fontScale(28)}px;
   line-height: 38px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -48,7 +49,7 @@ const TextHeading = styled.span`
 const TextNormal = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${p=> fontScale(16)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: rgba(29, 27, 41, 0.5);
@@ -59,7 +60,7 @@ const ListBullets = styled.ul`
 const ItemList = styled.li`
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${p=> fontScale(16)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: rgba(29, 27, 41, 0.5);

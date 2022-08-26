@@ -1,6 +1,7 @@
 import React, {memo} from "react";
 import styled from "styled-components";
 import {ButtonNavBar, TextButtonWhite} from "../NavBar";
+import {fontScale} from "../../utils/fontScale";
 
 export const CardSubcribe = memo(function CardSubcribe() {
     return (
@@ -24,6 +25,9 @@ const Container = styled.div`
   width: 100%;
   max-width: 520px;
   padding: 12% 20px;
+  box-shadow: 0px 2px 4px 0px #0000001A;
+  border-radius: 6px;
+
 `
 const TextTitle = styled.div`
   display: flex;
@@ -32,7 +36,7 @@ const TextTitle = styled.div`
   width: 100%;
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: ${p=> fontScale(28)}px;
   line-height: 38px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -45,7 +49,7 @@ const TextSubTitle = styled.div`
   width: 100%;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${p=> fontScale(16)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: rgba(29, 27, 41, 0.5);
@@ -58,7 +62,7 @@ const InputBox = styled.input`
   border: 1.5px solid #CACACA;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: ${p=> fontScale(12)}px;
   line-height: 16px;
   color: rgba(29, 27, 41, 0.5);
   background-color: white;

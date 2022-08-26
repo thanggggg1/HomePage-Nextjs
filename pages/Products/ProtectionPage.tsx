@@ -1,4 +1,4 @@
-import React,{memo} from "react";
+import React, {memo} from "react";
 import {NextPage} from "next";
 import {ButtonNavBar, NavBar, TextButtonWhite} from "../../components/NavBar";
 import Image from "next/image";
@@ -12,17 +12,19 @@ import Home, {DivCenter, DivSpaceBetWeen, RowSection} from "../index";
 import styled from "styled-components";
 import {CardProblem} from "../../components/ProtectionPage/CardProblem";
 import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
+import {fontScale} from "../../utils/fontScale";
 
-const ProtectionPage:NextPage = memo(function ProtectionPage(){
+const ProtectionPage: NextPage = memo(function ProtectionPage() {
     return (
         <>
+            <NavBar/>
             <Container>
-                <NavBar/>
                 <HeaderSection>
                     <LeftHeaderSection>
                         <TextHeaderBold>Disable Right-click
                             & Content Protection</TextHeaderBold>
-                        <TextHeaderNormal>Worrying about someone stealing your work? Activate your protection now!</TextHeaderNormal>
+                        <TextHeaderNormal>Worrying about someone stealing your work? Activate your protection
+                            now!</TextHeaderNormal>
                         <ListBullets>
                             <ItemList>Sending email/SMS in bulk</ItemList>
                             <ItemList>Special gift offers</ItemList>
@@ -34,7 +36,8 @@ const ProtectionPage:NextPage = memo(function ProtectionPage(){
                                 <TextButtonWhite data-name="hover">Install</TextButtonWhite>
                                 <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
                             </ButtonNavBar>
-                            <LinkTextGray>Watch video demo</LinkTextGray>
+                            <LinkTextGray href={'https://youtu.be/pBlqQGkPBjE'} target={'_blank'}>Watch video
+                                demo</LinkTextGray>
                         </RowSection>
                     </LeftHeaderSection>
                     <RightHeaderSection>
@@ -44,44 +47,54 @@ const ProtectionPage:NextPage = memo(function ProtectionPage(){
                 <ProblemSection>
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
                     <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
-                    <DivSpaceBetWeen style={{alignItems:'self-start'}}>
+                    <DivSpaceBetWeen style={{alignItems: 'self-start'}}>
                         <ItemProblemSection>
-                            <CardProblem title={'Your work belongs to you!'} content={'Original images and content are valuable digital assets that must be well-protected to prevent replication.'}/>
+                            <CardProblem title={'Your work belongs to you!'}
+                                         content={'Original images and content are valuable digital assets that must be well-protected to prevent replication.'}/>
                         </ItemProblemSection>
                         <ItemProblemSection>
-                            <CardProblem title={'Duplicated content affects SEO'} content={'Search engines prize stores with higher ranking for original content, duplicated work will definitely impact your SEO performance, espeacially on Google'}/>
+                            <CardProblem title={'Duplicated content affects SEO'}
+                                         content={'Search engines prize stores with higher ranking for original content, duplicated work will definitely impact your SEO performance, espeacially on Google'}/>
                         </ItemProblemSection>
                         <ItemProblemSection>
-                            <CardProblem title={'Lack of a complete solution'} content={'Because there are various ways to violate your copyright, you will need a comprehensive solution to avoid fraudulent practices.'}/>
+                            <CardProblem title={'Lack of a complete solution'}
+                                         content={'Because there are various ways to violate your copyright, you will need a comprehensive solution to avoid fraudulent practices.'}/>
                         </ItemProblemSection>
                     </DivSpaceBetWeen>
                 </ProblemSection>
-                <ContentSection>
+                <ContentSection id={'about'}>
                     <TextTitleProblem>OUR SOLUTIONS</TextTitleProblem>
                     <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
-                   <DivSpaceBetWeen>
-                       <ItemWrapper>
-                           <ItemGradient text={'All-in-one protection'}/>
-                           <CardContentSection header={'Disable Keyboard Shortcuts\n' +
-                               'Disable Dev tools (F12)'} content={'Vistors on your site can not access to the function of these keyboard shortcuts:' +
-                               ''} textButton={'Learn more'}/>
-                       </ItemWrapper>
-                       <ItemWrapper>
-                           <CardContentSection header={'Disable Right-click'} content={'Vistors on your site are not allowed to Text Selection and use Right-click on the mouse.'} textButton={'Install the app now'}/>
-                           <CardContentSection header={'Disable by Country'} content={'Block users from specific countries'} textButton={'Experience our app'}/>
-                       </ItemWrapper>
-                       <ItemWrapper>
-                           <CardContentSection header={'Free Life-time Support'} content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, are wondering how it’s compatible with your store’s Shopify theme.'} textButton={'Contact our support'}/>
-                           <ItemGradient text={'It simply works!'}/>
-                       </ItemWrapper>
-                   </DivSpaceBetWeen>
+                    <DivSpaceBetWeen>
+                        <ItemWrapper>
+                            <ItemGradient text={'All-in-one protection'} greenText={'What you need is an'}/>
+                            <CardContentSection header={'Disable Keyboard Shortcuts\n' +
+                                'Disable Dev tools (F12)'}
+                                                content={'Vistors on your site can not access to the function of these keyboard shortcuts:' +
+                                                    ''} textButton={'Learn more'}/>
+                        </ItemWrapper>
+                        <ItemWrapper>
+                            <CardContentSection header={'Disable Right-click'}
+                                                content={'Vistors on your site are not allowed to Text Selection and use Right-click on the mouse.'}
+                                                textButton={'Install the app now'}/>
+                            <CardContentSection header={'Disable by Country'}
+                                                content={'Block users from specific countries'}
+                                                textButton={'Experience our app'}/>
+                        </ItemWrapper>
+                        <ItemWrapper>
+                            <CardContentSection header={'Free Life-time Support'}
+                                                content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, are wondering how it’s compatible with your store’s Shopify theme.'}
+                                                textButton={'Contact our support'}/>
+                            <ItemGradient text={'It simply works!'}/>
+                        </ItemWrapper>
+                    </DivSpaceBetWeen>
                 </ContentSection>
                 <BlogSection>
                     <TextBoldProblem>Videos - App intro, tutorial and many more</TextBoldProblem>
-                    <IframeVideo  height="800" src="https://www.youtube.com/embed/pBlqQGkPBjE"
-                            title="YouTube video player" frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen></IframeVideo>
+                    <IframeVideo height="800" src="https://www.youtube.com/embed/pBlqQGkPBjE"
+                                 title="YouTube video player" frameBorder="0"
+                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                 allowFullScreen></IframeVideo>
                     <br/>
                     <ButtonNavBar>
                         <TextButtonWhite>Watch more</TextButtonWhite>
@@ -101,7 +114,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 12.5%;
+  padding: 0 32px;
 `
 
 const HeaderSection = styled.div`
@@ -110,13 +123,18 @@ const HeaderSection = styled.div`
   flex-direction: row;
   margin-top: 80px;
   padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
 `
 const LeftHeaderSection = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 60px;
 `
 const RightHeaderSection = styled.div`
   display: flex;
@@ -127,7 +145,7 @@ const RightHeaderSection = styled.div`
 const TextHeaderBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: ${p => fontScale(40)}px;
   line-height: 55px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -135,7 +153,7 @@ const TextHeaderBold = styled.span`
 const TextHeaderNormal = styled.p`
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 27px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -147,6 +165,11 @@ const ContentSection = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 100px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
 `
 const ItemWrapper = styled.div`
   display: flex;
@@ -154,26 +177,32 @@ const ItemWrapper = styled.div`
   width: 32%;
 `
 const ProblemSection = styled.div`
-display: flex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
-  padding:100px 0;
+  padding: 100px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
 `
 const TextTitleProblem = styled.div`
   display: flex;
   justify-content: flex-start;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 27px;
   letter-spacing: 0.025em;
   text-transform: uppercase;
   color: #004AF7;
 `
-const TextBoldProblem =styled.div`
+const TextBoldProblem = styled.div`
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: ${p => fontScale(32)}px;
   line-height: 44px;
   letter-spacing: 0.025em;
   color: #000000;
@@ -184,7 +213,6 @@ const ItemProblemSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   width: 32%;
-  max-width: 440px;
 `
 const BlogSection = styled.div`
   display: flex;
@@ -192,9 +220,14 @@ const BlogSection = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 60px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
 `
 const IframeVideo = styled.iframe`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -202,7 +235,7 @@ display: flex;
 const TextBlogBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: ${p => fontScale(32)}px;
   line-height: 44px;
   letter-spacing: 0.025em;
   color: #000000;
@@ -213,7 +246,7 @@ const ListBullets = styled.ul`
 const ItemList = styled.li`
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${p => fontScale(16)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -221,7 +254,7 @@ const ItemList = styled.li`
 const LinkTextGray = styled.a`
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: ${p => fontScale(16)}px;
   line-height: 19px;
   text-decoration-line: underline;
   color: rgba(41, 45, 50, 0.5);

@@ -1,10 +1,13 @@
 import React, {memo} from "react";
 import styled from "styled-components";
+import {fontScale} from "../utils/fontScale";
 
 export const GradientBox = memo(function GradientBox() {
     return (
-        <Container>
-            <TextHeading>Ready to boost up your sales?</TextHeading>
+        <Container className={'content_bg_footer'}>
+            <TextHeading>
+                It is time to <TextHeadingGreen>Boost up</TextHeadingGreen> your sale
+            </TextHeading>
             <TextNormal>Are you ready to join the race?</TextNormal>
             <br/>
             <Button>
@@ -18,7 +21,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(325.97deg, #004AF7 -8.5%, #00D0FF 66.04%);
   width: 100%;
   padding:60px 0;
   border-radius: 6px;
@@ -26,15 +28,18 @@ const Container = styled.div`
 const TextHeading = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: ${p=> fontScale(40)}px;
   line-height: 55px;
   letter-spacing: 0.025em;
   color: #F6F6F7;
 `
+const TextHeadingGreen = styled(TextHeading)`
+color: #30C973;
+`
 const TextNormal = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: ${p=> fontScale(20)}px;
   line-height: 27px;
   text-align: center;
   letter-spacing: 0.025em;
@@ -52,9 +57,9 @@ const Button = styled.button`
 const TextButton = styled.span`
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: ${p=> fontScale(20)}px;
   line-height: 24px;
   text-align: center;
   letter-spacing: -0.015em;
-  color: #18A0FB;
+  color: #004AF7;
 `
