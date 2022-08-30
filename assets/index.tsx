@@ -7,8 +7,7 @@ export const IMG_BACKGROUND_BLACK = require('/public/img/img_black_background.sv
 export const IMG_DIVIDE_SECTION = require('../public/images/img_divide_section.png')
 export const IMG_TOGGLE =require('../public/images/img_toogle.svg')
 export const IMG_BACKGROUND_FOOTER = require('../public/img/img_background_footer.svg')
-
-
+export const IMG_BACKGROUND_FREEGIFT= require('../public/images/img_background_freegift.svg')
 
 export const IC_CONTENT_01 = require('../public/icons/ic_content01.svg')
 export const IC_CONTENT_02 = require('../public/icons/ic_content02.svg')
@@ -21,3 +20,8 @@ export const IC_INSTAGRAM = require('../public/icons/ic_instagram.svg')
 export const IC_YOUTUBE = require('../public/icons/ic_youtube.svg')
 export const IC_PROTECTION = require('../public/icons/ic_protection.png')
 export const IC_SHAPE_DOWN = require('../public/icons/ic_shape_down.svg')
+export const IC_USER = require('../public/icons/ic_user.svg')
+export const IC_CALENDAR = require('../public/icons/ic_calendar.svg')
+export const IC_COMMENT = require('../public/icons/ic_comment.svg')
+export const IC_CLOCK = require('../public/icons/ic_clock.svg')
+export const IC_UPLOAD = require('../public/icons/ic_upload.svg')
