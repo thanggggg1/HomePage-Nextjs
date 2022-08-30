@@ -4,6 +4,7 @@ import {DivSpaceBetWeen, RowSection} from "../pages/index";
 import Image from "next/image";
 import {IC_FACEBOOK, IC_INSTAGRAM, IC_LINKEDIN, IC_YOUTUBE} from "../assets";
 import {fontScale} from "../utils/fontScale";
+import Link from "next/link";
 
 export const Footer = memo(function Footer() {
     return (
@@ -76,9 +77,9 @@ export const Footer = memo(function Footer() {
                             </div>
                         </ListItem>
                         <ListItem>
-                            <div>
+                            <Link href={'https://protect.sortecom.com/'} passHref>
                                 <TextListItem href={'https://protect.sortecom.com/'}>Disable Right-click & Content Protection</TextListItem>
-                            </div>
+                            </Link>
                         </ListItem>
                         <ListItem>
                             <div>

@@ -35,7 +35,7 @@ export const NavBar = memo(function NavBar() {
             <Container>
                 <ContentContainer>
                     <DivSpaceBetWeen>
-                        <SLink href='/'>
+                        <SLink href='/' passHref>
                             <div style={{cursor: "pointer"}}>
                                 <ImageLogo src={IMG_LOGO}/>
                             </div>
@@ -78,7 +78,9 @@ export const NavBar = memo(function NavBar() {
                                 </DropDownMenu>
                             </DivOptionNavBar>
                             <DivOptionNavBar>
-                                <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
+                                <Link href={'/Blog/BlogPage'} passHref>
+                                    <TextNavBar href="/Blog/BlogPage">Blogs</TextNavBar>
+                                </Link>
                             </DivOptionNavBar>
                             <DivOptionNavBar>
                                 <TextNavBar href="#footer">Contact</TextNavBar>
