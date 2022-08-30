@@ -17,7 +17,6 @@ export const NavBar = memo(function NavBar() {
             } else {
                 $(this).children("div").eq(1).stop().slideUp(300);
             }
-
         });
     }, [])
     const {width} = UseWindowSize()

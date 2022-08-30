@@ -8,13 +8,14 @@ export const CardArticle = memo(function CardArticle() {
     return (
         <Container>
             <TextHeading>Spekit: Using ClickUp For Effective Quarterly OKR Tracking</TextHeading>
+            <br/>
             <DivSpaceBetWeen>
                 <RowSection>
-                    <Image src={IC_USER} width={48} height={48}/>
+                    <Image src={IC_USER} width={32} height={32}/>
                     <TextNormalBold>Lelia Cruz</TextNormalBold>
                 </RowSection>
                 <RowSection>
-                    <Image src={IC_CLOCK} width={48} height={48}/>
+                    <Image src={IC_CLOCK} width={32} height={32}/>
                     <TextTime>Max 7min read</TextTime>
                 </RowSection>
             </DivSpaceBetWeen>
@@ -28,9 +29,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 4px 0px #0000001A;
   padding: 30px;
   border-radius: 6px;
 `

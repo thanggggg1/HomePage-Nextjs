@@ -7,8 +7,7 @@ export const IMG_BACKGROUND_BLACK = require('/public/img/img_black_background.sv
 export const IMG_DIVIDE_SECTION = require('../public/images/img_divide_section.png')
 export const IMG_TOGGLE =require('../public/images/img_toogle.svg')
 export const IMG_BACKGROUND_FOOTER = require('../public/img/img_background_footer.svg')
-
-
+export const IMG_BACKGROUND_FREEGIFT= require('../public/images/img_background_freegift.svg')
 
 export const IC_CONTENT_01 = require('../public/icons/ic_content01.svg')
 export const IC_CONTENT_02 = require('../public/icons/ic_content02.svg')

@@ -9,34 +9,34 @@ export const TableContents = memo(function TableContents() {
             <BackgroundTextDiv>
                 <TextNormal>Our Solution Engineering Team’s Favorite ClickUp Features</TextNormal>
             </BackgroundTextDiv>
-            <Link href={'#section-01'} passHref>
+            <Link href={'#01'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal>1. Salesforce Integration</TextNormal>
+                    <TextNormal href={'#01'}>1. Salesforce Integration</TextNormal>
                 </BackgroundTextDiv>
             </Link>
-            <Link href={'#section-02'} passHref>
+            <Link href={'#02'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal>2. Automations</TextNormal>
+                    <TextNormal href={'#02'}>2. Automations</TextNormal>
                 </BackgroundTextDiv>
             </Link>
-            <Link href={'#section-03'} passHref>
+            <Link href={'#03'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal>3. Personalized Views</TextNormal>
+                    <TextNormal href={'#03'}>3. Personalized Views</TextNormal>
                 </BackgroundTextDiv>
             </Link>
-            <Link href={'#section-04'} passHref>
+            <Link href={'#04'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal>4. Templated Docs</TextNormal>
+                    <TextNormal href={'#04'}>4. Templated Docs</TextNormal>
                 </BackgroundTextDiv>
             </Link>
-            <Link href={'#section-05'} passHref>
+            <Link href={'#05'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal>5. Time Tracking</TextNormal>
+                    <TextNormal href={'#05'}>5. Time Tracking</TextNormal>
                 </BackgroundTextDiv>
             </Link>
             <Link href={'#ending'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal>Using ClickUp to Enhance Collaboration and Keep Our Team Organized
+                    <TextNormal href={'#ending'}>Using ClickUp to Enhance Collaboration and Keep Our Team Organized
                     </TextNormal>
                 </BackgroundTextDiv>
             </Link>
@@ -65,9 +65,5 @@ const BackgroundTextDiv = styled.div`
   display: flex;
   align-items: center;
   padding: 6px 12px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0px 2px 4px 0px #0000001A;
   cursor: pointer;
-
 `

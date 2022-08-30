@@ -1,4 +1,4 @@
-import {memo, useCallback} from "react";
+import {memo, useCallback, useEffect, useRef, useState} from "react";
 import {NavBar} from "../../../components/NavBar";
 import styled from "styled-components";
 import Image from 'next/image'
@@ -9,10 +9,26 @@ import {CardArticle} from "../../../components/BlogPage/CardArticle";
 import {DivRowFlex} from "../BlogPage";
 import {Footer} from "../../../components/Footer";
 import {TableContents} from "../../../components/BlogPage/TableContents";
-
+import $ from 'jquery'
 const PostBlog = memo(function PostBlog() {
-    const onScroll =useCallback((e)=>{
-        console.log('e',e)
+    const addClassOnScroll = useCallback(()=>{
+        const windowTop = $(window).scrollTop();
+        $('section[id]').each(function (index, elem) {
+            // @ts-ignore
+            const offsetTop = $(elem).offset().top;
+            const outerHeight = $(this).outerHeight(true);
+            // @ts-ignore
+            if( windowTop > (offsetTop - 50) && windowTop < ( offsetTop + outerHeight)) {
+                const elemId = $(elem).attr('id');
+                $("div.active-href").removeClass('active-href');
+                $("a[href='#" + elemId + "']").parent().addClass('active-href');
+            }
+        });
+    },[])
+    useEffect(()=>{
+        $(window).on('scroll', function () {
+            addClassOnScroll();
+        });
     },[])
     return (
         <>
@@ -58,7 +74,7 @@ const PostBlog = memo(function PostBlog() {
                         <TextHeading>Our Solution Engineering Team’s Favorite ClickUp Features</TextHeading>
 
                         {/*    Section 1*/}
-                        <div id={'section-01'}>
+                        <section id={'01'}>
                             <TextTitle>1. Salesforce Integration</TextTitle>
                             <TextContent>When someone says lip balm, you likely think of ChapStick. In a similar fashion,
                                 when someone says CRM, you picture Salesforce.
@@ -87,9 +103,9 @@ const PostBlog = memo(function PostBlog() {
                                 improvement!
 
                             </TextContent>
-                        </div>
+                        </section>
                         {/*    Section 2*/}
-                        <div id={'section-02'}>
+                        <section id={'02'} >
                             <TextTitle id={'section-02'}>2. Automation</TextTitle>
                             <TextContent>While driving a manual car may be a sense of pride for some, manually processing
                                 work definitely is not!
@@ -124,9 +140,9 @@ const PostBlog = memo(function PostBlog() {
                                 automated using ClickUp!
 
                             </TextContent>
-                        </div>
+                        </section>
                         {/*Section 03*/}
-                        <div id={'section-03'}>
+                        <section id={'03'}>
                             <TextTitle>3. Personalized Views</TextTitle>
                             <TextContent>It’s no secret that different individuals prefer to view their work in different
                                 ways.
@@ -154,11 +170,11 @@ const PostBlog = memo(function PostBlog() {
                                 keep the focus on what matters most
 
                             </TextItalic>
-                        </div>
+                        </section>
 
 
                     {/*    Section 04*/}
-                        <div id={'section-04'}>
+                        <section id={'04'}>
                             <TextTitle>4. Template Docs</TextTitle>
                             <TextContent>Within ClickUp, you can create templates for just about anything!
 
@@ -176,10 +192,10 @@ const PostBlog = memo(function PostBlog() {
                             <TextContent>After meeting with a customer, follow-up is frequently required regarding the next steps, action items, etc. To ensure these action items are completed in a timely fashion, we simply select any relevant note in our Doc and turn it into an assigned comment.
 
                             </TextContent>
-                        </div>
+                        </section>
 
                     {/*    Section 05*/}
-                      <div id={'section-05'}>
+                      <section id={'05'} >
                           <TextTitle>5. Time Tracking</TextTitle>
                           <TextContent>Understanding where your time is being spent is important, especially for Solutions Engineers. Time is money—literally!
 
@@ -198,9 +214,9 @@ const PostBlog = memo(function PostBlog() {
                           <TextContent>This helps us deliver on our No. 1 core value, creating the best customer experience, both for our sales team partners as well as potential customers.
 
                           </TextContent>
-                      </div>
+                      </section>
                     {/*    Footer*/}
-                        <div id={'ending'} onScroll={onScroll}>
+                        <section id={'ending'}>
                             <TextTitle>Using ClickUp to Enhance Collaboration and Keep Our Team Organized
                             </TextTitle>
                             <TextContent>We love the opportunity to work cross-departmentally on the platform because it enables us to partner effectively with our customers.
@@ -215,9 +231,7 @@ const PostBlog = memo(function PostBlog() {
                             <TextContent>Now it’s your turn: how will you use ClickUp for your pre-sales process? 😉
 
                             </TextContent>
-                        </div>
-
-
+                        </section>
                     {/*    Related Articles*/}
                         <TextNormalBold>Related Articles:
                         </TextNormalBold>
@@ -228,7 +242,6 @@ const PostBlog = memo(function PostBlog() {
                             <ListItem>How ClickUp’s quality excellence team uses ClickUp</ListItem>
                             <ListItem>How ClickUp’s onboarding team uses ClickUp</ListItem>
                         </ListArticles>
-
                         <CardQuestions/>
                         <br/>
                         <br/>
@@ -323,7 +336,7 @@ const TextNormal = styled.span`
   color: #000000;
 `
 const TextNormalBold = styled(TextNormal)`
-  font-weight: 700;
+  font-weight: 600;
 `
 const Info = styled.div`
   display: flex;
@@ -347,7 +360,7 @@ const TextContent = styled.p`
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.025em;
-  color: #000000;
+  color: #292d34;
 `
 const TextItalic = styled(TextContent)`
   font-style: italic;

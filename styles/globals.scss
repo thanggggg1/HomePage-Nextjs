@@ -195,6 +195,11 @@ a.effect-underline:hover:after {
   background: #555;
 }
 
+.active-href{
+  border-left: 4px solid #18A0FB;
+  background-color: white;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
