@@ -33,13 +33,13 @@ export const NavBar = memo(function NavBar() {
         <>
             <Container>
                 <ContentContainer>
-                    <DivSpaceBetWeen>
+                    <RowNavBar>
                         <SLink href='/' passHref>
                             <div style={{cursor: "pointer"}}>
                                 <ImageLogo src={IMG_LOGO}/>
                             </div>
                         </SLink>
-                        {width && width > 1024 ? <RowSection>
+                        {width && width > 1024 ? <RowSectionMiddle>
                             <DivOptionNavBar>
                                 <TextNavBar href="#about">About us</TextNavBar>
                             </DivOptionNavBar>
@@ -67,7 +67,7 @@ export const NavBar = memo(function NavBar() {
                                                 <Image src={IC_PROTECTION} width={100} height={100}/>
                                             </div>
                                             <Column>
-                                                <TextNavBarBold>Free gift</TextNavBarBold>
+                                                <TextNavBarBold href="/Products/FreeGiftPage">Free gift</TextNavBarBold>
                                                 <TextNavBarSpan>Unlimited campaign creation: BOGO, buy one get discount,
                                                     buy one get free gifts, buy 2 get discount or get 1 product, and many customized ways to create a desired campaign, even the most complicated ones.
                                                 </TextNavBarSpan>
@@ -84,21 +84,23 @@ export const NavBar = memo(function NavBar() {
                             <DivOptionNavBar>
                                 <TextNavBar href="#footer">Contact</TextNavBar>
                             </DivOptionNavBar>
-                            <DivOptionNavBar>
-                                <ButtonNavBar className='click-btn btn-style505'>
-                                    <TextButtonWhite>Start free on Shopify</TextButtonWhite>
-                                </ButtonNavBar>
-                            </DivOptionNavBar>
-                        </RowSection> : <ButtonToggle onClick={onSlide}>
+                        </RowSectionMiddle> : <RowSectionMiddle/>}
+                        {width && width > 1024 ? <DivOptionNavBar>
+                            <ButtonNavBar className='click-btn btn-style505'>
+                            <TextButtonWhite>Start free on Shopify</TextButtonWhite>
+                            </ButtonNavBar>
+                            </DivOptionNavBar> :   <ButtonToggle onClick={onSlide}>
                             <Image src={IMG_TOGGLE} width={32} height={32}/>
-                        </ButtonToggle>}
-                    </DivSpaceBetWeen>
+                        </ButtonToggle> }
+                    </RowNavBar>
                 </ContentContainer>
             </Container>
             <MenuBarResponsive/>
         </>
     )
 })
+
+
 const Container = styled.div`
   position: sticky;
   left: 0;
@@ -110,8 +112,7 @@ const Container = styled.div`
   padding-right: 32px;
   padding-left: 32px;
   align-items: center;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px 0px #0000001A;
+  background-color: #F6F6F7;
   z-index: 1000;
 `
 const ContentContainer = styled.div`
@@ -123,12 +124,26 @@ const ContentContainer = styled.div`
   margin-left: auto;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 0;
 `
 const ImageLogo = styled(Image)`
 
 `
 const DivOptionNavBar = styled.div`
-margin-left: 40px;
+margin-left: 80px;
+`
+
+const RowNavBar = styled.div`
+display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+`
+const RowSectionMiddle = styled.div`
+display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `
 const TextNavBar = styled.a`
   font-style: normal;
@@ -203,7 +218,7 @@ export const Column = styled.div`
   flex-direction: column;
 `
 const ButtonToggle = styled.button`
-background-color: white;
+background-color: #F6F6F7;
   border: none;
 
 `

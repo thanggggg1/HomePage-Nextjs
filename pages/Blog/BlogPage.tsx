@@ -1,11 +1,6 @@
 import React, {memo} from "react";
 import {ButtonNavBar, NavBar, TextButtonWhite} from "../../components/NavBar";
 import {DivCenter, DivSpaceBetWeen, RowSection} from "../index";
-import Image from "next/image";
-import {IMG_PROTECTION} from "../../assets";
-import {CardProblem} from "../../components/ProtectionPage/CardProblem";
-import {ItemGradient} from "../../components/ItemGradient";
-import {CardContentSection} from "../../components/HomePage/CardContentSection";
 import {GradientBox} from "../../components/GradientBox";
 import {Footer} from "../../components/Footer";
 import styled from "styled-components";
@@ -14,29 +9,37 @@ import {CardBlog} from "../../components/BlogPage/CardBlog";
 import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
 import {fontScale} from "../../utils/fontScale";
+import Head from "next/head";
 
 const BlogPage: NextPage = memo(function BlogPage() {
     return (
         <>
+            <Head>
+                <title>SortEcom - Blog</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+            </Head>
             <NavBar/>
             <Container>
-                <HeaderSection>
-                    <LeftHeaderSection>
-                        <TextHeaderBold>Everything you need
-                            to succeed with Sortecom.</TextHeaderBold>
-                        <TextHeaderNormal>Join Sortecom newsletter to receive necessary resources
-                            to make your ecommerce business more successful! </TextHeaderNormal>
-                        <RowSection>
-                            <InputBox placeholder={'Enter email'}/>
-                            <ButtonNavBar>
-                                <TextButtonWhite>Subcribe</TextButtonWhite>
-                            </ButtonNavBar>
-                        </RowSection>
-                    </LeftHeaderSection>
-                    <RightHeaderSection>
-                        <CardBlog/>
-                    </RightHeaderSection>
-                </HeaderSection>
+                <>
+                    <BackgroundGradient/>
+                    <HeaderSection>
+                        <LeftHeaderSection>
+                            <TextHeaderBold>Everything you need
+                                to succeed with Sortecom.</TextHeaderBold>
+                            <TextHeaderNormal>Join Sortecom newsletter to receive necessary resources
+                                to make your ecommerce business more successful! </TextHeaderNormal>
+                            <RowSection>
+                                <InputBox placeholder={'Enter email'}/>
+                                <ButtonNavBar>
+                                    <TextButtonWhite>Subcribe</TextButtonWhite>
+                                </ButtonNavBar>
+                            </RowSection>
+                        </LeftHeaderSection>
+                        <RightHeaderSection>
+                            <CardBlog/>
+                        </RightHeaderSection>
+                    </HeaderSection>
+                </>
                 <ProblemSection>
                     <DivSpaceBetWeen>
                         <TextBoldProblem>Read our Articles</TextBoldProblem>
@@ -49,10 +52,10 @@ const BlogPage: NextPage = memo(function BlogPage() {
                             <ItemProblemSection>
                                 <CardBlog/>
                             </ItemProblemSection>
-                            <ItemProblemSection style={{justifyContent:'center'}}>
+                            <ItemProblemSection style={{justifyContent: 'center'}}>
                                 <CardBlog/>
                             </ItemProblemSection>
-                            <ItemProblemSection style={{justifyContent:'flex-end'}}>
+                            <ItemProblemSection style={{justifyContent: 'flex-end'}}>
                                 <CardBlog/>
                             </ItemProblemSection>
                         </DivRowFlex>
@@ -61,10 +64,10 @@ const BlogPage: NextPage = memo(function BlogPage() {
                             <ItemProblemSection>
                                 <CardBlog/>
                             </ItemProblemSection>
-                            <ItemProblemSection style={{justifyContent:'center'}}>
+                            <ItemProblemSection style={{justifyContent: 'center'}}>
                                 <CardBlog/>
                             </ItemProblemSection>
-                            <ItemProblemSection style={{justifyContent:'flex-end'}}>
+                            <ItemProblemSection style={{justifyContent: 'flex-end'}}>
                                 <CardSubcribe/>
                             </ItemProblemSection>
                         </DivRowFlex>
@@ -73,10 +76,10 @@ const BlogPage: NextPage = memo(function BlogPage() {
                             <ItemProblemSection>
                                 <CardBlog/>
                             </ItemProblemSection>
-                            <ItemProblemSection style={{justifyContent:'center'}}>
+                            <ItemProblemSection style={{justifyContent: 'center'}}>
                                 <CardBlog/>
                             </ItemProblemSection>
-                            <ItemProblemSection style={{justifyContent:'flex-end'}}>
+                            <ItemProblemSection style={{justifyContent: 'flex-end'}}>
                                 <CardBlog/>
                             </ItemProblemSection>
                         </DivRowFlex>
@@ -111,14 +114,23 @@ const HeaderSection = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 80px;
+  position: relative;
+  margin-top: 20px;
   padding-top: 100px;
   width: 100%;
-  height: 100%;
+  height: 50vh;
   max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   align-items: center;
+`
+const BackgroundGradient = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(30% 28% at 81.56% 50%, rgba(0, 74, 247, 0.4) 0%, rgba(24, 160, 251, 0.4) 44.36%, rgba(246, 246, 247, 0.4) 100%);
 `
 const LeftHeaderSection = styled.div`
   width: 50%;
@@ -135,8 +147,8 @@ const RightHeaderSection = styled.div`
 const TextHeaderBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: ${p => fontScale(40)}px;
-  line-height: 55px;
+  font-size: ${p => fontScale(60)}px;
+  line-height: 80px;
   letter-spacing: 0.025em;
   color: #1D1B29;
 `
@@ -160,6 +172,7 @@ const ProblemSection = styled.div`
   margin-right: auto;
   margin-left: auto;
   align-items: center;
+  z-index: 100;
 `
 
 const TextBoldProblem = styled.div`

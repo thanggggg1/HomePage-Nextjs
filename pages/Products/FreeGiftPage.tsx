@@ -9,29 +9,43 @@ import {Footer} from "../../components/Footer";
 import styled from "styled-components";
 import {fontScale} from "../../utils/fontScale";
 import Image from "next/image";
-import {IMG_BACKGROUND_FREEGIFT} from "../../assets";
+import {IMG_BACKGROUND_FREEGIFT, IMG_REACTANGLE_FREEGIFT_01, IMG_REACTANGLE_FREEGIFT_02} from "../../assets";
+import Head from "next/head";
 
 const FreeGiftPage = memo(function FreeGiftPage() {
     return (
         <>
+            <Head>
+                <title>Free Gift - BOGO</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <NavBar/>
             <Container>
-                <HeaderSection>
-                    <TextHeaderBold>BOGO, Free Gift, Discount
-                        <br/>
-                        <TextBlueHeader>Boost your Sales</TextBlueHeader>
-                    </TextHeaderBold>
-                    <TextHeaderNormal>Encourage your customers to buy more and increase your Average Order
-                        Value?</TextHeaderNormal>
-                    <ButtonNavBar className='click-btn btn-style902'>
-                        <div className="block"><span></span></div>
-                        <TextButtonWhite data-name="hover">Create</TextButtonWhite>
-                        <TextButtonWhite data-name="me">Gift Campaign</TextButtonWhite>
-                    </ButtonNavBar>
-                    <DivImage>
-                        <Image src={IMG_BACKGROUND_FREEGIFT} layout={'responsive'}/>
-                    </DivImage>
-                </HeaderSection>
+                <>
+                    <BackgroundGradient/>
+                    <HeaderSection>
+                        <TextHeaderBold>BOGO, Free Gift, Discount
+                            <br/>
+                            <TextBlueHeader>Boost your Sales</TextBlueHeader>
+                        </TextHeaderBold>
+                        <TextHeaderNormal>Encourage your customers to buy more and increase your Average Order
+                            Value?</TextHeaderNormal>
+                        <ButtonNavBar className='click-btn btn-style902'>
+                            <div className="block"><span></span></div>
+                            <TextButtonWhite data-name="hover">Create</TextButtonWhite>
+                            <TextButtonWhite data-name="me">Gift Campaign</TextButtonWhite>
+                        </ButtonNavBar>
+                        <DivImage>
+                            <LeftImage className={'bounce-2'}>
+                                <Image src={IMG_REACTANGLE_FREEGIFT_01} width={200}/>
+                            </LeftImage>
+                            <Image src={IMG_BACKGROUND_FREEGIFT}/>
+                            <RightImage className={'bounce-2'}>
+                                <Image src={IMG_REACTANGLE_FREEGIFT_02} width={200}/>
+                            </RightImage>
+                        </DivImage>
+                    </HeaderSection>
+                </>
                 <ProblemSection>
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
                     <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
@@ -104,36 +118,66 @@ const Container = styled.div`
   justify-content: center;
   padding: 0 32px;
 `
+
+const BackgroundGradient = styled.div`
+position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(34.76% 62.22% at 50% 88.63%, rgba(0, 74, 247, 0.4) 0%, rgba(24, 160, 251, 0.4) 30.71%, rgba(246, 246, 247, 0.4) 100%);
+`
 const HeaderSection = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 80px;
-  padding-top: 100px;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   align-items: center;
-  background: linear-gradient(177.38deg, #FFFFFF 2.17%, rgba(255, 255, 255, 0) 27.2%);
-  mix-blend-mode: multiply;
 `
 const TextBlueHeader = styled.span`
   font-style: normal;
   font-weight: 900;
-  font-size: ${p => fontScale(60)}px;
+  font-size: ${p => fontScale(80)}px;
   line-height: 115.9%;
   letter-spacing: 0.01em;
   color: #004AF7;
+  text-align: center;
+`
+
+const LeftImage = styled.div`
+  position: absolute;
+  top:50%;
+  left: 0;
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+`
+const RightImage = styled.div`
+  position: absolute;
+  top:50%;
+  right: 0;
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
 `
 const TextHeaderBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: ${p => fontScale(40)}px;
+  font-size: ${p => fontScale(60)}px;
   line-height: 55px;
   letter-spacing: 0.025em;
   color: #1D1B29;
+  text-align: center;
+
 `
 const TextHeaderNormal = styled.p`
   font-style: normal;
@@ -217,37 +261,14 @@ const IframeVideo = styled.iframe`
   justify-content: center;
   width: 100%;
 `
-const TextBlogBold = styled.span`
-  font-style: normal;
-  font-weight: 700;
-  font-size: ${p => fontScale(32)}px;
-  line-height: 44px;
-  letter-spacing: 0.025em;
-  color: #000000;
-`
-const ListBullets = styled.ul`
-  list-style-type: disc;
-`
-const ItemList = styled.li`
-  font-style: normal;
-  font-weight: 600;
-  font-size: ${p => fontScale(16)}px;
-  line-height: 22px;
-  letter-spacing: 0.025em;
-  color: #1D1B29;
-`
-const LinkTextGray = styled.a`
-  font-style: normal;
-  font-weight: 400;
-  font-size: ${p => fontScale(16)}px;
-  line-height: 19px;
-  text-decoration-line: underline;
-  color: rgba(41, 45, 50, 0.5);
-  margin-left: 20px;
-`
-const DivImage = styled.div`
+export const DivImage = styled.div`
+  position: relative;
 width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
+
 
 
 export default FreeGiftPage

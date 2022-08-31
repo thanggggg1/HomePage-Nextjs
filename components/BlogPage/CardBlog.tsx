@@ -1,26 +1,28 @@
-import React,{memo} from "react";
+import React, {memo} from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import {IMG_CARD_PROBLEM} from "../../assets";
 import {DivSpaceBetWeen} from "../../pages";
 import {fontScale} from "../../utils/fontScale";
+import Link from "next/link";
 
-export const CardBlog = memo(function CardBlogHomePage(){
+export const CardBlog = memo(function CardBlogHomePage() {
     return (
-<Container>
-<Image src={IMG_CARD_PROBLEM}/>
-    <ContentDiv>
-        <DivSpaceBetWeen>
-            <TextCategory>Marketing</TextCategory>
-            <TextTime>Published 04.08.22</TextTime>
-        </DivSpaceBetWeen>
-        <TextTitle>Various kinds of app for every
-            problems</TextTitle>
-        <TextContent>We provide apps that deal with daily struggles
-            of a merchant.</TextContent>
-    </ContentDiv>
-
-</Container>
+        <Container>
+            <Image src={IMG_CARD_PROBLEM}/>
+            <ContentDiv>
+                <DivSpaceBetWeen>
+                    <TextCategory>Marketing</TextCategory>
+                    <TextTime>Published 04.08.22</TextTime>
+                </DivSpaceBetWeen>
+                <Link href={'/Blog/posts/123'} passHref>
+                    <TextTitle>Various kinds of app for every
+                        problems</TextTitle>
+                </Link>
+                <TextContent>We provide apps that deal with daily struggles
+                    of a merchant.</TextContent>
+            </ContentDiv>
+        </Container>
     )
 })
 const Container = styled.div`
@@ -35,14 +37,14 @@ const Container = styled.div`
 
 `
 const ContentDiv = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
-  padding:20px;
+  padding: 20px;
 `
 const TextCategory = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: ${p=> fontScale(12)}px;
+  font-size: ${p => fontScale(12)}px;
   line-height: 16px;
   letter-spacing: 0.025em;
   color: #18A0FB;
@@ -51,23 +53,27 @@ const TextCategory = styled.span`
 const TextTime = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: ${p=> fontScale(12)}px;
+  font-size: ${p => fontScale(12)}px;
   line-height: 16px;
   letter-spacing: 0.025em;
   color: rgba(29, 27, 41, 0.5);
 `
-const TextTitle = styled.div`
+const TextTitle = styled.a`
   font-style: normal;
   font-weight: 600;
-  font-size: ${p=> fontScale(20)}px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 27px;
   letter-spacing: 0.025em;
   color: #1D1B29;
+  cursor: pointer;
+  &:hover{
+    color: #18A0FB;
+  }
 `
 const TextContent = styled.div`
   font-style: normal;
   font-weight: 600;
-  font-size: ${p=> fontScale(16)}px;
+  font-size: ${p => fontScale(16)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: rgba(29, 27, 41, 0.5);

@@ -13,37 +13,34 @@ import styled from "styled-components";
 import {CardProblem} from "../../components/ProtectionPage/CardProblem";
 import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {fontScale} from "../../utils/fontScale";
+import Head from "next/head";
 
 const ProtectionPage: NextPage = memo(function ProtectionPage() {
     return (
         <>
+            <Head>
+                <title>Disable Right Click AntiTheft</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <NavBar/>
             <Container>
-                <HeaderSection>
-                    <LeftHeaderSection>
-                        <TextHeaderBold>Disable Right-click
+                <>
+                    <BackgroundGradient/>
+                    <HeaderSection>
+                        <TextHeaderBold>Disable Right-click <br/>
                             & Content Protection</TextHeaderBold>
-                        <TextHeaderNormal>Worrying about someone stealing your work? Activate your protection
+                        <TextHeaderNormal>Worrying about someone stealing your work?<br/>Activate your protection
                             now!</TextHeaderNormal>
-                        <ListBullets>
-                            <ItemList>Sending email/SMS in bulk</ItemList>
-                            <ItemList>Special gift offers</ItemList>
-                            <ItemList>Disable right-click & Content protection</ItemList>
-                        </ListBullets>
-                        <RowSection>
-                            <ButtonNavBar className='click-btn btn-style902'>
-                                <div className="block"><span></span></div>
-                                <TextButtonWhite data-name="hover">Install</TextButtonWhite>
-                                <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
-                            </ButtonNavBar>
-                            <LinkTextGray href={'https://youtu.be/pBlqQGkPBjE'} target={'_blank'}>Watch video
-                                demo</LinkTextGray>
-                        </RowSection>
-                    </LeftHeaderSection>
-                    <RightHeaderSection>
+                        <ButtonNavBar className='click-btn btn-style902'>
+                            <div className="block"><span></span></div>
+                            <TextButtonWhite data-name="hover">Install</TextButtonWhite>
+                            <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
+                        </ButtonNavBar>
+                        <LinkTextGray href={'https://youtu.be/pBlqQGkPBjE'} target={'_blank'} rel="noreferrer">Watch video
+                            demo</LinkTextGray>
                         <Image src={IMG_PROTECTION}/>
-                    </RightHeaderSection>
-                </HeaderSection>
+                    </HeaderSection>
+                </>
                 <ProblemSection>
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
                     <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
@@ -120,35 +117,33 @@ const Container = styled.div`
 const HeaderSection = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  margin-top: 80px;
-  padding-top: 100px;
+  flex-direction: column;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   align-items: center;
 `
-const LeftHeaderSection = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
-const RightHeaderSection = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 50%;
+const BackgroundGradient = styled.div`
+position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(133.45% 97.33% at 50% 97.33%, #004AF7 0%, #18A0FB 39.34%, rgba(246, 246, 247, 0) 69.1%);
 `
 const TextHeaderBold = styled.span`
+  font-size: ${p => fontScale(80)}px;
+  color: #1D1B29;
   font-style: normal;
   font-weight: 700;
-  font-size: ${p => fontScale(40)}px;
-  line-height: 55px;
-  letter-spacing: 0.025em;
-  color: #1D1B29;
+  line-height: 115.9%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
 `
 const TextHeaderNormal = styled.p`
   font-style: normal;
@@ -157,6 +152,8 @@ const TextHeaderNormal = styled.p`
   line-height: 27px;
   letter-spacing: 0.025em;
   color: #1D1B29;
+  text-align: center
+;
 `
 
 const ContentSection = styled.div`

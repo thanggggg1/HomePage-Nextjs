@@ -2,6 +2,7 @@ import {memo} from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import {IC_COMMENT} from "../../assets";
+import {fontScale} from "../../utils/fontScale";
 
 export const CardQuestions = memo(function CardQuestions(){
     return (
@@ -37,7 +38,7 @@ display: flex;
 const TextContent = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: ${p=>fontScale(20)}px;
   line-height: 20px;
   letter-spacing: 0.025em;
   color: white;
@@ -46,7 +47,7 @@ const TextContent = styled.span`
 const TextLink = styled.a`
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: ${p=>fontScale(20)}px;
   line-height: 20px;
   letter-spacing: 0.025em;
   color: white;

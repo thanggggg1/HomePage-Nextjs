@@ -1,6 +1,7 @@
 import {memo, useCallback} from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import {fontScale} from "../../utils/fontScale";
 
 export const TableContents = memo(function TableContents() {
     return (
@@ -36,8 +37,7 @@ export const TableContents = memo(function TableContents() {
             </Link>
             <Link href={'#ending'} passHref>
                 <BackgroundTextDiv>
-                    <TextNormal href={'#ending'}>Using ClickUp to Enhance Collaboration and Keep Our Team Organized
-                    </TextNormal>
+                    <TextNormal href={'#ending'}>Using ClickUp to Enhance Collaboration and Keep Our Team Organized</TextNormal>
                 </BackgroundTextDiv>
             </Link>
 
@@ -52,13 +52,14 @@ const Container = styled.div`
 const TextNormal = styled.a`
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: ${p=>fontScale(15)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: #000000;
   margin: 12px 0;
 `
 const TextNormalBold = styled(TextNormal)`
+  font-size: ${p=>fontScale(12)}px;
   font-weight: 700;
 `
 const BackgroundTextDiv = styled.div`

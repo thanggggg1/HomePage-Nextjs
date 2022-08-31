@@ -3,7 +3,13 @@ import Image from 'next/image'
 import React, {memo} from "react";
 import styled from "styled-components";
 import {ButtonNavBar, NavBar, TextButtonWhite} from "../components/NavBar";
-import {IMG_DIVIDE_SECTION, IMG_HEADER} from "../assets";
+import {
+    IMG_DIVIDE_SECTION,
+    IMG_HEADER,
+    IMG_REACTANGLE_FREEGIFT_01,
+    IMG_REACTANGLE_HOME_01,
+    IMG_REACTANGLE_HOME_02, IMG_REACTANGLE_HOME_03
+} from "../assets";
 import {CardContentSection} from "../components/HomePage/CardContentSection";
 import {ItemGradient} from "../components/ItemGradient";
 import {CardFeedback} from "../components/HomePage/CardFeedback";
@@ -12,20 +18,24 @@ import {Footer} from "../components/Footer";
 import {CardBlogHomePage} from "../components/HomePage/CardBlog";
 import Marquee from "react-fast-marquee";
 import {fontScale} from "../utils/fontScale";
+import {DivImage} from "./Products/FreeGiftPage";
+import Head from "next/head";
 
 const Home: NextPage = memo(function Home() {
     return (
         <>
+            <Head>
+                <title>SortEcom</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <NavBar/>
             <Container>
-                <HeaderSection>
-                    <LeftHeaderSection>
-                        <TextBlueHeader>Powerful apps </TextBlueHeader>
-                        <TextHeaderBold>make your
-                            ecommerce business better</TextHeaderBold>
-                        <TextHeaderNormal>Sortecom includes all you need for your ecommerce website:
-                            Email marketing, Review, Free gifts BOGO, Pop up,
-                            Free Shipping bar, Content Protections and many more.</TextHeaderNormal>
+                <>
+                    <BackgroundGradient/>
+                    <HeaderSection>
+                        <TextBlueHeader>Powerful apps <TextHeaderBold>make<br/> your
+                            ecommerce business better</TextHeaderBold> </TextBlueHeader>
+                        <TextHeaderNormal>Free Gift | Content Protection | Email Marketing</TextHeaderNormal>
                         <div style={{display: "flex", flexWrap: 'wrap'}}>
                             <ButtonNavBar className='click-btn btn-style902'>
                                 <div className="block"><span></span></div>
@@ -33,11 +43,23 @@ const Home: NextPage = memo(function Home() {
                                 <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
                             </ButtonNavBar>
                         </div>
-                    </LeftHeaderSection>
-                    <RightHeaderSection>
-                        <Image src={IMG_HEADER}/>
-                    </RightHeaderSection>
-                </HeaderSection>
+                        <br/>
+                        <br/>
+                        <DivImage>
+                            <LeftImageAnimation className={'bounce-2'}>
+                                <Image src={IMG_REACTANGLE_HOME_01} width={200}/>
+                            </LeftImageAnimation>
+                            <CenterImageAnimation className={'bounce-2'}>
+                                <Image src={IMG_REACTANGLE_HOME_02} width={200}/>
+                            </CenterImageAnimation>
+                            <Image src={IMG_HEADER}/>
+                            <RightImageAnimation className={'bounce-2'}>
+                                <Image src={IMG_REACTANGLE_HOME_03} width={200}/>
+                            </RightImageAnimation>
+                        </DivImage>
+                    </HeaderSection>
+                </>
+
                 <ContentSection id={'about'}>
                     <ItemWrapper>
                         <ItemGradient text={'Why SortEcom?'} greenText={'Grow your Shopify store'}/>
@@ -145,37 +167,36 @@ export const RowSection = styled.div`
   display: flex;
   align-items: center;
 `
-
+const BackgroundGradient = styled.div`
+position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(33.66% 63.09% at 50% 89.37%, rgba(0, 74, 247, 0.6) 0%, rgba(24, 160, 251, 0.6) 41.46%, rgba(246, 246, 247, 0.6) 100%)
+`
 const HeaderSection = styled.div`
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 1440px;
-  margin-top: 80px;
   margin-right: auto;
   margin-left: auto;
-  justify-content: space-between;
   align-items: center;
 `
-const LeftHeaderSection = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
-const RightHeaderSection = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 50%;
-`
+
+
 const TextHeaderBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: ${p => fontScale(60)}px;
+  font-size: ${p => fontScale(80)}px;
   line-height: 115.9%;
   letter-spacing: 0.01em;
   color: #1D1B29;
+  text-align: center;
 `
 const TextHeaderNormal = styled.p`
   font-style: normal;
@@ -304,10 +325,11 @@ export const DivCenter = styled.div`
 const TextBlueHeader = styled.span`
   font-style: normal;
   font-weight: 900;
-  font-size: ${p => fontScale(60)}px;
+  font-size: ${p => fontScale(80)}px;
   line-height: 115.9%;
   letter-spacing: 0.01em;
   color: #004AF7;
+  text-align: center;
 `
 
 export const DivFull = styled.div`
@@ -318,6 +340,37 @@ export const DivFull = styled.div`
 `
 export const ImageFull = styled(Image)`
   width: 100%;
+`
+const LeftImageAnimation = styled.div`
+  position: absolute;
+  top:40%;
+  left: 0;
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+`
+const RightImageAnimation = styled.div`
+  position: absolute;
+  top:40%;
+  right: 0;
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+`
+const CenterImageAnimation = styled.div`
+  position: absolute;
+  top:70%;
+  left: 20%;
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  z-index: 2000;
 `
 
 export default Home

@@ -97,7 +97,7 @@ const ItemDropDown = styled.button`
 const TextTitleDrop = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: ${p=>fontScale(16)}px;
   line-height: 170%;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -105,7 +105,7 @@ const TextTitleDrop = styled.span`
 const TextContentDrop = styled.span`
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: ${p=>fontScale(12)}px;
   line-height: 170%;
   display: flex;
   align-items: center;
