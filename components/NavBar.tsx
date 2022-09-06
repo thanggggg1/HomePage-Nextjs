@@ -55,7 +55,9 @@ export const NavBar = memo(function NavBar() {
                                                 <Image src={IC_PROTECTION} width={100} height={100}/>
                                             </div>
                                             <Column>
-                                                <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
+                                                <Link href="/Products/ProtectionPage" passHref>
+                                                    <TextNavBarBold href="/Products/ProtectionPage">Protection</TextNavBarBold>
+                                                </Link>
                                                 <TextNavBarSpan>All images, videos and content on your store belong to you only. prevents all intentional
                                                     violation of your copyright by disable right clicks, download, keyboard shortcuts, and Dev Tools.</TextNavBarSpan>
                                             </Column>
@@ -67,7 +69,9 @@ export const NavBar = memo(function NavBar() {
                                                 <Image src={IC_PROTECTION} width={100} height={100}/>
                                             </div>
                                             <Column>
-                                                <TextNavBarBold href="/Products/FreeGiftPage">Free gift</TextNavBarBold>
+                                                <Link href="/Products/FreeGiftPage" passHref>
+                                                    <TextNavBarBold href="/Products/FreeGiftPage">Freegift</TextNavBarBold>
+                                                </Link>
                                                 <TextNavBarSpan>Unlimited campaign creation: BOGO, buy one get discount,
                                                     buy one get free gifts, buy 2 get discount or get 1 product, and many customized ways to create a desired campaign, even the most complicated ones.
                                                 </TextNavBarSpan>

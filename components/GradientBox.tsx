@@ -22,24 +22,25 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding:60px 0;
+  padding: 60px 0;
   border-radius: 6px;
 `
 const TextHeading = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: ${p=> fontScale(40)}px;
+  font-size: ${p => fontScale(40)}px;
   line-height: 55px;
   letter-spacing: 0.025em;
   color: #F6F6F7;
+  text-align: center;
 `
 const TextHeadingGreen = styled(TextHeading)`
-color: #30C973;
+  color: #30C973;
 `
 const TextNormal = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: ${p=> fontScale(20)}px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 27px;
   text-align: center;
   letter-spacing: 0.025em;
@@ -57,7 +58,7 @@ const Button = styled.button`
 const TextButton = styled.span`
   font-style: normal;
   font-weight: 500;
-  font-size: ${p=> fontScale(20)}px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 24px;
   text-align: center;
   letter-spacing: -0.015em;

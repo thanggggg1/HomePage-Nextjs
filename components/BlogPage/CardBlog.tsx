@@ -5,13 +5,15 @@ import {IMG_CARD_PROBLEM} from "../../assets";
 import {DivSpaceBetWeen} from "../../pages";
 import {fontScale} from "../../utils/fontScale";
 import Link from "next/link";
+import UseWindowSize from "../../utils/useWindowSize";
 
 export const CardBlog = memo(function CardBlogHomePage() {
+    const {width}=UseWindowSize();
     return (
-        <Container>
+        <Container width={width}>
             <Image src={IMG_CARD_PROBLEM}/>
             <ContentDiv>
-                <DivSpaceBetWeen>
+                <DivSpaceBetWeen width={width}>
                     <TextCategory>Marketing</TextCategory>
                     <TextTime>Published 04.08.22</TextTime>
                 </DivSpaceBetWeen>
@@ -25,7 +27,7 @@ export const CardBlog = memo(function CardBlogHomePage() {
         </Container>
     )
 })
-const Container = styled.div`
+const Container = styled.div<{width:number}>`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -34,7 +36,7 @@ const Container = styled.div`
   height: 100%;
   box-shadow: 0px 2px 4px 0px #0000001A;
   border-radius: 6px;
-
+  margin-bottom: ${p=>p.width > 1024 ? 20 : 0}px;
 `
 const ContentDiv = styled.div`
   display: flex;

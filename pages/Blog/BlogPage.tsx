@@ -10,8 +10,10 @@ import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
 import {fontScale} from "../../utils/fontScale";
 import Head from "next/head";
+import UseWindowSize from "../../utils/useWindowSize";
 
 const BlogPage: NextPage = memo(function BlogPage() {
+    const {width}=UseWindowSize();
     return (
         <>
             <Head>
@@ -23,7 +25,7 @@ const BlogPage: NextPage = memo(function BlogPage() {
                 <>
                     <BackgroundGradient/>
                     <HeaderSection>
-                        <LeftHeaderSection>
+                        <LeftHeaderSection width={width}>
                             <TextHeaderBold>Everything you need
                                 to succeed with Sortecom.</TextHeaderBold>
                             <TextHeaderNormal>Join Sortecom newsletter to receive necessary resources
@@ -35,20 +37,20 @@ const BlogPage: NextPage = memo(function BlogPage() {
                                 </ButtonNavBar>
                             </RowSection>
                         </LeftHeaderSection>
-                        <RightHeaderSection>
+                        {width > 1024 &&  <RightHeaderSection>
                             <CardBlog/>
-                        </RightHeaderSection>
+                        </RightHeaderSection>}
                     </HeaderSection>
                 </>
                 <ProblemSection>
-                    <DivSpaceBetWeen>
+                    <DivSpaceBetWeen width={width}>
                         <TextBoldProblem>Read our Articles</TextBoldProblem>
                         <ButtonNavBar>
                             <TextButtonWhite>Read all</TextButtonWhite>
                         </ButtonNavBar>
                     </DivSpaceBetWeen>
                     <div>
-                        <DivRowFlex>
+                        <DivRowFlex width={width}>
                             <ItemProblemSection>
                                 <CardBlog/>
                             </ItemProblemSection>
@@ -60,7 +62,7 @@ const BlogPage: NextPage = memo(function BlogPage() {
                             </ItemProblemSection>
                         </DivRowFlex>
                         <br/>
-                        <DivRowFlex>
+                        <DivRowFlex width={width}>
                             <ItemProblemSection>
                                 <CardBlog/>
                             </ItemProblemSection>
@@ -72,7 +74,7 @@ const BlogPage: NextPage = memo(function BlogPage() {
                             </ItemProblemSection>
                         </DivRowFlex>
                         <br/>
-                        <DivRowFlex>
+                        <DivRowFlex width={width}>
                             <ItemProblemSection>
                                 <CardBlog/>
                             </ItemProblemSection>
@@ -132,8 +134,8 @@ const BackgroundGradient = styled.div`
   bottom: 0;
   background: radial-gradient(30% 28% at 81.56% 50%, rgba(0, 74, 247, 0.4) 0%, rgba(24, 160, 251, 0.4) 44.36%, rgba(246, 246, 247, 0.4) 100%);
 `
-const LeftHeaderSection = styled.div`
-  width: 50%;
+const LeftHeaderSection = styled.div<{width:number}>`
+  width: ${p=>p.width > 1024 ? '50%' : '100%'};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -215,8 +217,9 @@ const InputBox = styled.input`
   width: 40%;
 `
 
-export const DivRowFlex = styled.div`
+export const DivRowFlex = styled.div<{width:number}>`
   display: flex;
+  flex-direction: ${p=>p.width > 1024 ? 'row' : 'column'};
   flex: 1;
   flex-wrap: wrap;
 `

@@ -4,21 +4,24 @@ import Image from "next/image";
 import {IC_FACEBOOK, IC_INSTAGRAM, IC_LINKEDIN, IC_YOUTUBE, IMG_SHOPIFY_LOGO} from "../assets";
 import {fontScale} from "../utils/fontScale";
 import {DivRowFlex} from "../pages/Blog/BlogPage";
-import {DivFull, RowSection} from "../pages";
+import {RowSection} from "../pages";
 import Link from "next/link";
+import UseWindowSize from "../utils/useWindowSize";
+import {Column} from "./NavBar";
 
 export const Footer = memo(function Footer() {
+    const {width} = UseWindowSize();
     return (
         <Container id={'footer'}>
             <ContentContainer>
-                <BorderDivSpaceBetWeen>
-                    <LeftContainer>
+                <BorderDivSpaceBetWeen width={width}>
+                    {width && width > 1024 && <LeftContainer>
                         <TextLogoSortEcom>sortecom</TextLogoSortEcom>
                         <TextNormal>Built for Shopify & Shopify Plus</TextNormal>
-                        <Image src={IMG_SHOPIFY_LOGO} />
-                    </LeftContainer>
-                    <RightContainer>
-                        <DivRowFlex>
+                        <Image src={IMG_SHOPIFY_LOGO}/>
+                    </LeftContainer>}
+                    <RightContainer width={width}>
+                        <WrapperFooter>
                             <ColumnWrapper>
                                 <ColumnContent>
                                     <TextTileList>Menu</TextTileList>
@@ -27,7 +30,7 @@ export const Footer = memo(function Footer() {
                                     <Link href="/Blog/BlogPage" passHref>
                                         <TextListItem href="/Blog/BlogPage">Blog</TextListItem>
                                     </Link>
-                                    <TextListItem  href="#footer">Contact</TextListItem>
+                                    <TextListItem href="#footer">Contact</TextListItem>
                                 </ColumnContent>
                             </ColumnWrapper>
                             <ColumnWrapper>
@@ -73,12 +76,17 @@ export const Footer = memo(function Footer() {
                                     <TextTileList>Product</TextTileList>
                                     <TextListItem>Free Gift - BOGO </TextListItem>
                                     <TextListItem>Email Marketing </TextListItem>
-                                    <TextListItem href={'https://protect.sortecom.com/'}>Disable Right Click AntiTheft</TextListItem>
+                                    <TextListItem href={'https://protect.sortecom.com/'}>Disable Right Click
+                                        AntiTheft</TextListItem>
                                     <TextListItem>Banner - Free Shipping Bar </TextListItem>
                                 </ColumnContent>
                             </ColumnWrapper>
-                        </DivRowFlex>
+                        </WrapperFooter>
                     </RightContainer>
+                    {width < 1024 && <Column>
+                        <TextNormal>Built for Shopify & Shopify Plus</TextNormal>
+                        <Image src={IMG_SHOPIFY_LOGO} />
+                    </Column> }
                 </BorderDivSpaceBetWeen>
             </ContentContainer>
             <ContentContainer>
@@ -106,6 +114,7 @@ const Container = styled.div`
   padding: 60px 32px;
   width: 100%;
 `
+
 const ContentContainer = styled.div`
   display: flex;
   width: 100%;
@@ -120,12 +129,13 @@ const LeftContainer = styled.div`
   align-items: flex-start;
   width: 33%;
 `
-const RightContainer =styled.div`
-width: 66%;
+const RightContainer = styled.div<{ width: number }>`
+  width: ${p => p.width > 1024 ? '66%' : '100%'};
   display: flex;
 `
-const BorderDivSpaceBetWeen = styled.div`
+const BorderDivSpaceBetWeen = styled.div<{width:number}>`
   display: flex;
+  flex-direction: ${p=>p.width > 1024 ? 'row' :'column'};
   width: 100%;
   border-bottom: 1px solid #F6F6F7;
   padding-bottom: 40px;
@@ -134,19 +144,20 @@ const BorderDivSpaceBetWeen = styled.div`
 const TextNormal = styled.a`
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: ${p => fontScale(12)}px;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: #F6F6F7;
   margin-bottom: 6px;
-  &:hover{
-    color: #ffffff; !important;
+  &:hover {
+    color: #ffffff;
+  !important;
   }
 `
 const TextLogoSortEcom = styled.span`
   font-style: normal;
   font-weight: 800;
-  font-size: 20px;
+  font-size: ${p => fontScale(20)}px;
   line-height: 27px;
   letter-spacing: 0.01em;
   color: #F6F6F7;
@@ -155,7 +166,7 @@ const TextLogoSortEcom = styled.span`
 const TextTileList = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: ${p => fontScale(16)}px;
   line-height: 22px;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -167,31 +178,34 @@ const ColumnWrapper = styled.div`
   flex: 1;
 `
 const ColumnContent = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;  
+  align-items: flex-start;
   height: 100%;
 `
 const TextListItem = styled.a`
   font-weight: 600;
-  font-size: ${p=> fontScale(12)}px;
+  font-size: ${p => fontScale(12)}px;
   font-style: normal;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: #C9C9C9;
-  &:hover{
-    color: #ffffff; !important;
+
+  &:hover {
+    color: #ffffff;
+  !important;
   }
+
   margin: 6px 0;
 `
 const SImage = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 6px;
 `
 const LeftFooter = styled.div`
-display: flex;
+  display: flex;
   width: 50%;
 `
 const RightFooter = styled.div`
@@ -202,7 +216,12 @@ const RightFooter = styled.div`
   margin-left: -6px;
 `
 const RowFull = styled.div`
-display: flex;
+  display: flex;
   width: 100%;
   align-items: center;
+`
+export const WrapperFooter = styled.div`
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
 `

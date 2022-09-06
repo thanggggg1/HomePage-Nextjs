@@ -14,8 +14,10 @@ import {CardProblem} from "../../components/ProtectionPage/CardProblem";
 import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {fontScale} from "../../utils/fontScale";
 import Head from "next/head";
+import UseWindowSize from "../../utils/useWindowSize";
 
 const ProtectionPage: NextPage = memo(function ProtectionPage() {
+    const {width}=UseWindowSize();
     return (
         <>
             <Head>
@@ -44,16 +46,16 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                 <ProblemSection>
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
                     <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
-                    <DivSpaceBetWeen style={{alignItems: 'self-start'}}>
-                        <ItemProblemSection>
+                    <DivSpaceBetWeen style={{alignItems: 'self-start'}} width={width}>
+                        <ItemProblemSection width={width}>
                             <CardProblem title={'Your work belongs to you!'}
                                          content={'Original images and content are valuable digital assets that must be well-protected to prevent replication.'}/>
                         </ItemProblemSection>
-                        <ItemProblemSection>
+                        <ItemProblemSection  width={width}>
                             <CardProblem title={'Duplicated content affects SEO'}
                                          content={'Search engines prize stores with higher ranking for original content, duplicated work will definitely impact your SEO performance, espeacially on Google'}/>
                         </ItemProblemSection>
-                        <ItemProblemSection>
+                        <ItemProblemSection  width={width}>
                             <CardProblem title={'Lack of a complete solution'}
                                          content={'Because there are various ways to violate your copyright, you will need a comprehensive solution to avoid fraudulent practices.'}/>
                         </ItemProblemSection>
@@ -62,15 +64,15 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                 <ContentSection id={'about'}>
                     <TextTitleProblem>OUR SOLUTIONS</TextTitleProblem>
                     <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
-                    <DivSpaceBetWeen>
-                        <ItemWrapper>
+                    <DivSpaceBetWeen width={width}>
+                        <ItemWrapper width={width}>
                             <ItemGradient text={'All-in-one protection'} greenText={'What you need is an'}/>
                             <CardContentSection header={'Disable Keyboard Shortcuts\n' +
                                 'Disable Dev tools (F12)'}
                                                 content={'Vistors on your site can not access to the function of these keyboard shortcuts:' +
                                                     ''} textButton={'Learn more'}/>
                         </ItemWrapper>
-                        <ItemWrapper>
+                        <ItemWrapper width={width}>
                             <CardContentSection header={'Disable Right-click'}
                                                 content={'Vistors on your site are not allowed to Text Selection and use Right-click on the mouse.'}
                                                 textButton={'Install the app now'}/>
@@ -78,7 +80,7 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                                                 content={'Block users from specific countries'}
                                                 textButton={'Experience our app'}/>
                         </ItemWrapper>
-                        <ItemWrapper>
+                        <ItemWrapper width={width}>
                             <CardContentSection header={'Free Life-time Support'}
                                                 content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, are wondering how it’s compatible with your store’s Shopify theme.'}
                                                 textButton={'Contact our support'}/>
@@ -88,9 +90,10 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                 </ContentSection>
                 <BlogSection>
                     <TextBoldProblem>Videos - App intro, tutorial and many more</TextBoldProblem>
-                    <IframeVideo height="800" src="https://www.youtube.com/embed/pBlqQGkPBjE"
+                    <IframeVideo src="https://www.youtube.com/embed/pBlqQGkPBjE"
                                  title="YouTube video player" frameBorder="0"
                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                 width={width}
                                  allowFullScreen></IframeVideo>
                     <br/>
                     <ButtonNavBar>
@@ -168,10 +171,10 @@ const ContentSection = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-const ItemWrapper = styled.div`
+const ItemWrapper = styled.div<{width:number}>`
   display: flex;
   flex-direction: column;
-  width: 32%;
+  width: ${p => p.width > 1024 ? '32%' : '100%'};
 `
 const ProblemSection = styled.div`
   display: flex;
@@ -205,11 +208,12 @@ const TextBoldProblem = styled.div`
   color: #000000;
   margin-bottom: 20px;
 `
-const ItemProblemSection = styled.div`
+const ItemProblemSection = styled.div<{width:number}>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 32%;
+  width: ${p=>p.width > 1024 ? '32%' : '100%'};
+  margin-bottom: ${p=>p.width > 1024 ? 0 : 20}px;
 `
 const BlogSection = styled.div`
   display: flex;
@@ -223,31 +227,14 @@ const BlogSection = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-const IframeVideo = styled.iframe`
+const IframeVideo = styled.iframe<{width:number}>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: ${p=>p.width > 1024 ? 800 : 200}px;
 `
-const TextBlogBold = styled.span`
-  font-style: normal;
-  font-weight: 700;
-  font-size: ${p => fontScale(32)}px;
-  line-height: 44px;
-  letter-spacing: 0.025em;
-  color: #000000;
-`
-const ListBullets = styled.ul`
-  list-style-type: disc;
-`
-const ItemList = styled.li`
-  font-style: normal;
-  font-weight: 600;
-  font-size: ${p => fontScale(16)}px;
-  line-height: 22px;
-  letter-spacing: 0.025em;
-  color: #1D1B29;
-`
+
 const LinkTextGray = styled.a`
   font-style: normal;
   font-weight: 400;

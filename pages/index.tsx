@@ -6,9 +6,9 @@ import {ButtonNavBar, NavBar, TextButtonWhite} from "../components/NavBar";
 import {
     IMG_DIVIDE_SECTION,
     IMG_HEADER,
-    IMG_REACTANGLE_FREEGIFT_01,
     IMG_REACTANGLE_HOME_01,
-    IMG_REACTANGLE_HOME_02, IMG_REACTANGLE_HOME_03
+    IMG_REACTANGLE_HOME_02,
+    IMG_REACTANGLE_HOME_03
 } from "../assets";
 import {CardContentSection} from "../components/HomePage/CardContentSection";
 import {ItemGradient} from "../components/ItemGradient";
@@ -20,13 +20,15 @@ import Marquee from "react-fast-marquee";
 import {fontScale} from "../utils/fontScale";
 import {DivImage} from "./Products/FreeGiftPage";
 import Head from "next/head";
+import UseWindowSize from "../utils/useWindowSize";
 
 const Home: NextPage = memo(function Home() {
+    const {width} = UseWindowSize();
     return (
         <>
             <Head>
                 <title>SortEcom</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
             </Head>
             <NavBar/>
             <Container>
@@ -45,30 +47,30 @@ const Home: NextPage = memo(function Home() {
                         </div>
                         <br/>
                         <br/>
-                        <DivImage>
+                        {width && width > 1024 && <DivImage>
                             <LeftImageAnimation className={'bounce-2'}>
-                                <Image src={IMG_REACTANGLE_HOME_01} width={200}/>
+                                <Image src={IMG_REACTANGLE_HOME_01}/>
                             </LeftImageAnimation>
                             <CenterImageAnimation className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_HOME_02} width={200}/>
                             </CenterImageAnimation>
+
                             <Image src={IMG_HEADER}/>
                             <RightImageAnimation className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_HOME_03} width={200}/>
                             </RightImageAnimation>
-                        </DivImage>
+                        </DivImage>}
                     </HeaderSection>
                 </>
-
-                <ContentSection id={'about'}>
-                    <ItemWrapper>
+                <ContentSection id={'about'} width={width}>
+                    <ItemWrapper width={width}>
                         <ItemGradient text={'Why SortEcom?'} greenText={'Grow your Shopify store'}/>
                         <CardContentSection header={'Various kinds of app \n' +
                             'for every problems'}
                                             content={'We provide apps that deal with daily struggles of a merchant.'}
                                             isList={true} textButton={'Learn More'}/>
                     </ItemWrapper>
-                    <ItemWrapper>
+                    <ItemWrapper width={width}>
                         <CardContentSection header={'Trusted by \n' +
                             'worldwide merchants'} content={'Used by 100K+ merchants with 100% satisfaction'}
                                             isList={false} textButton={'What they talk about'}/>
@@ -76,7 +78,7 @@ const Home: NextPage = memo(function Home() {
                                             content={'We develop apps that customer-centric and really easy to use.'}
                                             isList={false} textButton={'Learn More'}/>
                     </ItemWrapper>
-                    <ItemWrapper>
+                    <ItemWrapper width={width}>
                         <CardContentSection header={'Free Life-time Support'}
                                             content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, ' +
                                                 'are wondering how it’s compatible with your store’s Shopify theme, or require a code adjustment to fit your needs.'}
@@ -94,7 +96,7 @@ const Home: NextPage = memo(function Home() {
                     <TextFeedbackNormal>Join over +10,000 Shopify brands that run their business on Sortecom.
                         We are in the business of helping your business to provide your customers with more
                         value.</TextFeedbackNormal>
-                    <DivSpaceBetWeen>
+                    <DivSpaceBetWeen width={width}>
                         <StatisticalWrapper>
                             <TextFeedBackNumber>100 thousand</TextFeedBackNumber>
                             <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>
@@ -135,7 +137,7 @@ const Home: NextPage = memo(function Home() {
             </FeedbackSection>
             <Container>
                 <BlogSection>
-                    <DivSpaceBetWeen>
+                    <DivSpaceBetWeen width={width}>
                         <TextBlogBold>Our successful implementations</TextBlogBold>
                         <ButtonNavBar>
                             <TextButtonWhite>Read all blogs</TextButtonWhite>
@@ -168,7 +170,7 @@ export const RowSection = styled.div`
   align-items: center;
 `
 const BackgroundGradient = styled.div`
-position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -207,10 +209,10 @@ const TextHeaderNormal = styled.p`
   color: #1D1B29;
 `
 
-const ContentSection = styled.div`
+const ContentSection = styled.div<{ width: number }>`
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: ${p => p.width > 1024 ? 'row' : 'column'};
   align-items: center;
   padding: 100px 0;
   width: 100%;
@@ -220,10 +222,10 @@ const ContentSection = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-const ItemWrapper = styled.div`
+const ItemWrapper = styled.div<{ width: number }>`
   display: flex;
   flex-direction: column;
-  width: 32%;
+  width: ${p => p.width > 1024 ? '32%' : '100%'};
 `
 const FeedbackSection = styled.div`
   display: flex;
@@ -301,8 +303,9 @@ const BlogSection = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-export const DivSpaceBetWeen = styled.div`
+export const DivSpaceBetWeen = styled.div<{ width: number }>`
   display: flex;
+  flex-direction: ${p => p.width > 1024 ? 'row' : 'column'};
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -343,7 +346,7 @@ export const ImageFull = styled(Image)`
 `
 const LeftImageAnimation = styled.div`
   position: absolute;
-  top:40%;
+  top: 40%;
   left: 0;
   align-self: flex-end;
   animation-duration: 2s;
@@ -353,7 +356,7 @@ const LeftImageAnimation = styled.div`
 `
 const RightImageAnimation = styled.div`
   position: absolute;
-  top:40%;
+  top: 40%;
   right: 0;
   align-self: flex-end;
   animation-duration: 2s;
@@ -363,7 +366,7 @@ const RightImageAnimation = styled.div`
 `
 const CenterImageAnimation = styled.div`
   position: absolute;
-  top:70%;
+  top: 70%;
   left: 20%;
   align-self: flex-end;
   animation-duration: 2s;

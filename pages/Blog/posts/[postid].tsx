@@ -12,7 +12,10 @@ import {TableContents} from "../../../components/BlogPage/TableContents";
 import $ from 'jquery'
 import {fontScale} from "../../../utils/fontScale";
 import Head from "next/head";
+import UseWindowSize from "../../../utils/useWindowSize";
 const PostBlog = memo(function PostBlog() {
+
+    const {width}=UseWindowSize();
     const addClassOnScroll = useCallback(()=>{
         const windowTop = $(window).scrollTop();
         $('section[id]').each(function (index, elem) {
@@ -46,7 +49,7 @@ const PostBlog = memo(function PostBlog() {
                     </div>
                 </HeaderSection>
                 <ContentContainer>
-                    <LeftContainer>
+                    <LeftContainer width={width}>
                         <TextHeading>How ClickUp’s Solution Engineering Team Uses ClickUp</TextHeading>
                         <RowStart>
                             <Image src={IC_USER} width={28} height={28}/>
@@ -252,9 +255,9 @@ const PostBlog = memo(function PostBlog() {
                         <br/>
                         <br/>
                     </LeftContainer>
-                    <RightContainer>
+                    {width > 1024 &&  <RightContainer>
                         <TableContents/>
-                    </RightContainer>
+                    </RightContainer>}
                 </ContentContainer>
                 <ContentContainer>
                     <RowSection>
@@ -265,7 +268,7 @@ const PostBlog = memo(function PostBlog() {
                     </RowSection>
                 </ContentContainer>
                 <ContentContainer>
-                    <DivRowFlex>
+                    <DivRowFlex width={width}>
                         <ItemArticle>
                             <CardArticle/>
                         </ItemArticle>
@@ -312,10 +315,10 @@ const HeaderSection = styled.div`
   align-items: center;
 `
 
-const LeftContainer = styled.div`
+const LeftContainer = styled.div<{width:number}>`
   display: flex;
   flex-direction: column;
-  width: 62%;
+  width: ${p=>p.width > 1024 ? '62%' : '100%'}
 `
 const RightContainer = styled.div`
   display: flex;

@@ -21,9 +21,8 @@ display: flex;
   justify-content: center;
   background-color: #18A0FB;
   border-radius: 6px;
-  padding: 40px 0;
+  padding: 40px 12px;
   box-shadow: 0px 2px 4px 0px #0000001A;
-
 ;
 `
 const IconComment = styled.div`
