@@ -4,13 +4,15 @@ import {DivSpaceBetWeen, RowSection} from "../../pages";
 import Image from "next/image";
 import {IC_CLOCK, IC_USER} from "../../assets";
 import {fontScale} from "../../utils/fontScale";
+import UseWindowSize from "../../utils/useWindowSize";
 
 export const CardArticle = memo(function CardArticle() {
+    const {width}=UseWindowSize();
     return (
         <Container>
             <TextHeading>Spekit: Using ClickUp For Effective Quarterly OKR Tracking</TextHeading>
             <br/>
-            <DivSpaceBetWeen>
+            <DivSpaceBetWeen width={width}>
                 <RowSection>
                     <Image src={IC_USER} width={32} height={32}/>
                     <TextNormalBold>Lelia Cruz</TextNormalBold>

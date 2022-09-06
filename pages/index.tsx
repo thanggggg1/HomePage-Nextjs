@@ -188,7 +188,7 @@ const HeaderSection = styled.div`
   margin-right: auto;
   margin-left: auto;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 80px;
 `
 
 
