@@ -313,6 +313,7 @@ const HeaderSection = styled.div`
   margin-right: auto;
   margin-left: auto;
   align-items: center;
+  margin-top: 80px;
 `
 
 const LeftContainer = styled.div<{width:number}>`

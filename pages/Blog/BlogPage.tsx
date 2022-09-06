@@ -117,8 +117,7 @@ const HeaderSection = styled.div`
   justify-content: center;
   flex-direction: row;
   position: relative;
-  margin-top: 20px;
-  padding-top: 100px;
+  margin-top: 80px;
   width: 100%;
   height: 50vh;
   max-width: 1440px;
