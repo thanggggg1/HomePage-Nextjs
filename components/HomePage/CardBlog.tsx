@@ -4,36 +4,40 @@ import Image from "next/image";
 import {IMG_BLOG_EXAMPLE} from "../../assets";
 import {ButtonNavBar, TextButtonWhite} from "../NavBar";
 import {fontScale} from "../../utils/fontScale";
+import UseWindowSize from "../../utils/useWindowSize";
 
 export const CardBlogHomePage = memo(function CardBlogHomePage() {
+    const {width}=UseWindowSize();
     return (
-        <Container>
-            <LeftSection>
+        <Container width={width}>
+            <LeftSection width={width}>
                 <TextHeading>Various kinds of app for every problems</TextHeading>
+                <br/>
                 <TextNormal>We provide apps that deal with daily struggles of a merchant.</TextNormal>
                 <ListBullets>
                     <ItemList>Sending email/SMS in bulk</ItemList>
                     <ItemList>Special gift offers</ItemList>
                     <ItemList>Disable right-click & Content protection</ItemList>
                 </ListBullets>
-                <div>
+                <ButtonItem width={width}>
                     <ButtonNavBar>
                         <TextButtonWhite>Read full story</TextButtonWhite>
                     </ButtonNavBar>
-                </div>
+                </ButtonItem>
             </LeftSection>
-            <RightSection>
+            <RightSection width={width}>
                 <Image src={IMG_BLOG_EXAMPLE}/>
             </RightSection>
         </Container>
     )
 })
-const Container = styled.div`
+const Container = styled.div<{width:number}>`
   display: flex;
+  flex-direction: ${p=>p.width > 1024 ? 'row' : 'column'};
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  padding: 70px;
+  padding: 10%;
   margin-top: 20px;
   border-radius: 6px;
   width: 100%;
@@ -65,15 +69,20 @@ const ItemList = styled.li`
   letter-spacing: 0.025em;
   color: rgba(29, 27, 41, 0.5);
 `
-const LeftSection = styled.div`
-   width: 49%;
+const LeftSection = styled.div<{width:number}>`
   display: flex;
+  width: ${p=>p.width > 1024 ? '49%' : '100%'};
   flex-direction: column;
   justify-content: center;
 `
-const RightSection = styled.div`
+const RightSection = styled.div<{width:number}>`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 49%;
+  width: ${p=>p.width > 1024 ? '49%' : '100%'}
+`
+const ButtonItem = styled.div<{width:number}>`
+  display: flex;
+  align-items: center;
+  justify-content: ${p=>p.width > 1024 ? 'flex-start' : 'center'};
 `

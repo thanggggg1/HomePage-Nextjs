@@ -8,6 +8,15 @@ export const IMG_DIVIDE_SECTION = require('../public/images/img_divide_section.p
 export const IMG_TOGGLE =require('../public/images/img_toogle.svg')
 export const IMG_BACKGROUND_FOOTER = require('../public/img/img_background_footer.svg')
 export const IMG_BACKGROUND_FREEGIFT= require('../public/images/img_background_freegift.svg')
+export const IMG_REACTANGLE_FREEGIFT_01 = require('../public/images/img_freegift_reactangle01.svg')
+export const IMG_REACTANGLE_FREEGIFT_02 = require('../public/images/img_freegift_reactangle02.svg')
+export const IMG_REACTANGLE_HOME_01 = require('../public/images/img_reactangle_home01.svg')
+export const IMG_REACTANGLE_HOME_02 = require('../public/images/img_reactangle_home02.svg')
+export const IMG_REACTANGLE_HOME_03 = require('../public/images/img_reactangle_home03.svg')
+export const IMG_SHOPIFY_LOGO = require('../public/images/img_shopify_logo.svg')
+export const IMG_CLICKUP_EXAMPLE = require('../public/images/img_clickup_example.png')
+
+
 
 export const IC_CONTENT_01 = require('../public/icons/ic_content01.svg')
 export const IC_CONTENT_02 = require('../public/icons/ic_content02.svg')

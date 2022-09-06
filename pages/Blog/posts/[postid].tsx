@@ -1,8 +1,8 @@
-import {memo, useCallback, useEffect, useRef, useState} from "react";
+import React, {memo, useCallback, useEffect, useRef, useState} from "react";
 import {NavBar} from "../../../components/NavBar";
 import styled from "styled-components";
 import Image from 'next/image'
-import {IC_CALENDAR, IC_UPLOAD, IC_USER, IMG_CARD_PROBLEM} from "../../../assets";
+import {IC_CALENDAR, IC_UPLOAD, IC_USER, IMG_CARD_PROBLEM, IMG_CLICKUP_EXAMPLE} from "../../../assets";
 import {RowSection} from "../../index";
 import {CardQuestions} from "../../../components/BlogPage/CardQuestions";
 import {CardArticle} from "../../../components/BlogPage/CardArticle";
@@ -10,7 +10,12 @@ import {DivRowFlex} from "../BlogPage";
 import {Footer} from "../../../components/Footer";
 import {TableContents} from "../../../components/BlogPage/TableContents";
 import $ from 'jquery'
+import {fontScale} from "../../../utils/fontScale";
+import Head from "next/head";
+import UseWindowSize from "../../../utils/useWindowSize";
 const PostBlog = memo(function PostBlog() {
+
+    const {width}=UseWindowSize();
     const addClassOnScroll = useCallback(()=>{
         const windowTop = $(window).scrollTop();
         $('section[id]').each(function (index, elem) {
@@ -32,29 +37,33 @@ const PostBlog = memo(function PostBlog() {
     },[])
     return (
         <>
+            <Head>
+                <title>SortEcom - Post Blog</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <NavBar/>
             <Container>
-                <ContentContainer>
-                    <div style={{width: '100%'}}>
-                        <Image src={IMG_CARD_PROBLEM} layout={'responsive'} priority/>
+                <HeaderSection>
+                    <div style={{width: '100%',borderRadius:6}}>
+                        <Image src={IMG_CLICKUP_EXAMPLE} layout={'responsive'} priority />
                     </div>
-                </ContentContainer>
+                </HeaderSection>
                 <ContentContainer>
-                    <LeftContainer>
+                    <LeftContainer width={width}>
                         <TextHeading>How ClickUp’s Solution Engineering Team Uses ClickUp</TextHeading>
                         <RowStart>
-                            <Image src={IC_USER} width={48} height={48}/>
+                            <Image src={IC_USER} width={28} height={28}/>
                             <UserInfo>
                                 <TextNormalBold>Liam Marhonry</TextNormalBold>
                                 <br/>
                                 <TextNormal>Senior Solutions Engineer</TextNormal>
                             </UserInfo>
                             <Info>
-                                <Image src={IC_CALENDAR} width={48} height={48}/>
+                                <Image src={IC_CALENDAR} width={28} height={28}/>
                                 <TextNormalBold> August 8 2022</TextNormalBold>
                             </Info>
                             <Info>
-                                <Image src={IC_CALENDAR} width={48} height={48}/>
+                                <Image src={IC_CALENDAR} width={28} height={28}/>
                                 <TextNormalBold>Max 7 min read</TextNormalBold>
                             </Info>
                         </RowStart>
@@ -173,7 +182,7 @@ const PostBlog = memo(function PostBlog() {
                         </section>
 
 
-                    {/*    Section 04*/}
+                        {/*    Section 04*/}
                         <section id={'04'}>
                             <TextTitle>4. Template Docs</TextTitle>
                             <TextContent>Within ClickUp, you can create templates for just about anything!
@@ -194,28 +203,28 @@ const PostBlog = memo(function PostBlog() {
                             </TextContent>
                         </section>
 
-                    {/*    Section 05*/}
-                      <section id={'05'} >
-                          <TextTitle>5. Time Tracking</TextTitle>
-                          <TextContent>Understanding where your time is being spent is important, especially for Solutions Engineers. Time is money—literally!
+                        {/*    Section 05*/}
+                        <section id={'05'} >
+                            <TextTitle>5. Time Tracking</TextTitle>
+                            <TextContent>Understanding where your time is being spent is important, especially for Solutions Engineers. Time is money—literally!
 
-                          </TextContent>
-                          <TextContent>As our team continues to grow and scale, maximizing efficiency is key, so the team wants to understand where and how time is spent.
+                            </TextContent>
+                            <TextContent>As our team continues to grow and scale, maximizing efficiency is key, so the team wants to understand where and how time is spent.
 
-                          </TextContent>
-                          <TextContent>Time tracking labels to the rescue.
-                          </TextContent>
-                          <TextContent>However, the insights into how our time is spent don’t stop here! By using time tracking labels, we see exactly what we’re doing or not doing—all within the time we’d previously spent working on our assigned accounts.
+                            </TextContent>
+                            <TextContent>Time tracking labels to the rescue.
+                            </TextContent>
+                            <TextContent>However, the insights into how our time is spent don’t stop here! By using time tracking labels, we see exactly what we’re doing or not doing—all within the time we’d previously spent working on our assigned accounts.
 
-                          </TextContent>
-                          <Image src={IMG_CARD_PROBLEM} layout={'responsive'}/>
-                          <TextItalic>Time tracking labels allow the team to see a granular view of where time is spent, so processes can be continuously improved
-                          </TextItalic>
-                          <TextContent>This helps us deliver on our No. 1 core value, creating the best customer experience, both for our sales team partners as well as potential customers.
+                            </TextContent>
+                            <Image src={IMG_CARD_PROBLEM} layout={'responsive'}/>
+                            <TextItalic>Time tracking labels allow the team to see a granular view of where time is spent, so processes can be continuously improved
+                            </TextItalic>
+                            <TextContent>This helps us deliver on our No. 1 core value, creating the best customer experience, both for our sales team partners as well as potential customers.
 
-                          </TextContent>
-                      </section>
-                    {/*    Footer*/}
+                            </TextContent>
+                        </section>
+                        {/*    Footer*/}
                         <section id={'ending'}>
                             <TextTitle>Using ClickUp to Enhance Collaboration and Keep Our Team Organized
                             </TextTitle>
@@ -232,7 +241,7 @@ const PostBlog = memo(function PostBlog() {
 
                             </TextContent>
                         </section>
-                    {/*    Related Articles*/}
+                        {/*    Related Articles*/}
                         <TextNormalBold>Related Articles:
                         </TextNormalBold>
                         <ListArticles>
@@ -246,9 +255,9 @@ const PostBlog = memo(function PostBlog() {
                         <br/>
                         <br/>
                     </LeftContainer>
-                    <RightContainer>
+                    {width > 1024 &&  <RightContainer>
                         <TableContents/>
-                    </RightContainer>
+                    </RightContainer>}
                 </ContentContainer>
                 <ContentContainer>
                     <RowSection>
@@ -259,7 +268,7 @@ const PostBlog = memo(function PostBlog() {
                     </RowSection>
                 </ContentContainer>
                 <ContentContainer>
-                    <DivRowFlex>
+                    <DivRowFlex width={width}>
                         <ItemArticle>
                             <CardArticle/>
                         </ItemArticle>
@@ -295,11 +304,21 @@ const ContentContainer = styled.div`
   margin-left: auto;
   justify-content: space-between;
 `
+const HeaderSection = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+`
 
-const LeftContainer = styled.div`
+const LeftContainer = styled.div<{width:number}>`
   display: flex;
   flex-direction: column;
-  width: 62%;
+  width: ${p=>p.width > 1024 ? '62%' : '100%'}
 `
 const RightContainer = styled.div`
   display: flex;
@@ -314,7 +333,7 @@ const RightContainer = styled.div`
 const TextHeading = styled.h1`
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: ${p=>fontScale(40)}px;
   line-height: 55px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -322,7 +341,7 @@ const TextHeading = styled.h1`
 const TextTitle = styled.p`
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: ${p=>fontScale(32)}px;
   line-height: 44px;
   letter-spacing: 0.025em;
   color: #000000;
@@ -330,12 +349,13 @@ const TextTitle = styled.p`
 const TextNormal = styled.span`
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: ${p=>fontScale(13)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: #000000;
 `
 const TextNormalBold = styled(TextNormal)`
+  font-size: ${p=>fontScale(14)}px;
   font-weight: 600;
 `
 const Info = styled.div`
@@ -357,8 +377,8 @@ const RowStart = styled(RowSection)`
 const TextContent = styled.p`
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: ${p=>fontScale(18)}px;
+  line-height: 30px;
   letter-spacing: 0.025em;
   color: #292d34;
 `
@@ -372,7 +392,7 @@ const ListArticles= styled.ul`
 const ListItem = styled.li`
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${p=>fontScale(16)}px;
   line-height: 16px;
   letter-spacing: 0.025em;
   color: #18A0FB;

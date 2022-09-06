@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {DivSpaceBetWeen, RowSection} from "../../pages";
 import Image from "next/image";
 import {IC_CLOCK, IC_USER} from "../../assets";
+import {fontScale} from "../../utils/fontScale";
 
 export const CardArticle = memo(function CardArticle() {
     return (
@@ -36,7 +37,7 @@ const Container = styled.div`
 const TextHeading = styled.a`
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
+  font-size: ${p=>fontScale(22)}px;
   line-height: 30px;
   letter-spacing: 0.025em;
   color: #1D1B29;
@@ -45,7 +46,7 @@ const TextHeading = styled.a`
 const TextNormalBold = styled.span`
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: ${p=>fontScale(13)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: #000000;
@@ -53,7 +54,7 @@ const TextNormalBold = styled.span`
 const TextTime = styled.span`
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: ${p=>fontScale(13)}px;
   line-height: 22px;
   letter-spacing: 0.025em;
   color: #333;
