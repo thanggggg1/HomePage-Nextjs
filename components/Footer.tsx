@@ -96,7 +96,9 @@ export const Footer = memo(function Footer() {
                     </LeftFooter>
                     <RightFooter>
                         <TextNormal>Terms of service</TextNormal>
-                        <TextNormal href={'https://protect.sortecom.com/doc/policy.html'}>Private Policy</TextNormal>
+                        <Link href={'/Policy/PrivacyPolicy'} passHref>
+                            <TextNormal href={'/Policy/PrivacyPolicy'}>Private Policy</TextNormal>
+                        </Link>
                         <TextNormal>Support Policy</TextNormal>
                         <TextNormal>Cookies</TextNormal>
                     </RightFooter>

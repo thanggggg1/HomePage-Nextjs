@@ -41,7 +41,7 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                             <LeftImage className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_FREEGIFT_01} width={200}/>
                             </LeftImage>
-                            <Image src={IMG_BACKGROUND_FREEGIFT}/>
+                            <Image src={IMG_BACKGROUND_FREEGIFT} priority={true}/>
                             <RightImage className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_FREEGIFT_02} width={200}/>
                             </RightImage>

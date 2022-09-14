@@ -43,7 +43,7 @@ export const NavBar = memo(function NavBar() {
                             <DivOptionNavBar>
                                 <TextNavBar href="#about">About us</TextNavBar>
                             </DivOptionNavBar>
-                            <DivOptionNavBar className={'hoverable-dropdown'} style={{position: "relative"}}>
+                            <DivOptionNavBar className={'hoverable-dropdown'} >
                                 <RowSection>
                                     <TextNavBar>Products</TextNavBar>
                                     <Image src={IC_SHAPE_DOWN} className={'change'}/>
@@ -135,6 +135,7 @@ const ImageLogo = styled(Image)`
 `
 const DivOptionNavBar = styled.div`
 margin-left: 80px;
+  cursor: pointer;
 `
 
 const RowNavBar = styled.div`

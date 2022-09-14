@@ -55,7 +55,7 @@ const Home: NextPage = memo(function Home() {
                                 <Image src={IMG_REACTANGLE_HOME_02} width={200}/>
                             </CenterImageAnimation>
 
-                            <Image src={IMG_HEADER}/>
+                            <Image src={IMG_HEADER} priority={true}/>
                             <RightImageAnimation className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_HOME_03} width={200}/>
                             </RightImageAnimation>

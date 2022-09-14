@@ -40,7 +40,7 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                         </ButtonNavBar>
                         <LinkTextGray href={'https://youtu.be/pBlqQGkPBjE'} target={'_blank'} rel="noreferrer">Watch video
                             demo</LinkTextGray>
-                        <Image src={IMG_PROTECTION}/>
+                        <Image src={IMG_PROTECTION} priority={true}/>
                     </HeaderSection>
                 </>
                 <ProblemSection>
@@ -244,5 +244,8 @@ const LinkTextGray = styled.a`
   text-decoration-line: underline;
   color: rgba(41, 45, 50, 0.5);
   margin-left: 20px;
+  &:hover{
+    color: white;
+  }
 `
 export default ProtectionPage
