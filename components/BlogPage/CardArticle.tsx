@@ -7,12 +7,11 @@ import {fontScale} from "../../utils/fontScale";
 import UseWindowSize from "../../utils/useWindowSize";
 
 export const CardArticle = memo(function CardArticle() {
-    const {width}=UseWindowSize();
     return (
         <Container>
             <TextHeading>Spekit: Using ClickUp For Effective Quarterly OKR Tracking</TextHeading>
             <br/>
-            <DivSpaceBetWeen width={width}>
+            <InfoSection>
                 <RowSection>
                     <Image src={IC_USER} width={32} height={32}/>
                     <TextNormalBold>Lelia Cruz</TextNormalBold>
@@ -21,7 +20,7 @@ export const CardArticle = memo(function CardArticle() {
                     <Image src={IC_CLOCK} width={32} height={32}/>
                     <TextTime>Max 7min read</TextTime>
                 </RowSection>
-            </DivSpaceBetWeen>
+            </InfoSection>
         </Container>
     )
 })
@@ -60,4 +59,10 @@ const TextTime = styled.span`
   line-height: 22px;
   letter-spacing: 0.025em;
   color: #333;
+`
+const InfoSection =styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `
