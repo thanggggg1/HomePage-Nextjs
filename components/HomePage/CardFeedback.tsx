@@ -19,7 +19,9 @@ export const CardFeedback = memo(function CardFeedback(props: CardFeedbackProps)
     return (
         <Container>
             <LeftDiv>
-                <Image src={IC_CONTENT_01}/>
+                <div style={{width:'30%'}}>
+                    <Image src={iconUri} layout={'responsive'}/>
+                </div>
                 <TextHeading>{name}</TextHeading>
             </LeftDiv>
             <br/>
@@ -40,6 +42,7 @@ const Container = styled.div`
   padding: 40px 20px;
   background-color: #F6F6F7;
   border-radius: 6px;
+  height: 100%;
 `
 const TextHeading = styled.span`
   font-style: normal;
@@ -48,6 +51,7 @@ const TextHeading = styled.span`
   line-height: 38px;
   letter-spacing: 0.025em;
   color: #1D1B29;
+  margin-left: 20px;
 `
 const TextNormal = styled.span`
   font-style: normal;
@@ -62,8 +66,4 @@ const ContentDiv = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  line-height: 16px; /* fallback */
-  max-height: 120px; /* fallback */
-  -webkit-line-clamp: 4; /* number of lines to show */
-  -webkit-box-orient: vertical;
 `

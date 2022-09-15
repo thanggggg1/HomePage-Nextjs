@@ -15,7 +15,16 @@ export const IMG_REACTANGLE_HOME_02 = require('../public/images/img_reactangle_h
 export const IMG_REACTANGLE_HOME_03 = require('../public/images/img_reactangle_home03.svg')
 export const IMG_SHOPIFY_LOGO = require('../public/images/img_shopify_logo.svg')
 export const IMG_CLICKUP_EXAMPLE = require('../public/images/img_clickup_example.png')
-
+export const IMG_PIPCORN_LOGO= require('../public/images/pipcorn-logo.png')
+export const IMG_TRIANGL_LOGO = require('../public/images/triangl-logo.png')
+export const IMG_LEATHERHEAD_LOGO=require('../public/images/Leather_head_logo.png')
+export const IMG_BREMONT_LOGO = require('../public/images/bremont-logo.png')
+export const IMG_BITE_LOGO = require('../public/images/bite_logo.png')
+export const IMG_NEW_MARKET_LOGO=require('../public/images/new_market_logo.png')
+export const IMG_LUCY_LOGO = require('../public/images/lucy_logo.png')
+export const IMG_QUAKER_LOGO = require('../public/images/quaker-marine_logo.png')
+export const IMG_BRIGHTLAND_LOGO = require('../public/images/brightland_logo.jpg')
+export const IMG_POLAROID_LOGO = require('../public/images/Polaroid_Logo.png')
 
 
 export const IC_CONTENT_01 = require('../public/icons/ic_content01.svg')
