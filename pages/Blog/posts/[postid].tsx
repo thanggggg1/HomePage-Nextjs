@@ -13,7 +13,8 @@ import $ from 'jquery'
 import {fontScale} from "../../../utils/fontScale";
 import Head from "next/head";
 import UseWindowSize from "../../../utils/useWindowSize";
-const PostBlog = memo(function PostBlog() {
+import {NextPage} from "next";
+const PostBlog:NextPage = memo(function PostBlog() {
 
     const {width}=UseWindowSize();
     const addClassOnScroll = useCallback(()=>{

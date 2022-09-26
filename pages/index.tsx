@@ -40,7 +40,9 @@ const Home: NextPage = memo(function Home() {
         <>
             <Head>
                 <title>SortEcom</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                <meta name="description" content="Shopify App to support merchants"/>
+                <meta name="descripn" content="Powerful apps make your ecommerce business better"/>
+                <meta name="title" content="Free Gift | Content Protection | Email Marketing"/>
             </Head>
             <NavBar/>
             <Container>

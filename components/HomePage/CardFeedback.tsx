@@ -18,12 +18,12 @@ export const CardFeedback = memo(function CardFeedback(props: CardFeedbackProps)
     const {name, iconUri, content} = props;
     return (
         <Container>
-            <LeftDiv>
+            <TitleDiv>
                 <div style={{width:'30%'}}>
                     <Image src={iconUri} layout={'responsive'}/>
                 </div>
                 <TextHeading>{name}</TextHeading>
-            </LeftDiv>
+            </TitleDiv>
             <br/>
             <LeftDiv>
                 <Image src={IC_FIVE_STAR}/>
@@ -39,7 +39,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px 20px;
   background-color: #F6F6F7;
   border-radius: 6px;
   height: 100%;
@@ -66,4 +66,11 @@ const ContentDiv = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+`
+const TitleDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 120px;
 `

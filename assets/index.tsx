@@ -43,3 +43,17 @@ export const IC_CALENDAR = require('../public/icons/ic_calendar.svg')
 export const IC_COMMENT = require('../public/icons/ic_comment.svg')
 export const IC_CLOCK = require('../public/icons/ic_clock.svg')
 export const IC_UPLOAD = require('../public/icons/ic_upload.svg')
+
+
+
+
+
+
+
+
+//protect-content-blog
+export const IMG_PROTECT_CONTENT_01 = require('../public/images/img_protect_content_01.svg')
+
+//top-content-protection
+export const IMG_COZY_ANTITHIEF = require('../public/images/img_cozy_antithief.png')
+export const IMG_CRUCIAL_ANTITHIEF = require('../public/images/img_crucial_thief.png')
