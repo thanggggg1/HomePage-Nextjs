@@ -11,6 +11,7 @@ import {CardSubcribe} from "../../components/BlogPage/CardSubcribe";
 import {fontScale} from "../../utils/fontScale";
 import Head from "next/head";
 import UseWindowSize from "../../utils/useWindowSize";
+import {IMG_PROTECT_CONTENT_01, IMG_TITLE_BENEFITS, IMG_TITLE_BOOST_SALE, IMG_TOP_PROTECTION} from "../../assets";
 
 const BlogPage: NextPage = memo(function BlogPage() {
     const {width}=UseWindowSize();
@@ -52,19 +53,23 @@ const BlogPage: NextPage = memo(function BlogPage() {
                     <div>
                         <DivRowFlex width={width}>
                             <ItemProblemSection>
-                                <CardBlog/>
+                                <CardBlog title={'How to protect your images, text, content.'} subTitle={'Wondering how to protect your content from thieves all the time? Click here to learn how to recognize if your content is being stolen and prevent it. '}
+                                linkHref={'/Blog/posts/protect-content'} imageUri={IMG_PROTECT_CONTENT_01}/>
                             </ItemProblemSection>
                             <ItemProblemSection style={{justifyContent: 'center'}}>
-                                <CardBlog/>
+                                <CardBlog title={'Top the 9 best Shopify content protector apps'} subTitle={'Your content must be well-protected to prevent unauthorized replication. These the 9 best Shopify content protector apps are effective solutions for you to do it.'}
+                                          linkHref={'/Blog/posts/top-content-protection'} imageUri={IMG_TOP_PROTECTION}/>
                             </ItemProblemSection>
                             <ItemProblemSection style={{justifyContent: 'flex-end'}}>
-                                <CardBlog/>
+                                <CardBlog title={'3 huge benefits of offering gifts with purchase.'} subTitle={'Learn the reasons why we should include gift-with-purchase promotion in marketing campaigns and some supportive tools for gift-with-purchase promotion.'}
+                                          linkHref={'/Blog/posts/benefits-with-purchase'} imageUri={IMG_TITLE_BENEFITS}/>
                             </ItemProblemSection>
                         </DivRowFlex>
                         <br/>
                         <DivRowFlex width={width}>
                             <ItemProblemSection>
-                                <CardBlog/>
+                                <CardBlog title={'How to boost sales on your Shopify store. '} subTitle={'Effective sales-increasing plans for every Shopify store to operate at its full potential.'}
+                                          linkHref={'/Blog/posts/boost-sale-shopify'} imageUri={IMG_TITLE_BOOST_SALE}/>
                             </ItemProblemSection>
                             <ItemProblemSection style={{justifyContent: 'center'}}>
                                 <CardBlog/>

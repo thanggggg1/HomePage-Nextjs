@@ -22,6 +22,15 @@ import {Footer} from "../../../components/Footer";
 import styled from "styled-components";
 import {fontScale} from "../../../utils/fontScale";
 
+const data= [
+    'RISKS AND CONSEQUENCES',
+    'HOW TO RECOGNIZE IF YOUR CONTENT IS BEING STOLEN?',
+    'SOLUTIONS',
+    'Disable Right-click anti-theft by Sortecom'
+
+]
+const title ='HOW TO PROTECT YOUR IMAGES, TEXT, AND CONTENT '
+
 const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
     const {width}=UseWindowSize();
     const addClassOnScroll = useCallback(()=>{
@@ -47,13 +56,13 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
         <>
             <Head>
                 <title>HOW TO PROTECT YOUR IMAGES, TEXT, AND CONTENT </title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="how-to-protect-content" content="Wondering how to protect your content from thieves all the time? Click here to learn how to recognize if your content is being stolen and prevent it. " />
             </Head>
             <NavBar/>
             <Container>
                 <HeaderSection>
                     <div style={{width: '100%',borderRadius:6}}>
-                        <Image src={IMG_CLICKUP_EXAMPLE} layout={'responsive'} priority />
+                        <Image src={IMG_PROTECT_CONTENT_01} layout={'responsive'} priority alt={'HOW TO PROTECT YOUR IMAGES, TEXT, AND CONTENT'} />
                     </div>
                 </HeaderSection>
                 <ContentContainer>
@@ -156,7 +165,7 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                             <TextContent>Additionally, you may submit a single form to report multiple stores that are violating the same copyrighted content. You might be held responsible for damages if you wrongly claim that certain content infringes your copyright.</TextContent>
                             <TextBold>2. How to prevent future content theft.</TextBold>
                             <TextContent>As you can see, trying to find and delete stolen content can take a lot of time. Therefore, preventing content theft before it occurs is your greatest safeguarding option.</TextContent>
-                            <Image src={IMG_PROTECT_CONTENT_01} layout={'responsive'}/>
+                            <Image src={IMG_PROTECT_CONTENT_01} layout={'responsive'} alt={'protect Content'}/>
                             <TextContent>You had better add a visible copyright notification on your website. Utilizing a text panel from the widgets pane in the Customizer to add the copyright notice to your sidebar so that it is always visible. Depending on the sort of themes you now operate, your copyright notice should be written differently.
                             </TextContent>
                             <TextContent>Moreover, you might need to apply a watermark on the photographs. Although it won't totally stop them from being stolen, it could assist to confirm your authorship.</TextContent>
@@ -169,7 +178,7 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                         {/*    Section 04*/}
                         <section id={'04'}>
                             <TextTitle>4. Disable Right-click anti-theft by Sortecom</TextTitle>
-                            <Image src={IMG_PROTECTION} priority={true} layout={'responsive'}/>
+                            <Image src={IMG_PROTECTION} priority={true} layout={'responsive'} alt={'Disable Right-click anti-theft by Sortecom'}/>
                             <TextContent>With the variety of ways your copyright might be violated, you'll need a comprehensive approach to fend off dishonest tactics. Disable Right-click anti-theft is the ONLY app that secures both your images, and text and can block scammers. This app easily and quickly installs and works without any coding, just toggle the settings on/off
                                 in the app dashboard to protect your content in a few seconds. Furthermore, it’s extremely convenient for every merchant due to its ability to work with all themes.
                             </TextContent>
@@ -232,21 +241,21 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                             
                         </section>
                         {/*    Related Articles*/}
-                        <TextNormalBold>Related Articles:
-                        </TextNormalBold>
-                        <ListArticles>
-                            <ListItem>How ClickUp customer service uses ClickUp</ListItem>
-                            <ListItem>How to get the most out of your team with ClickUp</ListItem>
-                            <ListItem>How ClickUp’s marketing teams uses ClickUp</ListItem>
-                            <ListItem>How ClickUp’s quality excellence team uses ClickUp</ListItem>
-                            <ListItem>How ClickUp’s onboarding team uses ClickUp</ListItem>
-                        </ListArticles>
+                        {/*<TextNormalBold>Related Articles:*/}
+                        {/*</TextNormalBold>*/}
+                        {/*<ListArticles>*/}
+                        {/*    <ListItem>How ClickUp customer service uses ClickUp</ListItem>*/}
+                        {/*    <ListItem>How to get the most out of your team with ClickUp</ListItem>*/}
+                        {/*    <ListItem>How ClickUp’s marketing teams uses ClickUp</ListItem>*/}
+                        {/*    <ListItem>How ClickUp’s quality excellence team uses ClickUp</ListItem>*/}
+                        {/*    <ListItem>How ClickUp’s onboarding team uses ClickUp</ListItem>*/}
+                        {/*</ListArticles>*/}
                         <CardQuestions/>
                         <br/>
                         <br/>
                     </LeftContainer>
                     {width > 1024 &&  <RightContainer>
-                        <TableContents/>
+                        <TableContents data={data} title={title}/>
                     </RightContainer>}
                 </ContentContainer>
                 <ContentContainer>
@@ -260,13 +269,13 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                 <ContentContainer>
                     <DivRowFlex width={width}>
                         <ItemArticle>
-                            <CardArticle/>
+                            <CardArticle title={'How to boost sales on your Shopify store.'} linkHref={'/Blog/posts/boost-sale-shopify'}/>
                         </ItemArticle>
                         <ItemArticle>
-                            <CardArticle/>
+                            <CardArticle title={'Top the 9 best Shopify content protector apps\n'} linkHref={'/Blog/posts/top-content-protection'}/>
                         </ItemArticle>
                         <ItemArticle>
-                            <CardArticle/>
+                            <CardArticle title={'3 huge benefits of offering gifts with purchase.'} linkHref={'/Blog/posts/benefits-with-purchase'}/>
                         </ItemArticle>
                     </DivRowFlex>
                 </ContentContainer>

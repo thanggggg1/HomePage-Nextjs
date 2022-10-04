@@ -5,20 +5,29 @@ import Image from "next/image";
 import {IC_CLOCK, IC_USER} from "../../assets";
 import {fontScale} from "../../utils/fontScale";
 import UseWindowSize from "../../utils/useWindowSize";
+import Link from "next/link";
 
-export const CardArticle = memo(function CardArticle() {
+interface RelatedContent {
+    title : string
+    linkHref:string
+}
+
+export const CardArticle = memo(function CardArticle(props:RelatedContent) {
+    const {title,linkHref}=props
     return (
         <Container>
-            <TextHeading>Spekit: Using ClickUp For Effective Quarterly OKR Tracking</TextHeading>
+            {linkHref && <Link href={linkHref}>
+                <TextHeading>{title}</TextHeading>
+            </Link>}
             <br/>
             <InfoSection>
                 <RowSection>
                     <Image src={IC_USER} width={32} height={32}/>
-                    <TextNormalBold>Lelia Cruz</TextNormalBold>
+                    <TextNormalBold>Thanh Van Nguyen</TextNormalBold>
                 </RowSection>
                 <RowSection>
                     <Image src={IC_CLOCK} width={32} height={32}/>
-                    <TextTime>Max 7min read</TextTime>
+                    <TextTime>Max 12min read</TextTime>
                 </RowSection>
             </InfoSection>
         </Container>

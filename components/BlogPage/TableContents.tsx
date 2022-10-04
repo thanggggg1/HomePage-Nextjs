@@ -3,43 +3,28 @@ import styled from "styled-components";
 import Link from "next/link";
 import {fontScale} from "../../utils/fontScale";
 
-export const TableContents = memo(function TableContents() {
+export interface ListContent {
+    data :string[]
+    title:string
+}
+
+export const TableContents = memo(function TableContents(props:ListContent) {
+    const {data,title}=props;
     return (
         <Container>
             <TextNormalBold>TABLE OF CONTENTS</TextNormalBold>
             <BackgroundTextDiv>
-                <TextNormal>Our Solution Engineering Team’s Favorite ClickUp Features</TextNormal>
+                <TextNormal>{title}</TextNormal>
             </BackgroundTextDiv>
-            <Link href={'#01'} passHref>
-                <BackgroundTextDiv>
-                    <TextNormal href={'#01'}>1. Salesforce Integration</TextNormal>
-                </BackgroundTextDiv>
-            </Link>
-            <Link href={'#02'} passHref>
-                <BackgroundTextDiv>
-                    <TextNormal href={'#02'}>2. Automations</TextNormal>
-                </BackgroundTextDiv>
-            </Link>
-            <Link href={'#03'} passHref>
-                <BackgroundTextDiv>
-                    <TextNormal href={'#03'}>3. Personalized Views</TextNormal>
-                </BackgroundTextDiv>
-            </Link>
-            <Link href={'#04'} passHref>
-                <BackgroundTextDiv>
-                    <TextNormal href={'#04'}>4. Templated Docs</TextNormal>
-                </BackgroundTextDiv>
-            </Link>
-            <Link href={'#05'} passHref>
-                <BackgroundTextDiv>
-                    <TextNormal href={'#05'}>5. Time Tracking</TextNormal>
-                </BackgroundTextDiv>
-            </Link>
-            <Link href={'#ending'} passHref>
-                <BackgroundTextDiv>
-                    <TextNormal href={'#ending'}>Using ClickUp to Enhance Collaboration and Keep Our Team Organized</TextNormal>
-                </BackgroundTextDiv>
-            </Link>
+            {data && data.map((item,index)=>{
+                return (
+                    <Link href={`#0${index+1}`} passHref key={index}>
+                        <BackgroundTextDiv>
+                            <TextNormal href={`#0${index+1}`}>{`${index+1}. ${item}`}</TextNormal>
+                        </BackgroundTextDiv>
+                    </Link>
+                )
+            })}
 
         </Container>
     )

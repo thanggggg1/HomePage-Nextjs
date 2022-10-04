@@ -40,7 +40,7 @@ const Home: NextPage = memo(function Home() {
         <>
             <Head>
                 <title>SortEcom</title>
-                <meta name="description" content="Shopify App to support merchants"/>
+                <meta name="homepage" content="SortEcom gives you the best apps to optimize sales. We constantly upgrade more high-tech tools for you. Here you can find what should do and how to do. "/>
                 <meta name="descripn" content="Powerful apps make your ecommerce business better"/>
                 <meta name="title" content="Free Gift | Content Protection | Email Marketing"/>
             </Head>

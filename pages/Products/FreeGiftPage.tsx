@@ -14,12 +14,12 @@ import Head from "next/head";
 import UseWindowSize from "../../utils/useWindowSize";
 
 const FreeGiftPage = memo(function FreeGiftPage() {
-    const {width}=UseWindowSize();
+    const {width} = UseWindowSize();
     return (
         <>
             <Head>
                 <title>Free Gift - BOGO</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="freeGift" content="Create and customize gift-with-purchase promotions. Powerful tools help boost your product sales."/>
             </Head>
             <NavBar/>
             <Container>
@@ -41,7 +41,7 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                             <LeftImage className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_FREEGIFT_01} width={200}/>
                             </LeftImage>
-                            <Image src={IMG_BACKGROUND_FREEGIFT} priority={true}/>
+                            <Image src={IMG_BACKGROUND_FREEGIFT} priority={true} alt={'BOGO, Free Gift, Discount'}/>
                             <RightImage className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_FREEGIFT_02} width={200}/>
                             </RightImage>
@@ -52,15 +52,15 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
                     <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
                     <DivSpaceBetWeen style={{alignItems: 'self-start'}} width={width}>
-                        <ItemProblemSection  width={width}>
+                        <ItemProblemSection width={width}>
                             <CardProblem title={'Your work belongs to you!'}
                                          content={'Original images and content are valuable digital assets that must be well-protected to prevent replication.'}/>
                         </ItemProblemSection>
-                        <ItemProblemSection  width={width}>
+                        <ItemProblemSection width={width}>
                             <CardProblem title={'Duplicated content affects SEO'}
                                          content={'Search engines prize stores with higher ranking for original content, duplicated work will definitely impact your SEO performance, espeacially on Google'}/>
                         </ItemProblemSection>
-                        <ItemProblemSection  width={width}>
+                        <ItemProblemSection width={width}>
                             <CardProblem title={'Lack of a complete solution'}
                                          content={'Because there are various ways to violate your copyright, you will need a comprehensive solution to avoid fraudulent practices.'}/>
                         </ItemProblemSection>
@@ -70,14 +70,14 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                     <TextTitleProblem>OUR SOLUTIONS</TextTitleProblem>
                     <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
                     <DivSpaceBetWeen width={width}>
-                        <ItemWrapper  width={width}>
+                        <ItemWrapper width={width}>
                             <ItemGradient text={'All-in-one protection'} greenText={'What you need is an'}/>
                             <CardContentSection header={'Disable Keyboard Shortcuts\n' +
                                 'Disable Dev tools (F12)'}
                                                 content={'Vistors on your site can not access to the function of these keyboard shortcuts:' +
                                                     ''} textButton={'Learn more'}/>
                         </ItemWrapper>
-                        <ItemWrapper  width={width}>
+                        <ItemWrapper width={width}>
                             <CardContentSection header={'Disable Right-click'}
                                                 content={'Vistors on your site are not allowed to Text Selection and use Right-click on the mouse.'}
                                                 textButton={'Install the app now'}/>
@@ -85,7 +85,7 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                                                 content={'Block users from specific countries'}
                                                 textButton={'Experience our app'}/>
                         </ItemWrapper>
-                        <ItemWrapper  width={width}>
+                        <ItemWrapper width={width}>
                             <CardContentSection header={'Free Life-time Support'}
                                                 content={'Enjoy FREE technical assistance from our Shopify experts, whether you have questions about apps’ functionality, are wondering how it’s compatible with your store’s Shopify theme.'}
                                                 textButton={'Contact our support'}/>
@@ -123,7 +123,7 @@ const Container = styled.div`
 `
 
 const BackgroundGradient = styled.div`
-position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -156,7 +156,7 @@ const TextBlueHeader = styled.span`
 
 const LeftImage = styled.div`
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 0;
   align-self: flex-end;
   animation-duration: 2s;
@@ -166,7 +166,7 @@ const LeftImage = styled.div`
 `
 const RightImage = styled.div`
   position: absolute;
-  top:50%;
+  top: 50%;
   right: 0;
   align-self: flex-end;
   animation-duration: 2s;
@@ -205,7 +205,7 @@ const ContentSection = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-const ItemWrapper = styled.div<{width:number}>`
+const ItemWrapper = styled.div<{ width: number }>`
   display: flex;
   flex-direction: column;
   width: ${p => p.width > 1024 ? '32%' : '100%'};
@@ -242,12 +242,12 @@ const TextBoldProblem = styled.div`
   color: #000000;
   margin-bottom: 20px;
 `
-const ItemProblemSection = styled.div<{width:number}>`
+const ItemProblemSection = styled.div<{ width: number }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: ${p=>p.width > 1024 ? '32%' : '100%'};
-  margin-bottom: ${p=>p.width > 1024 ? 0 : 20}px;
+  width: ${p => p.width > 1024 ? '32%' : '100%'};
+  margin-bottom: ${p => p.width > 1024 ? 0 : 20}px;
 `
 const BlogSection = styled.div`
   display: flex;
@@ -261,22 +261,21 @@ const BlogSection = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-const IframeVideo = styled.iframe<{width:number}>`
+const IframeVideo = styled.iframe<{ width: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: ${p=>p.width > 1024 ? 800 : 200}px;
+  height: ${p => p.width > 1024 ? 800 : 200}px;
 `
 
 export const DivImage = styled.div`
   position: relative;
-width: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 `
-
 
 
 export default FreeGiftPage

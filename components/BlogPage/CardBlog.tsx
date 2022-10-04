@@ -7,23 +7,45 @@ import {fontScale} from "../../utils/fontScale";
 import Link from "next/link";
 import UseWindowSize from "../../utils/useWindowSize";
 
-export const CardBlog = memo(function CardBlogHomePage() {
+interface CardBlogProps{
+    title?:string;
+    subTitle?:string;
+    linkHref?:string;
+    imageUri?:string;
+}
+
+export const CardBlog = memo(function CardBlogHomePage(props:CardBlogProps) {
+    const {title,subTitle,linkHref,imageUri}=props
     const {width}=UseWindowSize();
     return (
         <Container width={width}>
-            <Image src={IMG_CARD_PROBLEM}/>
-            <ContentDiv>
-                <DivSpaceBetWeen width={width}>
-                    <TextCategory>Marketing</TextCategory>
-                    <TextTime>Published 04.08.22</TextTime>
-                </DivSpaceBetWeen>
-                <Link href={'/Blog/posts/123'} passHref>
-                    <TextTitle>Various kinds of app for every
-                        problems</TextTitle>
-                </Link>
-                <TextContent>We provide apps that deal with daily struggles
-                    of a merchant.</TextContent>
-            </ContentDiv>
+            {linkHref ? <>
+                <Image src={imageUri}/>
+                <ContentDiv>
+                    <DivSpaceBetWeen width={width}>
+                        <TextCategory>Marketing</TextCategory>
+                        <TextTime>Published 04.09.22</TextTime>
+                    </DivSpaceBetWeen>
+                    <Link href={linkHref} passHref>
+                        <TextTitle>{title}</TextTitle>
+                    </Link>
+                    <TextContent>{subTitle}</TextContent>
+                </ContentDiv>
+            </> : <>
+                <Image src={IMG_CARD_PROBLEM}/>
+                <ContentDiv>
+                    <DivSpaceBetWeen width={width}>
+                        <TextCategory>Marketing</TextCategory>
+                        <TextTime>Published 04.08.22</TextTime>
+                    </DivSpaceBetWeen>
+                    <Link href={'/Blog/posts/123'} passHref>
+                        <TextTitle>Various kinds of app for every
+                            problems</TextTitle>
+                    </Link>
+                    <TextContent>We provide apps that deal with daily struggles
+                        of a merchant.</TextContent>
+                </ContentDiv>
+            </>}
         </Container>
     )
 })

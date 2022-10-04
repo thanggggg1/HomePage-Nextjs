@@ -22,7 +22,7 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
         <>
             <Head>
                 <title>Disable Right Click AntiTheft</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="content-protection" content="Disable right click to help you protect your content against copyright infringement. Install now to keep your content safe and unique. " />
             </Head>
             <NavBar/>
             <Container>
@@ -40,7 +40,8 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                         </ButtonNavBar>
                         <LinkTextGray href={'https://youtu.be/pBlqQGkPBjE'} target={'_blank'} rel="noreferrer">Watch video
                             demo</LinkTextGray>
-                        <Image src={IMG_PROTECTION} priority={true}/>
+                        <Image src={IMG_PROTECTION} priority={true} alt={'Disable Right-click <br/>\n' +
+                            '                            & Content Protection'}/>
                     </HeaderSection>
                 </>
                 <ProblemSection>
