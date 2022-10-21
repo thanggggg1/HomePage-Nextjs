@@ -11,7 +11,7 @@ interface CardBlogProps{
     title?:string;
     subTitle?:string;
     linkHref?:string;
-    imageUri?:string;
+    imageUri?:string | undefined;
 }
 
 export const CardBlog = memo(function CardBlogHomePage(props:CardBlogProps) {
@@ -20,7 +20,7 @@ export const CardBlog = memo(function CardBlogHomePage(props:CardBlogProps) {
     return (
         <Container width={width}>
             {linkHref ? <>
-                <Image src={imageUri}/>
+                {imageUri &&  <Image src={imageUri}/>}
                 <ContentDiv>
                     <DivSpaceBetWeen width={width}>
                         <TextCategory>Marketing</TextCategory>

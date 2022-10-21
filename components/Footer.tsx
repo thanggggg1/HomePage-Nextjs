@@ -1,13 +1,12 @@
 import React, {memo} from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import {IC_FACEBOOK, IC_INSTAGRAM, IC_LINKEDIN, IC_YOUTUBE, IMG_SHOPIFY_LOGO} from "../assets";
+import {IC_FACEBOOK, IC_LINKEDIN, IC_YOUTUBE, IMG_SHOPIFY_LOGO} from "../assets";
 import {fontScale} from "../utils/fontScale";
-import {DivRowFlex} from "../pages/Blog/BlogPage";
 import {RowSection} from "../pages";
 import Link from "next/link";
 import UseWindowSize from "../utils/useWindowSize";
-import {Column} from "./NavBar";
+import {Column, SLink} from "./NavBar";
 
 export const Footer = memo(function Footer() {
     const {width} = UseWindowSize();
@@ -18,7 +17,10 @@ export const Footer = memo(function Footer() {
                     {width && width > 1024 && <LeftContainer>
                         <TextLogoSortEcom>sortecom</TextLogoSortEcom>
                         <TextNormal>Built for Shopify & Shopify Plus</TextNormal>
-                        <Image src={IMG_SHOPIFY_LOGO}/>
+                        <SLink href={'https://apps.shopify.com/partners/sortecom-team'}
+                        >
+                            <Image src={IMG_SHOPIFY_LOGO}/>
+                        </SLink>
                     </LeftContainer>}
                     <RightContainer width={width}>
                         <WrapperFooter>
@@ -40,19 +42,13 @@ export const Footer = memo(function Footer() {
                                         <SImage>
                                             <Image src={IC_FACEBOOK}/>
                                         </SImage>
-                                        <TextListItem>Facebook</TextListItem>
+                                        <TextListItem href={'https://www.facebook.com/profile.php?id=100086767201881'}>Facebook</TextListItem>
                                     </RowSection>
                                     <RowSection>
                                         <SImage>
                                             <Image src={IC_LINKEDIN}/>
                                         </SImage>
                                         <TextListItem>Linked in</TextListItem>
-                                    </RowSection>
-                                    <RowSection>
-                                        <SImage>
-                                            <Image src={IC_INSTAGRAM}/>
-                                        </SImage>
-                                        <TextListItem>Instagram</TextListItem>
                                     </RowSection>
                                     <RowSection>
                                         <SImage>
@@ -66,27 +62,27 @@ export const Footer = memo(function Footer() {
                                 <ColumnContent>
                                     <TextTileList>RESOURCES</TextTileList>
                                     <TextListItem>Business Blog</TextListItem>
-                                    <TextListItem>Learning Center</TextListItem>
-                                    <TextListItem>Community</TextListItem>
                                     <TextListItem>Help Document</TextListItem>
                                 </ColumnContent>
                             </ColumnWrapper>
                             <ColumnWrapper>
                                 <ColumnContent>
                                     <TextTileList>Product</TextTileList>
-                                    <TextListItem>Free Gift - BOGO </TextListItem>
-                                    <TextListItem>Email Marketing </TextListItem>
+                                    <TextListItem href={'https://apps.shopify.com/free-gifts-bogo-cart-upsell'}>Free
+                                        Gift - BOGO </TextListItem>
                                     <TextListItem href={'https://protect.sortecom.com/'}>Disable Right Click
                                         AntiTheft</TextListItem>
-                                    <TextListItem>Banner - Free Shipping Bar </TextListItem>
                                 </ColumnContent>
                             </ColumnWrapper>
                         </WrapperFooter>
                     </RightContainer>
                     {width < 1024 && <Column>
                         <TextNormal>Built for Shopify & Shopify Plus</TextNormal>
-                        <Image src={IMG_SHOPIFY_LOGO} />
-                    </Column> }
+                        <Link href={'https://apps.shopify.com/partners/sortecom-team'}
+                        >
+                            <Image src={IMG_SHOPIFY_LOGO}/>
+                        </Link>
+                    </Column>}
                 </BorderDivSpaceBetWeen>
             </ContentContainer>
             <ContentContainer>
@@ -135,9 +131,9 @@ const RightContainer = styled.div<{ width: number }>`
   width: ${p => p.width > 1024 ? '66%' : '100%'};
   display: flex;
 `
-const BorderDivSpaceBetWeen = styled.div<{width:number}>`
+const BorderDivSpaceBetWeen = styled.div<{ width: number }>`
   display: flex;
-  flex-direction: ${p=>p.width > 1024 ? 'row' :'column'};
+  flex-direction: ${p => p.width > 1024 ? 'row' : 'column'};
   width: 100%;
   border-bottom: 1px solid #F6F6F7;
   padding-bottom: 40px;
@@ -151,6 +147,7 @@ const TextNormal = styled.a`
   letter-spacing: 0.01em;
   color: #F6F6F7;
   margin-bottom: 6px;
+
   &:hover {
     color: #ffffff;
   !important;

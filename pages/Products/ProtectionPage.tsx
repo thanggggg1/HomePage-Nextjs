@@ -15,6 +15,7 @@ import {CardBlogHomePage} from "../../components/HomePage/CardBlog";
 import {fontScale} from "../../utils/fontScale";
 import Head from "next/head";
 import UseWindowSize from "../../utils/useWindowSize";
+import Link from "next/link";
 
 const ProtectionPage: NextPage = memo(function ProtectionPage() {
     const {width}=UseWindowSize();
@@ -33,11 +34,13 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                             & Content Protection</TextHeaderBold>
                         <TextHeaderNormal>Worrying about someone stealing your work?<br/>Activate your protection
                             now!</TextHeaderNormal>
-                        <ButtonNavBar className='click-btn btn-style902'>
-                            <div className="block"><span></span></div>
-                            <TextButtonWhite data-name="hover">Install</TextButtonWhite>
-                            <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
-                        </ButtonNavBar>
+                        <Link href={'https://apps.shopify.com/content-protection-1'}>
+                            <ButtonNavBar className='click-btn btn-style902'>
+                                <div className="block"><span></span></div>
+                                <TextButtonWhite data-name="hover">Install</TextButtonWhite>
+                                <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
+                            </ButtonNavBar>
+                        </Link>
                         <LinkTextGray href={'https://youtu.be/pBlqQGkPBjE'} target={'_blank'} rel="noreferrer">Watch video
                             demo</LinkTextGray>
                         <Image src={IMG_PROTECTION} priority={true} alt={'Disable Right-click <br/>\n' +
@@ -103,7 +106,7 @@ const ProtectionPage: NextPage = memo(function ProtectionPage() {
                     <br/>
                     <br/>
                     <DivCenter>
-                        <GradientBox/>
+                        <GradientBox isProtection={true}/>
                     </DivCenter>
                 </BlogSection>
             </Container>

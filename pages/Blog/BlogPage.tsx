@@ -95,8 +95,16 @@ const BlogPage: NextPage = memo(function BlogPage() {
 
                 <BlogSection>
                     <TextBoldProblem>Videos - App intro, tutorial and many more</TextBoldProblem>
-                    <CardBlogHomePage/>
-                    <CardBlogHomePage/>
+                    <CardBlogHomePage title={'How to protect your images, text, content.'}
+                                      subTitle={'Wondering how to protect your content from thieves all the time? Click here to learn how to recognize if your content is being stolen and prevent it.'}
+                                      linkHref={'/Blog/posts/protect-content'}
+                                      isProtect={true}
+                                      imageUri={IMG_PROTECT_CONTENT_01}/>
+                    <CardBlogHomePage title={'3 huge benefits of offering gifts with purchase.'}
+                                      subTitle={'Learn the reasons why we should include gift-with-purchase promotion in marketing campaigns and some supportive tools for gift-with-purchase promotion.'}
+                                      linkHref={'/Blog/posts/benefits-with-purchase'}
+                                      isProtect={false}
+                                      imageUri={IMG_TITLE_BENEFITS}/>
                     <br/>
                     <br/>
                     <br/>

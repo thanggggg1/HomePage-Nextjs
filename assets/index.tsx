@@ -43,6 +43,7 @@ export const IC_CALENDAR = require('../public/icons/ic_calendar.svg')
 export const IC_COMMENT = require('../public/icons/ic_comment.svg')
 export const IC_CLOCK = require('../public/icons/ic_clock.svg')
 export const IC_UPLOAD = require('../public/icons/ic_upload.svg')
+export const IC_FREEGIFT_LOGO=require('../public/icons/ic_freegift_logo.svg')
 
 
 

@@ -95,7 +95,7 @@ export const BenefitsWithPurchase:NextPage = memo(function BenefitsWithPurchase(
                             </Info>
                         </RowStart>
                         {/*Intro*/}
-                        <TextContent>Who doesn't enjoy getting free things? Free gifts are a proven way for companies to attract customers, as seen by the growing popularity of gift-with-purchase programs. Customers appreciate gifts with purchases, especially when they already have plans to purchase the item.
+                        <TextContent>Who doesn&apos;t enjoy getting free things? Free gifts are a proven way for companies to attract customers, as seen by the growing popularity of gift-with-purchase programs. Customers appreciate gifts with purchases, especially when they already have plans to purchase the item.
                             Brands use it to get people to buy something. Gift with purchase campaigns, when conducted well, may increase sales and boost the value of your brand.
                         </TextContent>
 
@@ -103,11 +103,11 @@ export const BenefitsWithPurchase:NextPage = memo(function BenefitsWithPurchase(
                         <section id={'01'}>
                             <TextTitle>I. What is gift-with-purchase promotion?
                             </TextTitle>
-                            <TextContent>Gift with purchase promotion is a marketing strategy used to attract clients and raise the average order value when they make a purchase with your brand. It's not a new tactic to offer a
+                            <TextContent>Gift with purchase promotion is a marketing strategy used to attract clients and raise the average order value when they make a purchase with your brand. It&apos;s not a new tactic to offer a
                                 free gift with purchase. This has been utilized by brands for years. When buyers meet the requirements, the merchants let them add a free item to their shopping cart.</TextContent>
-                            <TextContent>This is better explained with an example! Let's imagine you purchase a product for $X and have the option to add a free item for $Y, or you are provided a free gift when a particular amount is spent, and so on.</TextContent>
+                            <TextContent>This is better explained with an example! Let&apos;s imagine you purchase a product for $X and have the option to add a free item for $Y, or you are provided a free gift when a particular amount is spent, and so on.</TextContent>
                             <TextContent>The free gifts with purchases are typically goods that truly benefit the customers, such as travel-size cosmetics bottles, a free cup that comes with a coffee or tea package, or a sample of your new product.</TextContent>
-                            <TextContent>These deals are often limited in quantity and offered by retailers for a brief period of time. Thus, "while goods last" and "limited time offer" labels emphasize uniqueness and urgency, urging shoppers to take advantage of the deals as soon as they are available.</TextContent>
+                            <TextContent>These deals are often limited in quantity and offered by retailers for a brief period of time. Thus, &quot;while goods last&quot; and &quot;limited time offer&quot; labels emphasize uniqueness and urgency, urging shoppers to take advantage of the deals as soon as they are available.</TextContent>
                         </section>
                         {/*    Section 2*/}
                         <section id={'02'} >
@@ -118,9 +118,9 @@ export const BenefitsWithPurchase:NextPage = memo(function BenefitsWithPurchase(
                             <TextContent>Giving gifts helps spread brand recognition. People will spread the word about your company to their friends and family when they purchase any item from you and receive a free gift as well. This will persuade their family members to buy things from your company. Make sure you provide your consumers with a branded and practical item so they can continue to interact with your business. A logo and an interesting message on your promotional item can help promote your company. Using a brand message as a marketing technique may be quite successful.
                             </TextContent>
                             <TextBold>2. Increasing conversion rate</TextBold>
-                            <TextContent>Customers' reactions to the term "free" might be very emotional. Free things can make the value of the item seem more valuable in the eyes of the consumer. It is also possible to develop customer loyalty. Whe
+                            <TextContent>Customers&apos; reactions to the term &quot;free&quot; might be very emotional. Free things can make the value of the item seem more valuable in the eyes of the consumer. It is also possible to develop customer loyalty. Whe
                                 n someone receives something for free, their affection for the business increases, which encourages them to buy more goods.</TextContent>
-                            <TextContent>Businesses are utilizing the effectiveness of providing free gifts to consumers. They can offer their customers free gifts like samples of other products. It is significantly more effective to "test before you buy" than to use conventional promotional methods. It's more profitable to let customers sample things than to encourage them to consider purchasing something they've never tried. Companies are drastically increasing earnings by offering free samples, free trials, and "buy one, get one free" deals.
+                            <TextContent>Businesses are utilizing the effectiveness of providing free gifts to consumers. They can offer their customers free gifts like samples of other products. It is significantly more effective to &quot;test before you buy&quot; than to use conventional promotional methods. It&apos;s more profitable to let customers sample things than to encourage them to consider purchasing something they&apos;ve never tried. Companies are drastically increasing earnings by offering free samples, free trials, and &apos;buy one, get one free&apos; deals.
                             </TextContent>
                             <TextContent>Furthermore, if you offer your customers a free gift when they spend a certain amount of money. For instance, you provide a GWP deal for orders of $50 or more. If consumers have already spent $40 to complete the requirement and are given a free item, they are more likel
                                 y to make another purchase.</TextContent>
@@ -135,10 +135,10 @@ export const BenefitsWithPurchase:NextPage = memo(function BenefitsWithPurchase(
                         {/*Section 03*/}
                         <section id={'03'}>
                             <TextTitle>III. How to add gift-with-purchase?</TextTitle>
-                            <TextRed>1. Freegift by Sortecom</TextRed>
+                            <TextRed>1. Free Gifts BOGO Cart Upsell by Sortecom</TextRed>
                             <Image src={IMG_BACKGROUND_FREEGIFT} layout={'responsive'} priority={true} alt={'Freegift by Sortecom'}/>
-                            <TextContent><TextBold>Freegift</TextBold> by Sortecom is an effective app that can assist you to offer your gift-with-purchase into customers’ Shopify shopping carts. Just after
-                                your installation and some basic setting up, free gifts will be automatically added to the customer's cart, which is a strong and efficient method to boost your AOV and
+                            <TextContent><TextLink>Free Gifts BOGO Cart Upsell</TextLink> by Sortecom is an effective app that can assist you to offer your gift-with-purchase into customers’ Shopify shopping carts. Just after
+                                your installation and some basic setting up, free gifts will be automatically added to the customer&apos;s cart, which is a strong and efficient method to boost your AOV and
                                 support the growth of the greatest conversion rates.</TextContent>
                             <TextContent>You can create unlimited offers for customers:
                             </TextContent>
@@ -166,7 +166,7 @@ export const BenefitsWithPurchase:NextPage = memo(function BenefitsWithPurchase(
                             <TextContent>Gift Box – Free Gift Motivator costs $29.99/month to $199.99/month, which may be a little bit expensive for some small businesses.</TextContent>
                             <TextBold>3. Vitals: All-in-One Marketing by Vitals</TextBold>
                             <Image src={IMG_VITALS} layout={'responsive'} priority={true} alt={'Vitals: All-in-One Marketing by Vitals'}/>
-                            <TextContent>This app allows merchants to import unlimited reviews with photos, request reviews after order delivery, and highlight featured reviews to boost conversion. The highlight feature that we're focusing on is that it can increase average order value by offering product bundles, volume discounts, goals, and buy one get one (BOGO) deals. Moreover, merchants installing this app can record and replay visitor actions as they click, scroll, type, or move across store pages. At $29.99/month, Vitals: All-in-one Marketing is a suitable app for Shopify merchants who want more than just the free gift offering function.
+                            <TextContent>This app allows merchants to import unlimited reviews with photos, request reviews after order delivery, and highlight featured reviews to boost conversion. The highlight feature that we&apos;re focusing on is that it can increase average order value by offering product bundles, volume discounts, goals, and buy one get one (BOGO) deals. Moreover, merchants installing this app can record and replay visitor actions as they click, scroll, type, or move across store pages. At $29.99/month, Vitals: All-in-one Marketing is a suitable app for Shopify merchants who want more than just the free gift offering function.
                             </TextContent>
                         </section>
 
@@ -178,7 +178,7 @@ export const BenefitsWithPurchase:NextPage = memo(function BenefitsWithPurchase(
                                 turn on their investment, so merchants get more sales and improved brand recognition.
                             </TextContent>
                             <TextContent>
-                                Implementing a GWP promotion has a lot of advantages. However, it works best when you take your company's goals into consideration. According to research, GWP campaigns dramatically boost repeated sales of a particular product and lower the rate
+                                Implementing a GWP promotion has a lot of advantages. However, it works best when you take your company&apos;s goals into consideration. According to research, GWP campaigns dramatically boost repeated sales of a particular product and lower the rate
                                 of product returns. Even though the concept behind a GWP campaign may seem simple, there are numerous things to take into account, such as the kind of gift and your advertising strategy.
                             </TextContent>
                         </section>
@@ -342,7 +342,7 @@ const TextBold =styled.span`
   color: #292d34;
 `
 const TextRed = styled(TextBold)`
-  color: #c92222;
+  color: #292d34;
 `
 const ListArticles= styled.ul`
 
@@ -369,5 +369,16 @@ const ItemArticle = styled.div`
 display: flex;
   flex: 1;
   margin-right: 20px;
+`
+
+const TextLink = styled.a`
+  font-style: normal;
+  font-weight: 600;
+  font-size: ${p => fontScale(20)}px;
+  line-height: 20px;
+  letter-spacing: 0.025em;
+  margin: 12px 0;
+  color: #18A0FB;
+  text-decoration: underline;
 `
 export default BenefitsWithPurchase

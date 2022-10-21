@@ -101,7 +101,7 @@ export const TopContentProtection:NextPage = memo(function TopContentProtection(
                         <section id={'01'}>
                             <TextTitle>1. Disable Right-click Anti-theft</TextTitle>
                             <Image src={IMG_PROTECTION} layout={'responsive'} priority={true} alt={'Disable Right-click Anti-theft'}/>
-                            <TextContent><TextBold>Disable Right-click Anti-theft</TextBold> is an effective and thorough solution that allows Shopify’s merchants to protect all their stores’ assets. This software installs quickly and effortlessly and works without the need for any coding. After your installation, it will turn off right-clicking all purposeful infringements of your copyright, including screen captures, downloads, keyboard shortcuts, right clicks, and Dev Tools. Simply toggle the settings on/off on the app dashboard to safeguard your Shopify store in a few seconds.
+                            <TextContent><TextLink href={'https://apps.shopify.com/content-protection-1'}>Disable Right-click anti-theft</TextLink> is an effective and thorough solution that allows Shopify’s merchants to protect all their stores’ assets. This software installs quickly and effortlessly and works without the need for any coding. After your installation, it will turn off right-clicking all purposeful infringements of your copyright, including screen captures, downloads, keyboard shortcuts, right clicks, and Dev Tools. Simply toggle the settings on/off on the app dashboard to safeguard your Shopify store in a few seconds.
 
                             </TextContent>
                             <TextContent>Highlight features:</TextContent>
@@ -111,7 +111,7 @@ export const TopContentProtection:NextPage = memo(function TopContentProtection(
                             </TextContent>
                             <TextContent>- Disable Keyboard Shortcuts
                             </TextContent>
-                            <TextContent>- Disable Inspect Elements/Developer's Tools (F12)
+                            <TextContent>- Disable Inspect Elements/Developer&apos;s Tools (F12)
                             </TextContent>
                             <TextContent>- Disable Right Click
                             </TextContent>
@@ -152,8 +152,8 @@ export const TopContentProtection:NextPage = memo(function TopContentProtection(
                             <TextContent>Another striking advantage of Cozy AntiTheft is that it is free for merchants. However,
                                 it would not let a person enable screenshot capabilities and sometimes still has a fault that makes it inactive. It’s recommended if you cannot afford other paid protectors.
                             </TextContent>
-                            <TextContent>Simply type your article into the text box and click the "check plagiarism" button to get it checked for plagiarism.
-                                The next thing that will happen is that this tool will use Google's search engine to scan for words and phrases from your writing.
+                            <TextContent>Simply type your article into the text box and click the &quot;check plagiarism&quot; button to get it checked for plagiarism.
+                                The next thing that will happen is that this tool will use Google&apos;s search engine to scan for words and phrases from your writing.
                                 It will highlight certain passages of the content located online when the search is done.
                             </TextContent>
 
@@ -162,12 +162,12 @@ export const TopContentProtection:NextPage = memo(function TopContentProtection(
                         <section id={'03'}>
                             <TextTitle>3. Disable Right Click Pro by Crucial Commerce Apps</TextTitle>
                             <Image src={IMG_CRUCIAL_ANTITHIEF} layout={'responsive'} priority={true} alt={'Disable Right Click Pro by Crucial Commerce Apps'}/>
-                            <TextContent>Disable Right Click Pro could prevent store visitors from downloading any images, disable copy & paste & 'save as' and anti-theft purposes to help you avoid your store's search ranking dropping significantly due to the duplicated content without any coding.
-                                Besides, this app runs smoothly and won't interfere with your consumers' experiences.
+                            <TextContent>Disable Right Click Pro could prevent store visitors from downloading any images, disable copy & paste & &apos;save as&apos; and anti-theft purposes to help you avoid your store&apos;s search ranking dropping significantly due to the duplicated content without any coding.
+                                Besides, this app runs smoothly and won&apos;t interfere with your consumers&apos; experiences.
                             </TextContent>
                             <TextContent>Highlight features:
                             </TextContent>
-                            <TextContent>- Protect your store's content
+                            <TextContent>- Protect your store&apos;s content
                             </TextContent>
                             <TextContent>- Won’t annoy customers
                             </TextContent>
@@ -211,7 +211,7 @@ export const TopContentProtection:NextPage = memo(function TopContentProtection(
                         <section id={'06'}>
                             <TextTitle>6. Disable Right Click & Country by Dakaas</TextTitle>
                             <Image src={IMG_DAKAAS} priority={true} layout={'responsive'} alt={'Disable Right Click & Country by Dakaas'}/>
-                            <TextContent><TextBold>Disable Right Click & Country</TextBold> uses the block right click program to disable copy, paste, "save as," and anti-theft purposes in order to stop shop visitors from downloading any photographs. Additionally, it incapacitates right-click, and copy-text, making the majority of thefts end. Block access to your store
+                            <TextContent><TextBold>Disable Right Click & Country</TextBold> uses the block right click program to disable copy, paste, &quot;save as,&quot; and anti-theft purposes in order to stop shop visitors from downloading any photographs. Additionally, it incapacitates right-click, and copy-text, making the majority of thefts end. Block access to your store
                                 for users from specific countries or IP addresses to reduce fraud and fraudulent refunds.
                             </TextContent>
                             <TextContent>Highlight features:
@@ -459,5 +459,15 @@ const ItemArticle = styled.div`
 display: flex;
   flex: 1;
   margin-right: 20px;
+`
+const TextLink = styled.a`
+  font-style: normal;
+  font-weight: 600;
+  font-size: ${p => fontScale(20)}px;
+  line-height: 20px;
+  letter-spacing: 0.025em;
+  margin: 12px 0;
+  color: #18A0FB;
+  text-decoration: underline;
 `
 export default TopContentProtection

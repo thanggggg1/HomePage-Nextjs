@@ -96,7 +96,7 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             </Info>
                         </RowStart>
                         {/*Intro*/}
-                        <TextContent>Effective sales-increasing plans must be in place for every company to operate at its full potential. It's crucial to comprehend the methods you may use to boost sales for your business and create strong, long-lasting interactions with clients. This article explains the importance of increasing sales, how to do it, and offers practical advice for growing sales in any size organization.
+                        <TextContent>Effective sales-increasing plans must be in place for every company to operate at its full potential. It&apos;s crucial to comprehend the methods you may use to boost sales for your business and create strong, long-lasting interactions with clients. This article explains the importance of increasing sales, how to do it, and offers practical advice for growing sales in any size organization.
                         </TextContent>
 
                         {/*    Section 1*/}
@@ -111,14 +111,14 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             <TextTitle id={'02'}>II. Possible reasons why you have traffic but no sales
                             </TextTitle>
                             <TextContent>Many come to your web pages and see the products there, but why isn’t it converting into sales? Unfortunately, even the smallest element might cause the website interaction to stop working properly.
-                                Because of this, it's important to focus on every specific aspect of the resource. So we want to make sure that your website does not make these mistakes below:
+                                Because of this, it&apos;s important to focus on every specific aspect of the resource. So we want to make sure that your website does not make these mistakes below:
                             </TextContent>
                             <TextBold>Poor store navigation</TextBold>
                             <br/>
                             <br/>
                             <Image src={IMG_WEB_NAVIGATION} layout={'responsive'} priority={true} alt={'Possible reasons why you have traffic but no sales'}/>
                             <TextContent>A person searches for a menu as soon as they arrive on a website. Hubspot estimates that 38% of visitors to an online business will give up interacting if the
-                                navigation is confusing. So if you want your visitors to stay longer on your website, you have to make its navigation as easy as possible for them to discover what they're looking for
+                                navigation is confusing. So if you want your visitors to stay longer on your website, you have to make its navigation as easy as possible for them to discover what they&apos;re looking for
                             </TextContent>
                             <TextContent>Your Shopify store menu should stand out, have all the essential elements, and be the first thing a visitor sees.
                                 It may be at the top or in the footer, but remember that all your major product categories must be contained so that your visitors can easily find them.
@@ -126,13 +126,13 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             <TextBold>Lack of trust</TextBold>
                             <TextContent>Consumers are now becoming smarter when they are aware of fraud and seek reasons to believe in the companies they use. Before a person makes a purchase on something, they generally want to know the advantages and disadvantages of that product by reading reviews or looking at the pictures without editing. They’re now definitely reluctant to buy a product that has not had any testimonials or social proof.
                             </TextContent>
-                            <TextContent>Adding your contact information is also a factor that increases customers' trust in your webpage. Although they just shop online, your address and phone number are provided, making them feel your business is credible to make a purchase decision.
+                            <TextContent>Adding your contact information is also a factor that increases customers&apos; trust in your webpage. Although they just shop online, your address and phone number are provided, making them feel your business is credible to make a purchase decision.
                             </TextContent>
                             <TextContent>Moreover, your sites need to use common and prestigious payment gateways. Many people give up buying a product since the payment website uses strange payment gateways and lacks a logo.
                             </TextContent>
                             <TextBold>Inadequate content
                             </TextBold>
-                            <TextContent>Effective content can attract customers and create leads for every business. Giving useful content, providing visitors with your products' descriptions, prices, current discount policy, and so on, is the most effective way to grab visitors' attention and then build customer relationships. So your content should be persuadable enough to convert traffic into sales.
+                            <TextContent>Effective content can attract customers and create leads for every business. Giving useful content, providing visitors with your products&apos; descriptions, prices, current discount policy, and so on, is the most effective way to grab visitors&apos; attention and then build customer relationships. So your content should be persuadable enough to convert traffic into sales.
                             </TextContent>
                             <TextContent>Every company has its own brand story and precious messages. Telling your brand’s story and conveying your messages to your visitors may raise their awareness and belief in your company. Content is an effective method to do this. From that, the conversion rate of your web pages will improve gradually.
                             </TextContent>
@@ -156,9 +156,9 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             <TextBold>2. Reach out to blog</TextBold>
                             <Image src={IMG_REACH_BLOG} layout={'responsive'} priority={true} alt={'5 tips for how to increase sales'}/>
 
-                            <TextContent>Only the customers who already know you type your name directly into their browser. They are aware of you and have you on their radar, which doesn't help you increase the amount of traffic. You may buy traffic by putting up a lot of costly sponsored advertisements. However, the moment you run out of money, the traffic stops as well. Therefore, writing blogs is a cheap and efficient strategy to get more visitors to your website. You may have an increased chance of appearing on the search engine
+                            <TextContent>Only the customers who already know you type your name directly into their browser. They are aware of you and have you on their radar, which doesn&apos;t help you increase the amount of traffic. You may buy traffic by putting up a lot of costly sponsored advertisements. However, the moment you run out of money, the traffic stops as well. Therefore, writing blogs is a cheap and efficient strategy to get more visitors to your website. You may have an increased chance of appearing on the search engine
                                 results page (SERP) and attracting visitors to your website through organic search every time you write and publish a blog article.</TextContent>
-                            <TextContent>You can attract your target audience's attention to your blog. Only customers that are ready to buy will likely be interested in your service landing page. While a blog will provide you with the chance to connect with individuals at different stages in their customer journey to build relationships with them.</TextContent>
+                            <TextContent>You can attract your target audience&apos;s attention to your blog. Only customers that are ready to buy will likely be interested in your service landing page. While a blog will provide you with the chance to connect with individuals at different stages in their customer journey to build relationships with them.</TextContent>
                             <TextContent>By blogging about your area of expertise, you may create trust among your readers. If you write useful content, your audience will find it valuable. As a result, this activity will help you establish yourself as a thought leader or industry expert. Thanks to reaching out to the blog, you can gain their trust and convert them into loyal customers.
                             </TextContent>
                             <TextBold>3. Start email marketing & remarketing.
@@ -167,7 +167,7 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             </TextContent>
                             <Image src={IMG_EMAIL_MARKETING} layout={'responsive'} priority={true} alt={'Start email marketing & remarketing.'}/>
 
-                            <TextContent>Regular communication with your audience can help them become more aware of the brand and what it stands for? Since you'll continually be in their inbox, your subscribers will get familiar with your goods, services, and business as a whole. When you publish useful information about your business or sector, you may develop a reputation as an amazing resource and win the trust of potential customers.
+                            <TextContent>Regular communication with your audience can help them become more aware of the brand and what it stands for? Since you&apos;ll continually be in their inbox, your subscribers will get familiar with your goods, services, and business as a whole. When you publish useful information about your business or sector, you may develop a reputation as an amazing resource and win the trust of potential customers.
                             </TextContent>
                             <TextContent>Furthermore, you can also utilize email to remarket your products. You send an email to customers that experienced your services or goods to remind them about your company. These advertisements keep your brand top-of-mind among qualified users and encourage them to return to your site to learn more since the audiences who view your remarketing advertising have previously expressed interest in the information and material on your website.
                             </TextContent>
@@ -175,15 +175,15 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             </TextBold>
                             <TextContent>It is obvious that customers who are pleased with the service they received and who have received individualized attention that is suited to their demands have more purchasing possibilities than those who feel neglected or have had a negative experience. Additionally, that buyer will be more inclined to test or purchase different goods or services (cross-selling).
                             </TextContent>
-                            <TextContent>To reiterate, the role of the prosumer is growing significantly. Prosumers are strong voices and spokespersons; they are the ultimate appeal to authority, allowing you to reach other customers who will choose your services or goods. This is important given our previous studies that consumers prefer to believe other consumers' experiences more than the image the business presents.
+                            <TextContent>To reiterate, the role of the prosumer is growing significantly. Prosumers are strong voices and spokespersons; they are the ultimate appeal to authority, allowing you to reach other customers who will choose your services or goods. This is important given our previous studies that consumers prefer to believe other consumers&apos; experiences more than the image the business presents.
                             </TextContent>
-                            <TextContent>Moreover, is there a more effective marketing strategy than having satisfied customers? They will help spread the word about how great your services are to new clients because of their influence and social media presence. A business or organization that provides poor service will be obliged to "cover up" its reputation by increasing marketing spending and bringing in new clients.
+                            <TextContent>Moreover, is there a more effective marketing strategy than having satisfied customers? They will help spread the word about how great your services are to new clients because of their influence and social media presence. A business or organization that provides poor service will be obliged to &apos;cover up&apos; its reputation by increasing marketing spending and bringing in new clients.
                             </TextContent>
                             <TextContent>Improving customer service can not only help your business build customer loyalty but also attract more and more people to your Shopify store.
                             </TextContent>
-                            <TextBold>Call to action
+                            <TextBold>5. Call to action
                             </TextBold>
-                            <TextContent>A call to action (CTA) is a piece of content that encourages potential consumers to do an action that fulfills the purpose of grabbing the customers' attention and making a sale. A call to action (CTA) in web design can be a banner, button, or other visual that urges users to click it. </TextContent>
+                            <TextContent>A call to action (CTA) is a piece of content that encourages potential consumers to do an action that fulfills the purpose of grabbing the customers&apos; attention and making a sale. A call to action (CTA) in web design can be a banner, button, or other visual that urges users to click it. </TextContent>
                             <Image src={IMG_CALL_TO_ACTION} layout={'responsive'} priority={true} alt={'Improve customer service.'}/>
                             <TextContent>You may have highlighted the following examples of some typical call-to-action buttons:</TextContent>
                             <TextContent>⦁	Call Now</TextContent>
@@ -192,7 +192,7 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             <TextContent>⦁	Learn More</TextContent>
                             <TextContent>⦁	Downloaded</TextContent>
                             <TextContent>⦁	Click Here</TextContent>
-                            <TextContent>Sales funnels and Calls to action go hand in hand. The transitions between the stages of the buyer's journey are provided by the calls to action. They direct the user on what to do next and urge them to act right away. You must encourage this action with a strategically positioned CTA in the sales funnel if you want your user to visit your blog, give you their contact information, download an e-book, or subscribe to an email list.</TextContent>
+                            <TextContent>Sales funnels and Calls to action go hand in hand. The transitions between the stages of the buyer&apos;s journey are provided by the calls to action. They direct the user on what to do next and urge them to act right away. You must encourage this action with a strategically positioned CTA in the sales funnel if you want your user to visit your blog, give you their contact information, download an e-book, or subscribe to an email list.</TextContent>
                             <TextContent>The easier you make it to take the next step, the more people will do so. Your CTA improves user experience. You provide the solution in an eye-catching, vibrantly colored button to direct your audience to the next step of the purchasing process rather than leaving them to guess and wonder.</TextContent>
                         </section>
 
@@ -203,7 +203,7 @@ export const BoostSale:NextPage = memo(function BoostSale(){
                             </TextContent>
                             <TextContent>
                                 This may be your online marketing plan. You should create design strategies, advertising plans, and many more in the same way. Moreover,
-                                "don't put all your eggs in one basket" but use all of your available strategies to generate leads and turn them into paying clients.
+                                &quot;don&apos;t put all your eggs in one basket&quot; but use all of your available strategies to generate leads and turn them into paying clients.
                             </TextContent>
                         </section>
                         {/*    Footer*/}
@@ -366,7 +366,7 @@ const TextBold =styled.span`
   color: #292d34;
 `
 const TextRed = styled(TextBold)`
-  color: #c92222;
+  color: #292d34;
 `
 const ListArticles= styled.ul`
 

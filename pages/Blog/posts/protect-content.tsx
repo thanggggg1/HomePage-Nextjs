@@ -23,11 +23,10 @@ import styled from "styled-components";
 import {fontScale} from "../../../utils/fontScale";
 
 const data= [
+    'WHAT IS CONTENT THEFT?',
     'RISKS AND CONSEQUENCES',
     'HOW TO RECOGNIZE IF YOUR CONTENT IS BEING STOLEN?',
-    'SOLUTIONS',
-    'Disable Right-click anti-theft by Sortecom'
-
+    'SOLUTIONS'
 ]
 const title ='HOW TO PROTECT YOUR IMAGES, TEXT, AND CONTENT '
 
@@ -85,17 +84,14 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                             </Info>
                         </RowStart>
                         {/*Intro*/}
-                        <TextContent>Disable right-click for material is extremely important, particularly for Shopify store owners since stolen content is often reposted on other blogs, article websites, and personal websites. You may have put hours, if not days, into developing content you believe your customers' personas would enjoy, only for someone else to profit from it on their own website with your creativity and labor.
+                        <TextContent>Disable right-click for material is extremely important, particularly for Shopify store owners since stolen content is often reposted on other blogs, article websites, and personal websites. You may have put hours, if not days, into developing content you believe your customers&apos; personas would enjoy, only for someone else to profit from it on their own website with your creativity and labor.
                             So are you looking for a way to disable right-click to prevent store visitors from downloading any images, disable copy, paste, and ‘save as’ for anti-theft purposes? If so, this is for you.</TextContent>
                         <TextContent>We will go over all you need to know about securing your store content in this guide. You can use the tips and tricks shown here to disable right-click, stop image theft,
                             and prohibit IP addresses from particular countries in your Shopify store. We will also show how to carry it out on your own, with or without using a Shopify app.</TextContent>
                         <TextContent>Before we start, let’s understand content theft!</TextContent>
-
-                        <TextHeading>WHAT IS CONTENT THEFT?</TextHeading>
-
                         {/*    Section 1*/}
                         <section id={'01'}>
-
+                        <TextHeading>I. WHAT IS CONTENT THEFT?</TextHeading>
                             <TextContent>The unauthorized use of website content by a third party for their personal gain is known as content theft.
                                 Competitors steal a variety of online materials from websites, including blog posts, images,
                                 audiovisual components, and more. If your content is valuable, more likely than not, someone will want to use it for their own benefit.
@@ -105,24 +101,27 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                                 writing or editing themselves, content aggregators collect and reuse available content to drive traffic and earn generate sales.
                                 The motivation is clear that it is much easier to copy any other content than go through the arduous process of creating their own.
                             </TextContent>
-                            <TextTitle>1. RISKS AND CONSEQUENCES</TextTitle>
+                        </section>
+                        <section id={'02'}>
+                            <TextTitle>II . RISKS AND CONSEQUENCES</TextTitle>
                             <TextContent>High-quality content is hard-work and time-consuming. Being stolen content may not only make you feel terrible but it also has some potential risks and serious consequences for your websites.</TextContent>
                             <TextContent>What will happen if your content is being stolen? Your websites may experience unfair competition when you have to spend a lot of time creating and editing while your competitors just need to copy all your images,
                                 and text for their websites and ensure that their prices always are more reasonable than yours. It is not fair to the merchants who follow the rules.
                             </TextContent>
 
-                            <TextContent>Your SEO rankings may decrease if scraper bots take your content and publish it elsewhere without your permission. Search engines must choose which version of "appreciably similar" information to rank for query results when there are several copies of it available online. Despite being very effective at identifying the original source, Google is not always accurate. Other websites must select between duplicates too.
+                            <TextContent>Your SEO rankings may decrease if scraper bots take your content and publish it elsewhere without your permission. Search engines must choose which version of &quot;appreciably similar&quot; information to rank for query results when there are several copies of it available online. Despite being very effective at identifying the original source, Google is not always accurate. Other websites must select between duplicates too.
                                 Other websites may be spread instead of all the important inbound links pointing to you, reducing your online search visibility.
                             </TextContent>
                             <TextContent>As a result, traffic and income of your store will generally loss.
                                 Every visitor an e-commerce website loses to a rival business represents a missed chance to make a transaction.
                             </TextContent>
                         </section>
+
                         {/*    Section 2*/}
-                        <section id={'02'} >
-                            <TextTitle id={'section-02'}>2. HOW TO RECOGNIZE IF YOUR CONTENT IS BEING STOLEN?
+                        <section id={'03'} >
+                            <TextTitle id={'section-03'}>III. HOW TO RECOGNIZE IF YOUR CONTENT IS BEING STOLEN?
                             </TextTitle>
-                            <TextBold>Google Alert</TextBold>
+                            <TextBold>1. Google Alert</TextBold>
                             <TextContent>Google Alert is one of the most simple and user-friendly internet tools to automatically determine if your material was duplicated without your permission.
                                 It not only notifies you via email whenever your website is mentioned but also when your content is being used illegally.
                             </TextContent>
@@ -130,37 +129,37 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                                 paste a portion of any post you like to analyze, choose the kinds of websites you want to be looked for,
                                 and then type your email address. If there are any cases of content being utilized that meet the criteria you specified, Google will email you with the findings.
                             </TextContent>
-                            <TextBold>Plagiarism Checker </TextBold>
+                            <TextBold>2. Plagiarism Checker </TextBold>
                             <TextContent>Software that checks content for duplication is known as a plagiarism checker (this may include quoted material, paraphrased material, similarities in wording, etc.).
                                 It may be crucial for you if you want to check whether there is any website copying your content.
                             </TextContent>
-                            <TextContent>Simply type your article into the text box and click the "check plagiarism" button to get it checked for plagiarism.
-                                The next thing that will happen is that this tool will use Google's search engine to scan for words and phrases from your writing.
+                            <TextContent>Simply type your article into the text box and click the &quot;check plagiarism&quot; button to get it checked for plagiarism.
+                                The next thing that will happen is that this tool will use Google&apos;s search engine to scan for words and phrases from your writing.
                                 It will highlight certain passages of the content located online when the search is done.
                             </TextContent>
-                            <TextBold>Google images</TextBold>
+                            <TextBold>3. Google images</TextBold>
                             <TextContent>Google Image Search may meet your demand if you want to look for potential copies of your images and see whether someone is using them without your consent. Enter its URL or upload your original picture directly.
                                 You will see the normal Google results page along with the websites and pages that feature your image if anything is discovered.
                             </TextContent>
                         </section>
                         {/*Section 03*/}
-                        <section id={'03'}>
-                            <TextTitle>3. SOLUTIONS</TextTitle>
+                        <section id={'04'}>
+                            <TextTitle>IV. SOLUTIONS</TextTitle>
                             <TextContent>You undoubtedly know precisely what to do if someone takes something from your home or company.
                                 However, how do you handle it when something is stolen online? Every day, content is stolen, ripped, and scraped, and this behavior is getting more and more common online. Some dishonest individuals could decide to imitate your hard work rather than put in their own effort. Therefore, we listed several effective ways for you to protect your work.
                             </TextContent>
                             <TextBold>1. Ways to wipe out the offending content</TextBold>
                             <TextContent>After you identify your content is being used without your permission, what would you do? Would you call the police or post another blog to criticize your competitor?
                                 They’re all impossible and can harm your brand’s reputation. So I put here a few steps to help you remove the stealing content on Shopify.</TextContent>
-                            <TextBold>Contact the thief directly</TextBold>
+                            <TextBold>1.1 Contact the thief directly</TextBold>
                             <TextContent>You need to keep your calm in this case. Take some time to gather your views and proof before moving forward.
                                 Make a document with all the details you can gather, such as the URL(s) where the content was taken is located, any contact information, dates, and times, etc.
                             </TextContent>
                             <TextContent>Although it might be difficult, confrontation is frequently the most effective way to have duplicated information deleted. For contact details, look through
                                 all the offending Shopify stores.</TextContent>
                             <TextContent>Request the removal of your content by sending a brief message outlining what was taken, together with the URLs of both the original and copied page(s). Remember to provide a deadline when you compose your email. This shows your seriousness and creates a sense of urgency.</TextContent>
-                            <TextBold>Report to DMCA </TextBold>
-                            <TextContent>However, it is possible that the thief may not respond or ignore your warning. In this case, you may need to report copyright infringement to Shopify DMCA. To do this, you just have to fill in the form https://help.shopify.com/en/legal/dmca#/form all the necessary information. Then, users who repeatedly violate its policies will have their accounts disabled or terminated by Shopify, as necessary.
+                            <TextBold>1.2 Report to DMCA </TextBold>
+                            <TextContent>However, it is possible that the thief may not respond or ignore your warning. In this case, you may need to report copyright infringement to Shopify DMCA. To do this, you just have to fill in the form <TextLink href={'https://help.shopify.com/en/legal/dmca#/form'} target={'_blank'}>https://help.shopify.com/en/legal/dmca#/form</TextLink> all the necessary information. Then, users who repeatedly violate its policies will have their accounts disabled or terminated by Shopify, as necessary.
                             </TextContent>
                             <TextContent>Additionally, you may submit a single form to report multiple stores that are violating the same copyrighted content. You might be held responsible for damages if you wrongly claim that certain content infringes your copyright.</TextContent>
                             <TextBold>2. How to prevent future content theft.</TextBold>
@@ -168,24 +167,20 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                             <Image src={IMG_PROTECT_CONTENT_01} layout={'responsive'} alt={'protect Content'}/>
                             <TextContent>You had better add a visible copyright notification on your website. Utilizing a text panel from the widgets pane in the Customizer to add the copyright notice to your sidebar so that it is always visible. Depending on the sort of themes you now operate, your copyright notice should be written differently.
                             </TextContent>
-                            <TextContent>Moreover, you might need to apply a watermark on the photographs. Although it won't totally stop them from being stolen, it could assist to confirm your authorship.</TextContent>
+                            <TextContent>Moreover, you might need to apply a watermark on the photographs. Although it won&apos;t totally stop them from being stolen, it could assist to confirm your authorship.</TextContent>
                             <TextContent>Although these two methods are the simplest ways to mark your copyright, it’s still not thoroughly safe for your Shopify store. Therefore, we recommend you to add these apps to your Shopify store so that they can protect your content totally.
                             </TextContent>
-
                         </section>
-
-
-                        {/*    Section 04*/}
-                        <section id={'04'}>
-                            <TextTitle>4. Disable Right-click anti-theft by Sortecom</TextTitle>
+                        <section>
+                            <TextTitle>Disable Right-click anti-theft by Sortecom</TextTitle>
                             <Image src={IMG_PROTECTION} priority={true} layout={'responsive'} alt={'Disable Right-click anti-theft by Sortecom'}/>
-                            <TextContent>With the variety of ways your copyright might be violated, you'll need a comprehensive approach to fend off dishonest tactics. Disable Right-click anti-theft is the ONLY app that secures both your images, and text and can block scammers. This app easily and quickly installs and works without any coding, just toggle the settings on/off
+                            <TextContent>With the variety of ways your copyright might be violated, you&apos;ll need a comprehensive approach to fend off dishonest tactics. <TextLink href={'https://apps.shopify.com/content-protection-1'}>Disable Right-click anti-theft</TextLink> is the ONLY app that secures both your images, and text and can block scammers. This app easily and quickly installs and works without any coding, just toggle the settings on/off
                                 in the app dashboard to protect your content in a few seconds. Furthermore, it’s extremely convenient for every merchant due to its ability to work with all themes.
                             </TextContent>
                             <TextContent>-  Protect Text & Images</TextContent>
                             <TextContent>-  Disable Keyboard Shortcuts</TextContent>
                             <TextContent>-  Disable Print Page (ctrl/cmd + P)</TextContent>
-                            <TextContent>-  Disable Inspect Elements/Developer's Tools (F12)
+                            <TextContent>-  Disable Inspect Elements/Developer&apos;s Tools (F12)
                             </TextContent>
                             <TextContent>-  Disable Right Click</TextContent>
                             <TextContent>-  Disable Selenium Access</TextContent>
@@ -195,9 +190,11 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                             <TextContent>-  Compatible with all browsers
                             </TextContent>
                             <TextContent>-  Work on all devices (desktop, mobile, tablet).</TextContent>
-                            <TextContent><TextBold>Disable Right-click Anti-theft</TextBold> prevents all intentional violations of your copyright, including screen-shot, download, keyboard shortcuts, right clicks, and Dev Tools. Put a stop to the unfair competition brought on by spam, hackers, cheaters, and the theft of your labor. The <TextBold>Disable Right-click Anti-theft</TextBold> finds and prevents
+                            <TextContent><TextLink href={'https://apps.shopify.com/content-protection-1'}>Disable Right-click anti-theft</TextLink> prevents all intentional violations of your copyright, including screen-shot, download, keyboard shortcuts, right clicks, and Dev Tools. Put a stop to the unfair competition brought on by spam, hackers, cheaters, and the theft of your labor. The <TextLink href={'https://apps.shopify.com/content-protection-1'}>Disable Right-click anti-theft</TextLink> finds and prevents
                                 suspicious activity that endangers your consumers and your business. Block access to your store for people from specific countries or with specific IP addresses.</TextContent>
-
+                            <TextBold style={{color:'orange'}}>Price : Free</TextBold>
+                            <br/>
+                            <br/>
                             <TextBold>Content Protection by Webize
                             </TextBold>
                             <TextContent>Highlight features:
@@ -222,15 +219,14 @@ const ProtectContentBlog:NextPage=memo(function ProtectContentBlog() {
                             </TextContent>
                             <TextContent>-        Disable right-click
                             </TextContent>
-                            <TextContent>Another app is Shop Secure, which can protect your content by blocking blacklisting or whitelisting visitors from particular nations to your store using their IP address. It also creates a GDPR consent banner to ask for visitors' consent to cookies and stay GDPR compliant and disables
+                            <TextContent>Another app is Shop Secure, which can protect your content by blocking blacklisting or whitelisting visitors from particular nations to your store using their IP address. It also creates a GDPR consent banner to ask for visitors&apos; consent to cookies and stay GDPR compliant and disables
                                 right-click and keyboard shortcuts in your store to protect your work from unfair competition</TextContent>
                             <TextContent>Price: 9$/month
                             </TextContent>
                         </section>
-
                         {/*    Section 05*/}
-                        <section id={'05'} >
-                            <TextTitle>5. CONCLUSION</TextTitle>
+                        <section>
+                            <TextTitle>CONCLUSION</TextTitle>
                             <TextContent>Theft of online content will always be a concern.
                                 The good news is that you have a variety of options for preventing, identifying, and handling stolen content.
                                 The tools and advice listed above can assist you in keeping your work safe from copying or at least guarantee that you receive the credit you deserve for all of your diligent efforts.
@@ -421,6 +417,16 @@ const ItemArticle = styled.div`
 display: flex;
   flex: 1;
   margin-right: 20px;
+`
+const TextLink = styled.a`
+  font-style: normal;
+  font-weight: 600;
+  font-size: ${p => fontScale(20)}px;
+  line-height: 20px;
+  letter-spacing: 0.025em;
+  margin: 12px 0;
+  color: #18A0FB;
+  text-decoration: underline;
 `
 
 export default ProtectContentBlog

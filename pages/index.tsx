@@ -10,15 +10,16 @@ import {
     IMG_DIVIDE_SECTION,
     IMG_HEADER,
     IMG_LEATHERHEAD_LOGO,
-    IMG_LOGO,
     IMG_LUCY_LOGO,
     IMG_NEW_MARKET_LOGO,
     IMG_PIPCORN_LOGO,
     IMG_POLAROID_LOGO,
+    IMG_PROTECT_CONTENT_01,
     IMG_QUAKER_LOGO,
     IMG_REACTANGLE_HOME_01,
     IMG_REACTANGLE_HOME_02,
     IMG_REACTANGLE_HOME_03,
+    IMG_TITLE_BENEFITS,
     IMG_TRIANGL_LOGO
 } from "../assets";
 import {CardContentSection} from "../components/HomePage/CardContentSection";
@@ -32,6 +33,7 @@ import {fontScale} from "../utils/fontScale";
 import {DivImage} from "./Products/FreeGiftPage";
 import Head from "next/head";
 import UseWindowSize from "../utils/useWindowSize";
+import Link from "next/link";
 
 
 const Home: NextPage = memo(function Home() {
@@ -40,9 +42,10 @@ const Home: NextPage = memo(function Home() {
         <>
             <Head>
                 <title>SortEcom</title>
-                <meta name="homepage" content="SortEcom gives you the best apps to optimize sales. We constantly upgrade more high-tech tools for you. Here you can find what should do and how to do. "/>
+                <meta name="homepage"
+                      content="SortEcom gives you the best apps to optimize sales. We constantly upgrade more high-tech tools for you. Here you can find what should do and how to do. "/>
                 <meta name="descripn" content="Powerful apps make your ecommerce business better"/>
-                <meta name="title" content="Free Gift | Content Protection | Email Marketing"/>
+                <meta name="title" content="Free Gift | Content Protection "/>
             </Head>
             <NavBar/>
             <Container>
@@ -51,13 +54,17 @@ const Home: NextPage = memo(function Home() {
                     <HeaderSection>
                         <TextBlueHeader>Powerful apps <TextHeaderBold>make<br/> your
                             ecommerce business better</TextHeaderBold> </TextBlueHeader>
-                        <TextHeaderNormal>Free Gift | Content Protection | Email Marketing</TextHeaderNormal>
+                        <TextHeaderNormal>| <TextLink href={'https://apps.shopify.com/free-gifts-bogo-cart-upsell'}>Free
+                            Gift</TextLink> | <TextLink href={'https://apps.shopify.com/content-protection-1'}>Content
+                            Protection</TextLink> |</TextHeaderNormal>
                         <div style={{display: "flex", flexWrap: 'wrap'}}>
-                            <ButtonNavBar className='click-btn btn-style902'>
-                                <div className="block"><span></span></div>
-                                <TextButtonWhite data-name="hover">Visit</TextButtonWhite>
-                                <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
-                            </ButtonNavBar>
+                            <Link href={'https://apps.shopify.com/partners/sortecom-team'}>
+                                <ButtonNavBar className='click-btn btn-style902'>
+                                    <div className="block"><span></span></div>
+                                    <TextButtonWhite data-name="hover">Visit</TextButtonWhite>
+                                    <TextButtonWhite data-name="me">Shopify apps</TextButtonWhite>
+                                </ButtonNavBar>
+                            </Link>
                         </div>
                         <br/>
                         <br/>
@@ -82,12 +89,14 @@ const Home: NextPage = memo(function Home() {
                         <CardContentSection header={'Various kinds of app \n' +
                             'for every problems'}
                                             content={'We provide apps that deal with daily struggles of a merchant.'}
-                                            isList={true} textButton={'Learn More'}/>
+                                            isList={true} textButton={'Learn More'}
+                                            linkHref={'#learn-more'}/>
                     </ItemWrapper>
                     <ItemWrapper width={width}>
                         <CardContentSection header={'Trusted by \n' +
                             'worldwide merchants'} content={'Used by 100K+ merchants with 100% satisfaction'}
-                                            isList={false} textButton={'What they talk about'}/>
+                                            isList={false} textButton={'What they talk about'}
+                        />
                         <CardContentSection header={'Enhance merchants’ experience'}
                                             content={'We develop apps that customer-centric and really easy to use.'}
                                             isList={false} textButton={'Learn More'}/>
@@ -110,72 +119,92 @@ const Home: NextPage = memo(function Home() {
                     <TextFeedbackNormal>Join over +10,000 Shopify brands that run their business on Sortecom.
                         We are in the business of helping your business to provide your customers with more
                         value.</TextFeedbackNormal>
-                    <DivSpaceBetWeen width={width}>
-                        <StatisticalWrapper>
-                            <TextFeedBackNumber>100 thousand</TextFeedBackNumber>
-                            <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>
-                        </StatisticalWrapper>
-                        <StatisticalWrapper>
-                            <TextFeedBackNumber>2 billion</TextFeedBackNumber>
-                            <TextFeedbackNormal>Shopper interaction</TextFeedbackNormal>
-                        </StatisticalWrapper>
-                        <StatisticalWrapper>
-                            <TextFeedBackNumber>1 million </TextFeedBackNumber>
-                            <TextFeedbackNormal>Users worlwide</TextFeedbackNormal>
-                        </StatisticalWrapper>
-                        <StatisticalWrapper>
-                            <TextFeedBackNumber>4 Apps</TextFeedBackNumber>
-                            <TextFeedbackNormal>serve all purposes</TextFeedbackNormal>
-                        </StatisticalWrapper>
-                    </DivSpaceBetWeen>
+                    {/*<DivSpaceBetWeen width={width}>*/}
+                    {/*    <StatisticalWrapper>*/}
+                    {/*        <TextFeedBackNumber>100 thousand</TextFeedBackNumber>*/}
+                    {/*        <TextFeedbackNormal>Installation in 1 month</TextFeedbackNormal>*/}
+                    {/*    </StatisticalWrapper>*/}
+                    {/*    <StatisticalWrapper>*/}
+                    {/*        <TextFeedBackNumber>2 billion</TextFeedBackNumber>*/}
+                    {/*        <TextFeedbackNormal>Shopper interaction</TextFeedbackNormal>*/}
+                    {/*    </StatisticalWrapper>*/}
+                    {/*    <StatisticalWrapper>*/}
+                    {/*        <TextFeedBackNumber>1 million </TextFeedBackNumber>*/}
+                    {/*        <TextFeedbackNormal>Users worlwide</TextFeedbackNormal>*/}
+                    {/*    </StatisticalWrapper>*/}
+                    {/*    <StatisticalWrapper>*/}
+                    {/*        <TextFeedBackNumber>4 Apps</TextFeedBackNumber>*/}
+                    {/*        <TextFeedbackNormal>serve all purposes</TextFeedbackNormal>*/}
+                    {/*    </StatisticalWrapper>*/}
+                    {/*</DivSpaceBetWeen>*/}
                 </WrapperPaddingFeedback>
                 <Marquee speed={40}>
                     <FeedbackCardWrapper>
                         <CardFeedbackItem>
-                            <CardFeedback name={'PIPCORN'} iconUri={IMG_PIPCORN_LOGO} content={'Despite our 14-hour time difference, they always answer my questions very quickly.'}/>
+                            <CardFeedback name={'PIPCORN'} iconUri={IMG_PIPCORN_LOGO}
+                                          content={'Despite our 14-hour time difference, they always answer my questions very quickly.'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'TRIANGL'} iconUri={IMG_TRIANGL_LOGO} content={'Their dashboard and data are very easy to understand, and the implementation is also easy and seamless. \n'}/>
+                            <CardFeedback name={'TRIANGL'} iconUri={IMG_TRIANGL_LOGO}
+                                          content={'Their dashboard and data are very easy to understand, and the implementation is also easy and seamless. \n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'LeatherHead'} iconUri={IMG_LEATHERHEAD_LOGO} content={'Sortecom’s apps are incredible! My conversion rate went up by almost 15% in the first month of using it. \n'}/>
+                            <CardFeedback name={'LeatherHead'} iconUri={IMG_LEATHERHEAD_LOGO}
+                                          content={'Sortecom’s apps are incredible! My conversion rate went up by almost 15% in the first month of using it. \n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'BREMONT'} iconUri={IMG_BREMONT_LOGO} content={'Best support ever, out-of-the-box, creative, and really great set of tools but it’s truly affordable. \n'}/>
+                            <CardFeedback name={'BREMONT'} iconUri={IMG_BREMONT_LOGO}
+                                          content={'Best support ever, out-of-the-box, creative, and really great set of tools but it’s truly affordable. \n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'BITE'} iconUri={IMG_BITE_LOGO} content={'I can spend less time researching a bunch of supportive apps while having so many other things to learn and focus on. \n'}/>
+                            <CardFeedback name={'BITE'} iconUri={IMG_BITE_LOGO}
+                                          content={'I can spend less time researching a bunch of supportive apps while having so many other things to learn and focus on. \n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'New Market Goods'} iconUri={IMG_NEW_MARKET_LOGO} content={'I have no previous experience and this app has been critical to getting my product landing page in top-notch condition. So these apps are so useful, and simple for me. \n'}/>
+                            <CardFeedback name={'New Market Goods'} iconUri={IMG_NEW_MARKET_LOGO}
+                                          content={'I have no previous experience and this app has been critical to getting my product landing page in top-notch condition. So these apps are so useful, and simple for me. \n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'LUCY FOLK'} iconUri={IMG_LUCY_LOGO} content={'Everything works fine. Never had any problems. Would recommend :)\n'}/>
+                            <CardFeedback name={'LUCY FOLK'} iconUri={IMG_LUCY_LOGO}
+                                          content={'Everything works fine. Never had any problems. Would recommend :)\n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'Quaker Marine Supply'} iconUri={IMG_QUAKER_LOGO} content={'The support team is brilliant; they\'re always willing to help you. Highly recommend!\n'}/>
+                            <CardFeedback name={'Quaker Marine Supply'} iconUri={IMG_QUAKER_LOGO}
+                                          content={'The support team is brilliant; they\'re always willing to help you. Highly recommend!\n'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'Brightland'} iconUri={IMG_BRIGHTLAND_LOGO} content={'Absolutely amazing app! If you get stuck or are unsure the customer service is very quick and very helpful!'}/>
+                            <CardFeedback name={'Brightland'} iconUri={IMG_BRIGHTLAND_LOGO}
+                                          content={'Absolutely amazing app! If you get stuck or are unsure the customer service is very quick and very helpful!'}/>
                         </CardFeedbackItem>
                         <CardFeedbackItem>
-                            <CardFeedback name={'POLAROID'} iconUri={IMG_POLAROID_LOGO} content={'It helps me a lot with quite a range of possibilities, I can\'t say it all. Really really great apps.\n'}/>
+                            <CardFeedback name={'POLAROID'} iconUri={IMG_POLAROID_LOGO}
+                                          content={'It helps me a lot with quite a range of possibilities, I can\'t say it all. Really really great apps.\n'}/>
                         </CardFeedbackItem>
                     </FeedbackCardWrapper>
                 </Marquee>
             </FeedbackSection>
-            <Container>
+            <Container id={'learn-more'}>
                 <BlogSection>
                     <DivSpaceBetWeen width={width}>
-                        <TextBlogBold>Our successful implementations</TextBlogBold>
-                        <ButtonNavBar>
-                            <TextButtonWhite>Read all blogs</TextButtonWhite>
-                        </ButtonNavBar>
+                        <TextBlogBold>Our Articles</TextBlogBold>
+                        <Link href={'/Blog/BlogPage'}>
+                            <ButtonNavBar>
+                                <TextButtonWhite>Read all blogs</TextButtonWhite>
+                            </ButtonNavBar>
+                        </Link>
                     </DivSpaceBetWeen>
                     <DivCenter>
-                        <CardBlogHomePage/>
+                        <CardBlogHomePage title={'How to protect your images, text, content.'}
+                                          subTitle={'Wondering how to protect your content from thieves all the time? Click here to learn how to recognize if your content is being stolen and prevent it.'}
+                                          linkHref={'/Blog/posts/protect-content'}
+                                          isProtect={true}
+                                          imageUri={IMG_PROTECT_CONTENT_01}/>
                     </DivCenter>
-                    <CardBlogHomePage/>
+                    <CardBlogHomePage title={'3 huge benefits of offering gifts with purchase.'}
+                                      subTitle={'Learn the reasons why we should include gift-with-purchase promotion in marketing campaigns and some supportive tools for gift-with-purchase promotion.'}
+                                      linkHref={'/Blog/posts/benefits-with-purchase'}
+                                      isProtect={false}
+                                      imageUri={IMG_TITLE_BENEFITS}/>
                     <br/>
                     <br/>
                     <br/>
@@ -403,5 +432,12 @@ const CenterImageAnimation = styled.div`
   transform-origin: bottom;
   z-index: 2000;
 `
-
+const TextLink = styled.a`
+  font-style: normal;
+  font-weight: 600;
+  font-size: ${p => fontScale(20)}px;
+  line-height: 20px;
+  letter-spacing: 0.025em;
+  margin: 12px 0;
+`
 export default Home

@@ -12,6 +12,7 @@ import Image from "next/image";
 import {IMG_BACKGROUND_FREEGIFT, IMG_REACTANGLE_FREEGIFT_01, IMG_REACTANGLE_FREEGIFT_02} from "../../assets";
 import Head from "next/head";
 import UseWindowSize from "../../utils/useWindowSize";
+import Link from "next/link";
 
 const FreeGiftPage = memo(function FreeGiftPage() {
     const {width} = UseWindowSize();
@@ -32,11 +33,13 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                         </TextHeaderBold>
                         <TextHeaderNormal>Encourage your customers to buy more and increase your Average Order
                             Value?</TextHeaderNormal>
-                        <ButtonNavBar className='click-btn btn-style902'>
-                            <div className="block"><span></span></div>
-                            <TextButtonWhite data-name="hover">Create</TextButtonWhite>
-                            <TextButtonWhite data-name="me">Gift Campaign</TextButtonWhite>
-                        </ButtonNavBar>
+                        <Link href={'https://apps.shopify.com/free-gifts-bogo-cart-upsell'}>
+                            <ButtonNavBar className='click-btn btn-style902'>
+                                <div className="block"><span></span></div>
+                                <TextButtonWhite data-name="hover">Create</TextButtonWhite>
+                                <TextButtonWhite data-name="me">Gift Campaign</TextButtonWhite>
+                            </ButtonNavBar>
+                        </Link>
                         {width > 1024 && <DivImage>
                             <LeftImage className={'bounce-2'}>
                                 <Image src={IMG_REACTANGLE_FREEGIFT_01} width={200}/>
@@ -50,39 +53,41 @@ const FreeGiftPage = memo(function FreeGiftPage() {
                 </>
                 <ProblemSection>
                     <TextTitleProblem>PROBLEMS</TextTitleProblem>
-                    <TextBoldProblem>Why do merchants concern about the copyright?</TextBoldProblem>
+                    <TextBoldProblem>Why do merchants need Gift-with-Purchase?</TextBoldProblem>
                     <DivSpaceBetWeen style={{alignItems: 'self-start'}} width={width}>
                         <ItemProblemSection width={width}>
-                            <CardProblem title={'Your work belongs to you!'}
-                                         content={'Original images and content are valuable digital assets that must be well-protected to prevent replication.'}/>
+                            <CardProblem title={'Increasing conversion rate'}
+                                         content={'When someone receives gifts, their affection for the business increases, which encourages them to buy more.'}/>
                         </ItemProblemSection>
                         <ItemProblemSection width={width}>
-                            <CardProblem title={'Duplicated content affects SEO'}
-                                         content={'Search engines prize stores with higher ranking for original content, duplicated work will definitely impact your SEO performance, espeacially on Google'}/>
+                            <CardProblem title={'Build customer loyalty'}
+                                         content={'Nearly 90% of consumers who got a present said they tended to make more purchases from that online merchant in the future. \n' +
+                                             '\n' +
+                                             'Customers are more loyal to companies that actually try to connect with them by adding value.\n'}/>
                         </ItemProblemSection>
                         <ItemProblemSection width={width}>
-                            <CardProblem title={'Lack of a complete solution'}
-                                         content={'Because there are various ways to violate your copyright, you will need a comprehensive solution to avoid fraudulent practices.'}/>
+                            <CardProblem title={'Add brand recognition'}
+                                         content={'Your product will become more attractive, providing your goods a strategic advantage against well-known and formerly reliable brands.'}/>
                         </ItemProblemSection>
                     </DivSpaceBetWeen>
                 </ProblemSection>
                 <ContentSection id={'about'}>
                     <TextTitleProblem>OUR SOLUTIONS</TextTitleProblem>
-                    <TextBoldProblem>Create prevention of on-site interaction</TextBoldProblem>
+                    <TextBoldProblem>Powerful tools that Create and Customize gift-with-purchase promotions </TextBoldProblem>
                     <DivSpaceBetWeen width={width}>
                         <ItemWrapper width={width}>
                             <ItemGradient text={'All-in-one protection'} greenText={'What you need is an'}/>
-                            <CardContentSection header={'Disable Keyboard Shortcuts\n' +
-                                'Disable Dev tools (F12)'}
-                                                content={'Vistors on your site can not access to the function of these keyboard shortcuts:' +
-                                                    ''} textButton={'Learn more'}/>
+                            <CardContentSection header={'Create various campaigns'}
+                                                content={'It allows you to create infinite campaigns that meet all your requirements:'} textButton={'Learn more'} isListFreegift={true}/>
                         </ItemWrapper>
                         <ItemWrapper width={width}>
-                            <CardContentSection header={'Disable Right-click'}
-                                                content={'Vistors on your site are not allowed to Text Selection and use Right-click on the mouse.'}
-                                                textButton={'Install the app now'}/>
-                            <CardContentSection header={'Disable by Country'}
-                                                content={'Block users from specific countries'}
+                            <CardContentSection header={'Customize freely \n' +
+                                'displayed pop-ups'}
+                                                content={'The displayed pop-ups can be customized to stand out and be more persuasive.'}
+                                                textButton={'Install the app now'}
+                            linkHref={'https://apps.shopify.com/free-gifts-bogo-cart-upsell'}/>
+                            <CardContentSection header={'Statistical analytic system'}
+                                                content={'Powerful analytics that identify best-selling gifts and profitable campaigns.'}
                                                 textButton={'Experience our app'}/>
                         </ItemWrapper>
                         <ItemWrapper width={width}>

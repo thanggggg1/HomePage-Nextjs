@@ -39,7 +39,7 @@ const PostBlog:NextPage = memo(function PostBlog() {
     return (
         <>
             <Head>
-                <title>SortEcom - Post Blog</title>
+                <title>SortEcom - Post Blog</title>F
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <NavBar/>
@@ -257,7 +257,7 @@ const PostBlog:NextPage = memo(function PostBlog() {
                         <br/>
                     </LeftContainer>
                     {width > 1024 &&  <RightContainer>
-                        <TableContents/>
+                        <TableContents data={[]} title={''}/>
                     </RightContainer>}
                 </ContentContainer>
                 <ContentContainer>
@@ -271,13 +271,13 @@ const PostBlog:NextPage = memo(function PostBlog() {
                 <ContentContainer>
                     <DivRowFlex width={width}>
                         <ItemArticle>
-                            <CardArticle/>
+                            <CardArticle title={''} linkHref={''} />
                         </ItemArticle>
                         <ItemArticle>
-                            <CardArticle/>
+                            <CardArticle title={''} linkHref={''} />
                         </ItemArticle>
                         <ItemArticle>
-                            <CardArticle/>
+                            <CardArticle title={''} linkHref={''} />
                         </ItemArticle>
                     </DivRowFlex>
                 </ContentContainer>

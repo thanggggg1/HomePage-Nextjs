@@ -13,13 +13,26 @@ export const CardContentSection = memo(function CardContentSection(props:any) {
             <TextContentHeading>{props.header}</TextContentHeading>
             <TextContentNormal>{props.content}</TextContentNormal>
             {props.isList && <ListBullets>
-                <ItemList>Sending email/SMS in bulk</ItemList>
                 <ItemList>Special gift offers</ItemList>
                 <ItemList>Disable right-click & Content protection</ItemList>
             </ListBullets>}
+            {
+                props.isListFreegift && <ListBullets>
+                    <ItemList>Buy one get one (BOGO)
+                    </ItemList>
+                    <ItemList>Buy X get Y
+                    </ItemList>
+                    <ItemList>Buy X get discount of Y
+                    </ItemList>
+                    <ItemList>Spend a certain amount of money get Y
+                    </ItemList>
+                    <ItemList>and many more
+                    </ItemList>
+                </ListBullets>
+            }
             <LeftDiv>
                 <GrayButton className='click-btn btn-style505'>
-                    <TextButton>{props.textButton}</TextButton>
+                    <TextButton href={props.linkHref}>{props.textButton}</TextButton>
                 </GrayButton>
             </LeftDiv>
         </Container>

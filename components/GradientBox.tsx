@@ -1,8 +1,9 @@
 import React, {memo} from "react";
 import styled from "styled-components";
 import {fontScale} from "../utils/fontScale";
+import Link from "next/link";
 
-export const GradientBox = memo(function GradientBox() {
+export const GradientBox = memo(function GradientBox(props:any) {
     return (
         <Container className={'content_bg_footer'}>
             <TextHeading>
@@ -10,9 +11,11 @@ export const GradientBox = memo(function GradientBox() {
             </TextHeading>
             <TextNormal>Are you ready to join the race?</TextNormal>
             <br/>
-            <Button>
-                <TextButton>Get started</TextButton>
-            </Button>
+            <Link href={'https://apps.shopify.com/partners/sortecom-team'}>
+                <Button>
+                    {props.isProtection ? <TextButton>Activate Protection</TextButton> : <TextButton>Get started</TextButton>}
+                </Button>
+            </Link>
         </Container>
     )
 })

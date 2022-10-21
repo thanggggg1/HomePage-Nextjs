@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useEffect} from "react";
 import styled from "styled-components";
 import Image from 'next/image'
-import {IC_PROTECTION, IC_SHAPE_DOWN, IMG_LOGO, IMG_TOGGLE} from "../assets";
+import {IC_FREEGIFT_LOGO, IC_PROTECTION, IC_SHAPE_DOWN, IMG_LOGO, IMG_TOGGLE} from "../assets";
 import {DivSpaceBetWeen, RowSection} from "../pages";
 import $ from 'jquery'
 import Link from "next/link";
@@ -66,7 +66,7 @@ export const NavBar = memo(function NavBar() {
                                     <ItemDropDown>
                                         <Row>
                                             <div style={{marginRight: 20}}>
-                                                <Image src={IC_PROTECTION} width={100} height={100}/>
+                                                <Image src={IC_FREEGIFT_LOGO} width={100} height={100}/>
                                             </div>
                                             <Column>
                                                 <Link href="/Products/FreeGiftPage" passHref>
@@ -89,13 +89,15 @@ export const NavBar = memo(function NavBar() {
                                 <TextNavBar href="#footer">Contact</TextNavBar>
                             </DivOptionNavBar>
                         </RowSectionMiddle> : <RowSectionMiddle/>}
-                        {width && width > 1024 ? <DivOptionNavBar>
-                            <ButtonNavBar className='click-btn btn-style505'>
-                            <TextButtonWhite>Start free on Shopify</TextButtonWhite>
-                            </ButtonNavBar>
+                        <Link href={'https://apps.shopify.com/partners/sortecom-team'}>
+                            {width && width > 1024 ? <DivOptionNavBar>
+                                <ButtonNavBar className='click-btn btn-style505'>
+                                    <TextButtonWhite>Start free on Shopify</TextButtonWhite>
+                                </ButtonNavBar>
                             </DivOptionNavBar> :   <ButtonToggle onClick={onSlide}>
-                            <Image src={IMG_TOGGLE} width={32} height={32}/>
-                        </ButtonToggle> }
+                                <Image src={IMG_TOGGLE} width={32} height={32}/>
+                            </ButtonToggle> }
+                        </Link>
                     </RowNavBar>
                 </ContentContainer>
             </Container>

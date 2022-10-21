@@ -5,28 +5,44 @@ import {IMG_BLOG_EXAMPLE} from "../../assets";
 import {ButtonNavBar, TextButtonWhite} from "../NavBar";
 import {fontScale} from "../../utils/fontScale";
 import UseWindowSize from "../../utils/useWindowSize";
+import Link from "next/link";
 
-export const CardBlogHomePage = memo(function CardBlogHomePage() {
+interface CardBlogHomePageProps {
+    title:string;
+    subTitle:string;
+    linkHref:string;
+    isProtect:boolean;
+    imageUri:string;
+}
+
+export const CardBlogHomePage = memo(function CardBlogHomePage(props:CardBlogHomePageProps) {
     const {width}=UseWindowSize();
+    const {title,subTitle,linkHref,isProtect,imageUri}=props;
     return (
         <Container width={width}>
             <LeftSection width={width}>
-                <TextHeading>Various kinds of app for every problems</TextHeading>
+                <TextHeading>{title}</TextHeading>
                 <br/>
-                <TextNormal>We provide apps that deal with daily struggles of a merchant.</TextNormal>
-                <ListBullets>
-                    <ItemList>Sending email/SMS in bulk</ItemList>
-                    <ItemList>Special gift offers</ItemList>
-                    <ItemList>Disable right-click & Content protection</ItemList>
-                </ListBullets>
+                <TextNormal>{subTitle}</TextNormal>
+                {isProtect ? <ListBullets>
+                    <ItemList>Work with all themes</ItemList>
+                    <ItemList>Protect Text & Images</ItemList>
+                    <ItemList>Disable Inspect Elements/Developer&apos;s Tools (F12)</ItemList>
+                </ListBullets> : <ListBullets>
+                    <ItemList>Add brand recognition</ItemList>
+                    <ItemList>Increasing conversion rate</ItemList>
+                    <ItemList>Build customer loyalty and encourage repeat purchases.</ItemList>
+                </ListBullets>}
                 <ButtonItem width={width}>
-                    <ButtonNavBar>
-                        <TextButtonWhite>Read full story</TextButtonWhite>
-                    </ButtonNavBar>
+                    {linkHref && <Link href={linkHref}>
+                        <ButtonNavBar>
+                            <TextButtonWhite>Read full story</TextButtonWhite>
+                        </ButtonNavBar>
+                    </Link>}
                 </ButtonItem>
             </LeftSection>
             <RightSection width={width}>
-                <Image src={IMG_BLOG_EXAMPLE}/>
+                {imageUri && <Image src={imageUri}/>}
             </RightSection>
         </Container>
     )
